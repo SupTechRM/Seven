@@ -1,2 +1,2 @@
 # Computer
-The Future 
+The future is amazing.
