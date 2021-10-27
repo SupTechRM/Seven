@@ -1,2 +1,2 @@
 # Computer
-The future is amazing.
+What is the future? What is the upcoming redefining moment. There are infinite upcoming possibilited... And to harness them, to bring what the future possesses is the change of the future. We welcome you to Computer...
