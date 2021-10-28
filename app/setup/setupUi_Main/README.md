@@ -25,8 +25,8 @@ setupUiMain
 ```
 
 # Built With
-**Electron**
-**HTML/CSS/REACT**
+**1) Electron**
+**2) Html/Css/React**
 
 (Use of Open Source Software **#[Soft UI Dashboard](http://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html?ref=readme-sud) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/intent/tweet?url=https://www.creative-tim.com/product/soft-ui-dashboard&text=Check%20Soft%20UI%20Dashboard%20made%20by%20@CreativeTim%20#webdesign%20#dashboard%20#softdesign%20#html%20https://www.creative-tim.com/product/soft-ui-dashboard)
  https://github.com/creativetimofficial/soft-ui-dashboard**)
