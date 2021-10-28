@@ -2,6 +2,7 @@ import speech_recognition as sr
 import webbrowser as wb
 import pyttsx3 as sp
 import datetime
+import os
 # import simpleaudio as sa
 
 
@@ -90,6 +91,26 @@ elif 'Gmail' in r2.recognize_google(audio):
         speak('error')
     except sr.RequestError as e:
         speak('failed'.format(e))
+elif 'application' in r2.recognize_google(audio):
+    r2 = sr.Recognizer()
+    with sr.Microphone() as source:
+        speak("Which app should I open?")
+        audio = r2.listen(source)
+        get = r2.recognize_google(audio)
+        if os.name == 'nt':
+            os.startfile("C:/ProgramData/Microsoft/Windows/ Start Menu/Programs/" + get + ".lnk")
+        else:
+            if ' ' in get:
+                half = get.replace(" ", "\ ")
+            try:
+                os.system("open -a " + half.capitalize())
+            except sr.UnknownValueError:
+                speak('error')
+            except sr.RequestError as e:
+                speak('failed'.format(e))
+
+
+
 
 
 
