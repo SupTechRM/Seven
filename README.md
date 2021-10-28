@@ -1,6 +1,9 @@
 # Computer
-What is the future? What is the upcoming redefining moment. There are infinite upcoming possibilites... And to harness them, to bring what the future possesses is the change of the future. <h2>We Welcome You To Computer....<h2>
+What is the future? What is the upcoming redefining moment. There are infinite upcoming possibilites... And to harness them, to bring what the future possesses is the change of the future. 
 
+![<h2>**We Welcome You To Computer....**<h2>](https://www.phdmedia.com/australia/wp-content/uploads/sites/23/2017/11/Ai-banner.jpg)
+  
+  
 # Build status
 In Development
 
