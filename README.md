@@ -9,9 +9,12 @@ In Development
 Future installation guide coming up
 
 # API Reference
-Google Cloud Text to Speech
-Spotify
-(Future API References Coming Up)
+1. Google Cloud Text to Speech
+2. Spotify
+3. Product Hunt
+4. Github
+  
+**(Future Api References on Tag)**
 
 
 # How to use?
