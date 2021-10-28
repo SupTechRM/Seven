@@ -1,5 +1,5 @@
 # Computer Frontend 
-!(https://www.creativeencode.com/wp-content/uploads/2019/09/Top-Front-End-Development-Tools-creative-Encode-Blog.jpg)
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
 ### What's included
 
 Within the download you'll find the following directories and files:
