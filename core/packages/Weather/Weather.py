@@ -16,7 +16,7 @@ location = data['loc'].split(',')
 
 
 # Enter your API key here
-api_key = "f726177bc0a3668ac48870d798d9a623"
+api_key = ""
 
 base_url = "http://api.openweathermap.org/data/2.5/weather?"
 
