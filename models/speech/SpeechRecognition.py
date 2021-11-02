@@ -28,7 +28,7 @@ audio_source = AudioSource(q, True, True)
 
 # initialize speech to text service
 authenticator = IAMAuthenticator(
-    'SO5W4NkdfAuH7jedgS6YkGRaeWbtx7PAnZpgjzJQLipr')
+    'Enter IAM Authenticator')
 speech_to_text = SpeechToTextV1(authenticator=authenticator)
 
 # define callback for the speech to text service
