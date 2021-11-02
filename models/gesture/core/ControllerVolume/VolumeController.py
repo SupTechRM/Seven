@@ -16,12 +16,12 @@ cap.set(3, hCam)
 
 pTime = 0
 
-detector = htm.handDetector(detectionConfidence=0.7)
+detector = htm.handDetector(detectionConfidence=0.7, maxHands=1)
 
 devices = AudioUtilities.GetSpeakers()
 print(devices)
 interface = devices.Activate(
-    IAudioEndpointVolume._iid_, CLSCTX_ALL, None)
+	IAudioEndpointVolume._iid_, CLSCTX_ALL, None)
 volume = cast(interface, POINTER(IAudioEndpointVolume))
 volRange = volume.GetVolumeRange()
 
@@ -30,56 +30,63 @@ maxVol = volRange[1]
 vol = 0
 volBar = 400
 volPer = 0
+area = 0
+colorVol = (0, 0, 255)
 
 while True:
-    # Capture Frames
-    success, img = cap.read()
-    
-    # Locate Hands in Frame
-    img = detector.findHands(img)
-    
-    # Find Position of Landmarks
-    lmList = detector.findPosition(img, draw=False)
-    if len(lmList) != 0:
+	# Capture Frames
+	success, img = cap.read()
+	
+	# Locate Hands in Frame
+	img = detector.findHands(img, draw=False)
+	
+	# Find Position of Landmarks
+	lmList, bbox = detector.findPosition(img, draw=True)
+	if len(lmList) != 0:
 
+		# Filter Based on Size
+		area = (bbox[2]-bbox[0]) * (bbox[3] - bbox[1])//100
+		print(area)
+		# Find Position of Hand
 
-        x1 = lmList[4][0]
-        y1 = lmList[4][1]
-        x2, y2 = lmList[8][0], lmList[8][1]
-        cx, cy = (x1 + x2) // 2, (y1 + y2) // 2
+		# Find distance between index and thumb
+		length, img, lineInfo = detector.findDistance(4, 8, img)            
+		print(length)
 
-        cv2.circle(img, (x1, y1), 15, (0, 0, 255), cv2.FILLED)
-        cv2.circle(img, (x2, y2), 15, (0, 0, 255), cv2.FILLED)
-        cv2.line(img, (x1, y1), (x2, y2), (0, 255, 0), 3)
-        cv2.circle(img, (cx, cy), 15, (0, 255, 0), cv2.FILLED)
+		# Convert Volume
+		volBar = np.interp(length,[50, 200], [400, 150])
+		volPer=np.interp(length, [50, 200], [0, 100])
 
-        length = math.hypot(x2-x1, y2-y1)
-        
-        # Hand Range 50 - 300
-        # Volume Range -48 -12 
+		# Reduce Resolution
+		smoothness = 10
+		volPer = smoothness * round(volPer / smoothness)
 
-        vol = np.interp(length, [50, 300], [minVol, maxVol])
-        volBar = np.interp(length,[50, 300], [400, 150])
-        volPer=np.interp(length, [50, 300], [0, 100])
-        print(vol)
-        volume.SetMasterVolumeLevel(vol, None)
+		# Check Fingers Up
+		fingers = detector.fingersUp()
+		print(fingers)
 
-        if length < 50:
-            cv2.circle(img, (cx, cy), 15, (0, 0, 255), cv2.FILLED)
+		# If SetTarget is down set volume
+		if not fingers[4]:
+			volume.SetMasterVolumeLevelScalar(volPer/100, None)
+			cv2.circle(img, (lineInfo[4], lineInfo[5]), 15, (0, 0, 255), cv2.FILLED)
+			colorVol = (0, 255, 0)
+		else:
+			colorVol = (0, 0, 255)
 
-    cv2.rectangle(img, (50, 150), (85, 400), (255, 0, 0), 3)
-    cv2.rectangle(img, (50, int(volBar)), (85, 400), (255, 0, 0), cv2.FILLED)
-    cv2.putText(img, f'{int(volPer)} %', (40, 450), cv2.FONT_HERSHEY_COMPLEX,
-                1, (255, 0, 0), 3)
+	# Drawings to Render on Indicator
+	cv2.rectangle(img, (50, 150), (85, 400), (255, 0, 0), 3)
+	cv2.rectangle(img, (50, int(volBar)), (85, 400), (255, 0, 0), cv2.FILLED)
+	cv2.putText(img, f'{int(volPer)} %', (40, 450), cv2.FONT_HERSHEY_COMPLEX,
+				1, (255, 0, 0), 3)
+	cVol = int(volume.GetMasterVolumeLevelScalar() * 100)
+	cv2.putText(img, f'Vol Set: {int(cVol)}', (400, 50), cv2.FONT_HERSHEY_COMPLEX,
+				1, colorVol, 3)
+	# Calculate FPS
+	cTime = time.time()
+	fps = 1 / (cTime - pTime)
+	pTime = cTime
 
-    # Calculate FPS
-    cTime = time.time()
-    fps = 1 / (cTime - pTime)
-    pTime = cTime
-
-    # Render Data
-    # Render FPS on Screen
-    cv2.putText(img, f"FPS: {int(fps)}", (40, 50), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 0, 0), 3)
-
-    cv2.imshow("Img", img)
-    cv2.waitKey(1)
+	# Render Data
+	# Render FPS on Screen
+	cv2.putText(img, f"FPS: {int(fps)}", (40, 50), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 0, 0), 3)
+	cv2.waitKey(1)
