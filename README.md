@@ -9,7 +9,7 @@
   What is the future? What is the upcoming redefining moment. There are infinite upcoming possibilites... And to harness them, to bring what the future possesses is the change of the future. 
 </p>
 
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+![The Seven](https://github.com/SupTechRM/Computer/blob/main/The%20Seven.png)
 
 ## Build status
 In Development
