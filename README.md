@@ -93,7 +93,5 @@ React Native is developed and supported by many companies and individual core co
 
 ## 📄 License
 
-React Native is MIT licensed, as found in the [LICENSE][l] file.
 
-React Native documentation is Creative Commons licensed, as found in the [LICENSE-docs][ld] file.
 
