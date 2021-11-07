@@ -33,14 +33,14 @@ Signing off, SupTechRM
 
 
   <h1 align="center">
-  <a href="https://reactnative.dev/">
+  <a >
     Seven: A Glimse to The Future
     </a>
 </h1>
 
 <p align="center">
-  <strong>Learn once, write anywhere:</strong><br>
-  Build mobile apps with React.
+  <strong>We Welcome you To Seven</strong><br>
+  What is the future? What is the upcoming redefining moment. There are infinite upcoming possibilites... And to harness them, to bring what the future possesses is the change of the future. 
 </p>
 
 <p align="center">
