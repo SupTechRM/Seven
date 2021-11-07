@@ -6,6 +6,7 @@
 </h1>
 
 <p align="center">
+  ![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
   <strong>We Welcome you To Seven</strong><br>
   What is the future? What is the upcoming redefining moment. There are infinite upcoming possibilites... And to harness them, to bring what the future possesses is the change of the future. 
 </p>
