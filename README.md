@@ -64,14 +64,6 @@ Signing off, SupTechRM
 <h3 align="center">
   <a href="https://reactnative.dev/docs/getting-started">Getting Started</a>
   <span> · </span>
-  <a href="https://reactnative.dev/docs/tutorial">Learn the Basics</a>
-  <span> · </span>
-  <a href="https://reactnative.dev/showcase">Showcase</a>
-  <span> · </span>
-  <a href="https://reactnative.dev/docs/contributing">Contribute</a>
-  <span> · </span>
-  <a href="https://reactnative.dev/help">Community</a>
-  <span> · </span>
   <a href="https://github.com/facebook/react-native/blob/HEAD/.github/SUPPORT.md">Support</a>
 </h3>
 
