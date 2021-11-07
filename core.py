@@ -11,5 +11,5 @@ if doesExist:
     data = json.load(opened)
     opened.close()
 else:
-    webbrowser.open(
-        'http://localhost:3000/Computer/app/setup/setupUi_Main/userSetup/Frontend.html')
+    """Write an Algorithm to run Electron Start from Command Shell"""
+    pass
