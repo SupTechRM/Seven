@@ -1,5 +1,5 @@
-  <img>![The Seven](https://github.com/SupTechRM/Computer/blob/main/The%20Seven.png)
-  <h1 align="center">
+ <img align="center">![The Seven](https://github.com/SupTechRM/Computer/blob/main/The%20Seven.png)
+ <h1 align="center">
   <a >
     Seven: A Glimse to The Future
     </a>
