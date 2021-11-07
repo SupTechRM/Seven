@@ -1,5 +1,7 @@
-![The Seven](https://github.com/SupTechRM/Computer/blob/main/The%20Seven.png)
 
+<p align="center">
+  <img src="https://github.com/SupTechRM/Computer/blob/main/The%20Seven.png">
+</p>
 
  <h1 align="center">
   <a >
