@@ -40,7 +40,7 @@ Signing off, SupTechRM
 
 <p align="center">
   <strong>We Welcome you To Seven</strong><br>
-  What is the future? What is the upcoming redefining moment. There are infinite upcoming possibilites... And to harness them, to bring what the future possesses is the change of the future. 
+  What is the future? What is the upcoming redefining moment. There are infinite upcoming possibilites... And to harness them, to bring what the future possesses is the change of the future. We can only be the Future- The AI Radar
 </p>
 
 
@@ -51,7 +51,7 @@ Signing off, SupTechRM
   <a href="https://github.com/facebook/react-native/blob/HEAD/.github/SUPPORT.md">Support</a>
 </h3>
 
-React Native brings [**React**'s][r] declarative UI framework to iOS and Android. With React Native, you use native UI controls and have full access to the native platform.
+Seven is an AI which everyone desires of. It can run on any OS you can tell. It can do various tasks just by a control of a Hand. Click This link To Download Seven from our website  <a href="index.html"></a>
 
 - **Declarative.** React makes it painless to create interactive UIs. Declarative views make your code more predictable and easier to debug.
 - **Component-Based.** Build encapsulated components that manage their state, then compose them to make complex UIs.
