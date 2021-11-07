@@ -1,5 +1,5 @@
 {
-  "name": "data",
+  "name": "seven",
   "version": "1.0.0",
   "description": "Computer UI to access settings, data, and information. (Used for setting up) ",
   "main": "setup/setup.js",
