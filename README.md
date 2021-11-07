@@ -5,11 +5,13 @@
     </a>
 </h1>
 <p align="center">
-  <strong>We Welcome you To Seven</strong><br>
+  <strong>We Welcome you To Seven</strong>
+  <img>![The Seven](https://github.com/SupTechRM/Computer/blob/main/The%20Seven.png)
+</img>
+  <br>
   What is the future? What is the upcoming redefining moment. There are infinite upcoming possibilites... And to harness them, to bring what the future possesses is the change of the future. 
 </p>
 
-![The Seven](https://github.com/SupTechRM/Computer/blob/main/The%20Seven.png)
 
 ## Build status
 In Development
