@@ -34,8 +34,8 @@ Signing off, SupTechRM
 
   <h1 align="center">
   <a href="https://reactnative.dev/">
-    React Native
-  </a>
+    Seven: A Glimse to The Future
+    </a>
 </h1>
 
 <p align="center">
