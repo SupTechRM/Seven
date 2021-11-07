@@ -1,9 +1,6 @@
-  <h1 align="center">
-  <a >
-     ![The Seven](https://github.com/SupTechRM/Computer/blob/main/The%20Seven.png)
+![The Seven](https://github.com/SupTechRM/Computer/blob/main/The%20Seven.png)
 
-    </a>
-</h1>
+
  <h1 align="center">
   <a >
     Seven: A Glimse to The Future
