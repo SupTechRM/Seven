@@ -6,7 +6,7 @@ import autopy
 
 wCam, hCam = 640, 480
 frameR = 100  # Frame Reduction
-smoothening = 10
+smoothening = 6
 
 pTime = 0
 plocX, plocY = 0, 0
