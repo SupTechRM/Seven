@@ -1,7 +1,7 @@
-import pywhatkit
+import pywhatkit as kit
+string = input("Enter Text: ")
 
-def PlayYTTVideo():
-    pywhatkit.playonyt('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
-    print('Playing YouTube Video')
+def PlayYTTVideo(string):
+    kit.playonyt(string)
 
-PlayYTTVideo()
+PlayYTTVideo(string)
