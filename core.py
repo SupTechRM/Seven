@@ -2,14 +2,15 @@ import os
 import json
 import webbrowser
 
-path = '../Computer/user.json'
+path = './user.json'
 
-doesExist = os.path.exists(path)
+existence = os.path.exists(path)
 
-if doesExist:
-    opened = open('../Computer/user.json')
+if existence:
+    opened = open('user.json')
     data = json.load(opened)
     opened.close()
 else:
-    """Write an Algorithm to run Electron Start from Command Shell"""
+    # webbrowser.open(
+    #     "http://localhost:3000/Computer/app/setup/setupUi_Main/userSetup/Frontend.html")
     pass
