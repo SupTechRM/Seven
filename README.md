@@ -23,12 +23,11 @@ In Development
 
 | Codebase              |      Description          |
 | :-------------------- | :-----------------------: |
-| [app](app)        |      Frontend User Setup App       |
-| [assets](assets)  |     Banners and Logo/Images        |
-| [core](core)      |    Packages executing functions    |
-| [main](main)    |   Using NLTK to Proccess Input and Redirect to packages     |
+| [app](app)        |     Electron Frontend(Configuration)    |
+| [assets](assets)  |     Image Data: Banners/Logos/Covers        |
+| [core](core)      |    Packages(Containing Functions to Execute Tasks)    |
+| [main](main)    |   Identifying Sentences and Classifying Packagges     |
 | [models](models)        |   Code for Speech, Gesture, and Initialiation      |
-
 
 
 ## Installation
