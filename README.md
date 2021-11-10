@@ -5,7 +5,7 @@
 
  <h1 align="center">
   <a >
-    Seven: The Future is <u><b>Here</b></u>
+    Seven: The Future is <u>Here</u>
     </a>
 </h1>
 <p align="center">
