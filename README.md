@@ -26,7 +26,7 @@ In Development
 | [app](app)        |     Electron Frontend(Configuration)    |
 | [assets](assets)  |     Image Data: Banners/Logos/Covers        |
 | [core](core)      |    Packages(Containing Functions to Execute Tasks)    |
-| [main](main)    |   Identifying Sentences and Classifying Packagges     |
+| [main](main)    |   Identifying Sentences and Classifying Packages     |
 | [models](models)        |   Code for Speech, Gesture, and Initialiation      |
 
 
