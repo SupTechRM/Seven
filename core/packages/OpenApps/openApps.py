@@ -11,11 +11,11 @@ def openApp(ApptoOpen):
     # How to open files in windows??!?!??!!
 
 
-File = open('openApp.json')
+file = open('openApp.json')
 
-data = json.load(File)
+data = json.load(file)
 fileName = data['file_name']
 
-File.close()
+file.close()
 
 openApp(fileName)

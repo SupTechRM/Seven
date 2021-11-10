@@ -5,7 +5,7 @@ $dateCreated = date("F j, Y");
 
 $userInfo = new stdClass();
 $userInfo->name = $name;
-$userInfo->dateCreated = $dateCreated;
+$userInfo->dateAccountCreated = $dateCreated;
 
 $myJSON = json_encode($userInfo);
 $filename = "user.json";
