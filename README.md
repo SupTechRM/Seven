@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/SupTechRM/Seven/blob/main/assets/img/banner/Banner.png">
+  <img src="https://github.com/SupTechRM/Seven/blob/main/assets/img/banners/Banner.png">
 </p>
 
  <h1 align="center">
