@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="https://github.com/SupTechRM/Seven/blob/main/assets/img/logo/The%20Seven.png">
+  <img src="https://github.com/SupTechRM/Seven/blob/main/assets/img/banners/Futuristic%20Technology%20Facebook%20Cover%20Template.png">
 </p>
 
  <h1 align="center">
