@@ -19,6 +19,18 @@
 
 In Development
 
+## Structure
+
+| Codebase              |      Description          |
+| :-------------------- | :-----------------------: |
+| [app](app)        |      Frontend User Setup App       |
+| [assets](assets)  |     Banners and Logo/Images        |
+| [core](core)      |    Packages executing functions    |
+| [main](main)    |   Using NLTK to Proccess Input and Redirect to packages     |
+| [models](models)        |   Code for Speech, Gesture, and Initialiation      |
+
+
+
 ## Installation
 
 Future installation guide coming up
