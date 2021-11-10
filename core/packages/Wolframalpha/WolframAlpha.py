@@ -1,20 +1,23 @@
-import wolframalpha
+import requests
 import json
 
 file = open('query.json')
 
 data = json.load(file)
-dataquery = data['query']
-
-
-def Questionsearch(query):
-    client = wolframalpha.Client('47P9L8-VHY6GJ54G8')
-    res = client.query(query)
-    output = next(res.results). text
-    return output
-
-
-output = Questionsearch(dataquery)
-print(output)
+input = data['query']
+appid = data['appid']
 
 file.close()
+
+
+def QuestionSearch(input, appid):
+    response = requests.get("http://api.wolframalpha.com/v2/query?appid=" +
+                            appid + "&input=" + input + "&output=json")
+    jsonresp = response.json()
+    outcome = jsonresp["queryresult"]["pods"][1]["subpods"][0]["plaintext"]
+    return outcome
+
+
+result = QuestionSearch(input, appid)
+
+print(result)
