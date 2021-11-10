@@ -1,0 +1,9 @@
+
+import wolframalpha
+client=wolframalpha.Client('47P9L8-VHY6GJ54G8')
+
+while True:
+  query=str(input("Please type your Questions:-"))
+  res=client.query(query)
+  output=next(res.results). text
+  print(output)
