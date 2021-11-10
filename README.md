@@ -36,6 +36,6 @@ Future installation guide coming up
 
 Step by Step Usage Guide coming up
 
-## Contribute
+## Contributions
 
-Contribution and Feedback are always appreciated.
+Seven is open to contributions, but we recommend you create a pull request/issue to or replying to inform what you are working on. Contribution and Feedback are always appreciated!
