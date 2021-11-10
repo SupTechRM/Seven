@@ -39,3 +39,5 @@ Step by Step Usage Guide coming up
 ## Contributions
 
 Seven is open to contributions, but we recommend you create a pull request/issue to or replying to inform what you are working on. Contribution and Feedback are always appreciated!
+
+Please read CONTRIBUTING.md for details on Contribution for Seven. 
