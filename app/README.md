@@ -1,4 +1,4 @@
-# ## Seven User Configuration
+# Seven User Configuration
 
 This is the User Setup and Configuration app built for Seven with [Electron](https://www.electronjs.org/). 
 
