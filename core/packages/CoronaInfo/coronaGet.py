@@ -1,16 +1,16 @@
 import COVID19Py
 import json
 
+from main.bridges import utils
 
-covid = COVID19Py.COVID19(data_source="jhu")
+def CoronaGet(country):
+    covid = COVID19Py.COVID19(data_source="jhu")
 
-data = covid.getAll()
+    data = covid.getAll()
 
-latest = covid.getLatest()
-print("Latest Data:")
-print("\nConfirmed: ", latest["confirmed"])
-print("\nDeathes: ", latest["deaths"])
-print("\nRecovered: ", latest["recovered"])
+    latest = covid.getLatest()
 
-locations = covid.getLocations(timelines=True,
-                               rank_by='confirmed')
+    locations = covid.getLocations(timelines=True,
+                                   rank_by='confirmed')
+
+    return utils.translate("Latest Data, \nConfirmed: ", latest["confirmed"], "\n Deaths: ", latest["deaths"], "\n Recovered: ", latest["recovered"])

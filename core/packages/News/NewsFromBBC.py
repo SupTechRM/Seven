@@ -1,5 +1,5 @@
 import requests
-
+from main.bridges import utils
 
 def NewsFromBBC():
 
@@ -32,11 +32,6 @@ def NewsFromBBC():
         # printing all trending news
         print(i + 1, results[i])
 
-    print(results)
+    return utils.translate(results)
 
 
-# Driver Code
-if __name__ == '__main__':
-
-    # function call
-    NewsFromBBC()

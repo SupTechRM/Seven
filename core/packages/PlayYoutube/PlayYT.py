@@ -1,7 +1,6 @@
 import pywhatkit as kit
-string = input("Enter Text: ")
+from main.bridges import utils
 
 def PlayYTTVideo(string):
     kit.playonyt(string)
-
-PlayYTTVideo(string)
+    return utils.translate("")

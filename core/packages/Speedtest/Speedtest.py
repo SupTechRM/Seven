@@ -6,14 +6,9 @@
 import Speedtest
 import speedtest
 
+from main.bridges import utils
+
 def InternetSpeedTest(wifi):
     download = wifi.download()
     upload = wifi.upload()
-    print("Download Speed: ", download/1000000 + " Mbps")
-    print("Upload Speed: ", upload/1000000 + " Mbps")
-    return download, upload
-
-# Define Wifi 
-Wifi = speedtest.Speedtest()
-
-InternetSpeedTest(Wifi)
+    return utils.translate("Download Speed: ", download/1000000 + " Mbps", "Upload Speed: ", upload/1000000 + " Mbps")
