@@ -1,0 +1,47 @@
+{"packages": [
+        {"tag": "Calendar",
+         "patterns": ["Run my calendar", "Open the Calendar", "Open Calendar", "Show Calendar", "Show the Date and Time", "open my calendar"],
+         "responses": [""],
+         "context_set": ""
+        },
+        {"tag": "CoronaInfo",
+         "patterns": ["Show the Corona Info ", "Tell me the Corona Cases","Show me the recent Corona Updates around the world"],
+         "responses": ["Sure-executing!!!Be safe"],
+         "context_set": ""
+        },
+        {"tag": "Google",
+         "patterns": ["Search",  " Search this", "Search on google", "Search "],
+         "responses": ["You know me, I make your work easier, don't I? Here, your results", "Right Searching For the guy, eh?", "K, I am searching", "ok, gimme a second"],
+         "context_set": ""
+        },
+        {"tag": "News",
+         "patterns": ["Show ", "Show this", "Show me"],
+         "responses": ["Getting news info... Here", "Ok", "Showing the latest news"],
+         "context_set": ""
+        },
+        {"tag": "OpenWeb",
+         "patterns": ["Open ", "Open The web", "Open the Web Browser", "Open Web"],
+         "responses": ["Ok Opening", "Ya, I'm on it", "Right away", "Opening "],
+         "context_set": ""
+        },
+
+        {"tag": "PlayYoutube",
+         "patterns": ["Play a video", "Play Yotube ", "Play video", "Play this video","Play That video"],
+         "responses": ["Playing it", "Man, Did not know you watched this", "I too have seen this", "ya I'm on it"],
+         "context_set": ""
+        },
+
+        {"tag":"Speedtest",
+         "patterns":["What is my Net Speed","How much MBPS my net is running on","What is my Internet speed","What is my current net speed","What is my current net speed"],
+         "responses":["Checking the Internet Speed", "Testing your Speed, Get it speed? ", "Ok I am checking the internet", "Connecting to Speedtest", "Checking internet"],
+         "context_set": ""
+        },
+
+        {"tag":"Weather",
+         "patterns":["Check my surroundings weather","Check my Weather","Check my city's weather","What is my current weather","What is the Weather"],
+         "responses":["Here's your Weather", "And you care about weather", "Right away"],
+         "context_set": ""
+        }
+
+        ]
+}

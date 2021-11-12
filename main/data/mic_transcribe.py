@@ -210,5 +210,5 @@ def main(ARGS):
             text = stream_context.finishStream()
             print("Recognized: %s" % text)
             stream_context = model.createStream()
-
-
+    
+    return text
