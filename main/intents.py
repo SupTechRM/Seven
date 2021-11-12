@@ -50,7 +50,7 @@ def get_command_words(str):
 def intents(input_to):
     for intent in data['packages']:
         for pattern in intent['patterns']:
-            if pattern.lower() in input_to.split() or pattern.lower().split() in input_to.split():
+            if pattern.lower() in input_to.split():
                 print("Found")
                 print(intent['tag'])
                 response = (random.choice(intent['responses']))
@@ -58,7 +58,7 @@ def intents(input_to):
                     res = tts.synthesize(response, accept='audio/mp3',
                                         voice='en-GB_JamesV3Voice').get_result()
                     audio_file.write(res.content)
-
+                print(response)
                 playsound.playsound('speech.mp3')
 
                 if pattern.lower() in intent['patterns'] and intent['patterns'].index(pattern.lower()) == 0:
