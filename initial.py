@@ -14,6 +14,7 @@ while True:
             # wait for a second to let the recognizer
             # adjust the energy threshold based on
             r = sr.Recognizer()
+            print("######################Listening###################")
             # the surrounding noise level
             r.adjust_for_ambient_noise(source, duration=0.2)
 
@@ -26,7 +27,7 @@ while True:
             print(inputtext)
 
             if " " in inputtext.strip() and "7" in inputtext.strip():
-                os.system("python3 core.py")
+                os.system("python core.py")
                 exit()
 
     except sr.RequestError as e:

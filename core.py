@@ -13,5 +13,5 @@ if existence:
     # redirect to lib.py
 else:
     print("User json doesn't exist")
-    # os.system("cd app")
-    # os.system("npm start")
+    os.chdir("app")
+    os.system("npm start")

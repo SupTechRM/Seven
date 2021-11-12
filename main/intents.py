@@ -1,28 +1,37 @@
+from genericpath import sameopenfile
 import json
 import random
 import numpy
+import nltk
+from nltk.stem.lancaster import LancasterStemmer
+stemmer = LancasterStemmer()
 
-sample_input = ""
-
+input_to = str("play youtube")
 
 with open('packages.json') as file:
     data = json.load(file)
 
 
-patterns = []
+words = []
+labels = []
+docs_x = []
+docs_y = []
 
-for pattern in (data["packages"][5]["patterns"]):
-    print(pattern)
-    patterns.append(pattern.lower())
-    sample_input = str(sample_input.split())
-    for patternEach in patterns:
-        if patternEach in sample_input:
-            print("Found a match")
+for intent in data['packages']:
+    for pattern in intent['patterns']:
+        wrds = nltk.word_tokenize(pattern)
+
+        if pattern in input_to.split():
+            print(intent["tag"])
         else:
-            print("No match")
-        
+            print("not found")
 
-print(patterns)
+        words.extend(wrds)
+        docs_x.append(wrds)
+        docs_y.append(intent["tag"])
+
+    if intent['tag'] not in labels:
+        labels.append(intent['tag'])
 
 
 
