@@ -8,9 +8,10 @@ import re
 import sys
 import json
 
+
 nlp = spacy.load('en_core_web_sm')
 
-sample_input = "play enimem on youtube run the latest news"
+sample_input = "tell me the covid cases"
 
 
 # Define a dictionary containing Command Words and Attributes
