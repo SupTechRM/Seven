@@ -17,7 +17,7 @@
 
 ## Build status
 
-In Development
+In Development(Seven is on the verge of completion, and therefore we recommend pausing on installation and testing for a better experience. We hope to see you continue using Seven as your daily man at work! ) 
 
 ## Structure
 
