@@ -10,7 +10,8 @@ if existence:
     opened = open('user.json')
     data = json.load(opened)
     opened.close()
+    # redirect to lib.py
 else:
-    # webbrowser.open(
-    #     "http://localhost:3000/Computer/app/setup/setupUi_Main/userSetup/Frontend.html")
-    pass
+    print("User json doesn't exist")
+    # os.system("cd app")
+    # os.system("npm start")
