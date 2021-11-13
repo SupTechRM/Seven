@@ -8,16 +8,20 @@ import webbrowser
 import lib
 import os
 import pywhatkit as kit
+import wolframalpha
 
 #####################################
 # Main Function
 #####################################
+
 file = open('../user.json')
 
 data = json.load(file)
 name = data['name']
 
 file.close()
+
+app_id = '8QU8RA-TE2GAVWTKL'
 
 while True:
     try:
@@ -98,23 +102,14 @@ while True:
         except Exception as e:
             print(e)
 
-    else:
+    elif "volume controller" in user_input:
         try:
-            with open("apiData.json") as file:
-                data = json.load(file)
-                data["input"] = user_input
-                json.dump(data, open("apiData.json", "w"), indent=4)
-            os.system("python core/packages/Wolframalpha/WolframAlpha.py")
-            print("Run")
+            os.system("python Seven/models/gesture/core/GestureExecute.py")
         except Exception as e:
             print(e)
-
-
-
-
-
-
-
-
-
-
+    else:
+        client = wolframalpha.Client(app_id)
+        res = client.query(user_input)
+        ans = next(res.results).text
+        print(ans)
+        
