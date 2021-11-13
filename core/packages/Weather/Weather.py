@@ -19,7 +19,7 @@ from google.cloud import texttospeech_v1
 # Instantiates a client
 
 
-def SpeechSyntesizer(audio, path="main/data/speech/empyrean-app-332014-6fdfdc87b1df.json"):
+def SpeechSynthesizer(audio, path="main/data/speech/empyrean-app-332014-6fdfdc87b1df.json"):
     os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = path
     client = texttospeech_v1.TextToSpeechClient()
 
@@ -56,12 +56,12 @@ def SpeechSyntesizer(audio, path="main/data/speech/empyrean-app-332014-6fdfdc87b
     )
 
     # The response's audio_content is binary.
-    with open("./output2.mp3", "wb") as out:
+    with open("./output.mp3", "wb") as out:
         # Write the response to the output file.
         out.write(response.audio_content)
         print('Audio content written to file "output.mp3"')
-        playsound.playsound('output2.mp3')
-        os.remove("output2.mp3")
+        playsound.playsound('output.mp3')
+        os.remove("output.mp3")
 
 
 # Enter your API key here
@@ -107,13 +107,13 @@ def getWeather(city_name):
         weather_description = z[0]["description"]
         print(json.dumps(temperature_max))
 
-        SpeechSyntesizer("Current Temperature: " +
-                         str(round(current_temperature, 2)))
-        SpeechSyntesizer("Maximum Temperature: " +
-                         str(round(temperature_max, 2)))
-        SpeechSyntesizer("Minimum Temperature: " +
-                         str(round(temperature_min, 2)))
-        SpeechSyntesizer("Humidity: " + str(current_humidity) + "%")
+        SpeechSynthesizer("Current Temperature: " +
+                          str(round(current_temperature, 2)))
+        SpeechSynthesizer("Maximum Temperature: " +
+                          str(round(temperature_max, 2)))
+        SpeechSynthesizer("Minimum Temperature: " +
+                          str(round(temperature_min, 2)))
+        SpeechSynthesizer("Humidity: " + str(current_humidity) + "%")
         # return utils.translate("Weather Successfully Accessed")
 
     else:

@@ -1,8 +1,4 @@
 import COVID19Py
-from ibm_watson import TextToSpeechV1
-from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
-import playsound
-
 import os
 import pandas as pd  # pip install numpy==1.19.3
 import playsound
@@ -12,7 +8,7 @@ from google.cloud import texttospeech_v1
 # Instantiates a client
 
 
-def SpeechSyntesizer(audio, path="main/data/speech/empyrean-app-332014-6fdfdc87b1df.json"):
+def SpeechSynthesizer(audio, path="main/data/speech/empyrean-app-332014-6fdfdc87b1df.json"):
     os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = path
     client = texttospeech_v1.TextToSpeechClient()
 
@@ -49,12 +45,12 @@ def SpeechSyntesizer(audio, path="main/data/speech/empyrean-app-332014-6fdfdc87b
     )
 
     # The response's audio_content is binary.
-    with open("./output2.mp3", "wb") as out:
+    with open("./output.mp3", "wb") as out:
         # Write the response to the output file.
         out.write(response.audio_content)
         print('Audio content written to file "output.mp3"')
-        playsound.playsound('output2.mp3')
-        os.remove("output2.mp3")
+        playsound.playsound('output.mp3')
+        os.remove("output.mp3")
 
 
 def CoronaGet():
@@ -67,8 +63,8 @@ def CoronaGet():
     locations = covid.getLocations(timelines=True,
                                    rank_by='confirmed')
 
-    SpeechSyntesizer("Latest Data, \nConfirmed: " + str(latest["confirmed"]) + "\n Deaths: " + str(
-        latest["deaths"]) + "\n Recovered: " + str(latest["recovered"]))
+    SpeechSynthesizer("Latest Data, \nConfirmed: " + str(latest["confirmed"]) + "\n Deaths: " + str(
+        latest["deaths"]) + "\n Recovered: " + str(latest["recovered"]), path="../../../../main/data/speech/empyrean-app-332014-6fdfdc87b1df.json")
 
 
 CoronaGet()

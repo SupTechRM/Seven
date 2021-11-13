@@ -1,18 +1,20 @@
 import os
-import pandas as pd #  pip install numpy==1.19.3
+import pandas as pd  # pip install numpy==1.19.3
 import playsound
-from google.cloud import texttospeech # outdated or incomplete comparing to v1
+from google.cloud import texttospeech  # outdated or incomplete comparing to v1
 from google.cloud import texttospeech_v1
 
 # Instantiates a client
 
-def SpeechSyntesizer(audio, path="main/data/speech/empyrean-app-332014-6fdfdc87b1df.json"):
+
+def SpeechSynthesizer(audio, path="empyrean-app-332014-6fdfdc87b1df.json"):
     os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = path
     client = texttospeech_v1.TextToSpeechClient()
 
     voice_list = []
     for voice in client.list_voices().voices:
-        voice_list.append([voice.name, voice.language_codes[0], voice.ssml_gender, voice.natural_sample_rate_hertz])
+        voice_list.append([voice.name, voice.language_codes[0],
+                           voice.ssml_gender, voice.natural_sample_rate_hertz])
     df_voice_list = pd.DataFrame(voice_list, columns=['name', 'language code', 'ssml gender', 'hertz rate']).to_csv(
         'Voice List.csv', index=False)
 
@@ -25,8 +27,8 @@ def SpeechSyntesizer(audio, path="main/data/speech/empyrean-app-332014-6fdfdc87b
     )
 
     voice = texttospeech_v1.VoiceSelectionParams(
-        name='ar-XA-Wavenet-B', language_code="en-GB"
-        # name='vi-VN-Wavenet-D', language_code="vi-VN"
+        # name='ar-XA-Wavenet-B', language_code="en-GB"
+        name='en-GB-Wavenet-B', language_code="en-GB"
     )
 
     # Select the type of audio file you want returned
@@ -42,11 +44,8 @@ def SpeechSyntesizer(audio, path="main/data/speech/empyrean-app-332014-6fdfdc87b
     )
 
     # The response's audio_content is binary.
-    with open("./output2.mp3", "wb") as out:
+    with open("./output.mp3", "wb") as out:
         # Write the response to the output file.
         out.write(response.audio_content)
-        print('Audio content written to file "output.mp3"')
-        playsound.playsound('output2.mp3')
-        os.remove("output2.mp3")
-
-
+        playsound.playsound('output.mp3')
+        os.remove("output.mp3")

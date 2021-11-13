@@ -12,7 +12,7 @@ from google.cloud import texttospeech_v1
 # Instantiates a client
 
 
-def SpeechSyntesizer(audio, path="main/data/speech/empyrean-app-332014-6fdfdc87b1df.json"):
+def SpeechSynthesizer(audio, path="main/data/speech/empyrean-app-332014-6fdfdc87b1df.json"):
     os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = path
     client = texttospeech_v1.TextToSpeechClient()
 
@@ -49,18 +49,18 @@ def SpeechSyntesizer(audio, path="main/data/speech/empyrean-app-332014-6fdfdc87b
     )
 
     # The response's audio_content is binary.
-    with open("./output2.mp3", "wb") as out:
+    with open("./output.mp3", "wb") as out:
         # Write the response to the output file.
         out.write(response.audio_content)
         print('Audio content written to file "output.mp3"')
-        playsound.playsound('output2.mp3')
-        os.remove("output2.mp3")
+        playsound.playsound('output.mp3')
+        os.remove("output.mp3")
 
 
 def translate(audio):
     try:
-        SpeechSyntesizer(audio)
+        SpeechSynthesizer(audio)
 
     except Exception as e:
         print(e)
-        SpeechSyntesizer(audio)
+        SpeechSynthesizer(audio)
