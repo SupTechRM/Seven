@@ -3,8 +3,7 @@ from ibm_watson import TextToSpeechV1
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 import playsound
 from datetime import date
-
-from main.data.realtime_mic import takeCommand
+from main.data.speech.RealtimeMic import takeCommand
 import os
 import speech_recognition as sr
 
@@ -18,7 +17,7 @@ if existence:
     data = json.load(opened)
     opened.close()
     os.chdir("main")
-    os.system("python3 main.py")
+    os.system("python main.py")
 else:
     apikey = '3k6i8lvhuVL0xvMjdc3H0Fe5wciOJ-qN--UhqVPQNsev'
     url = 'https://api.eu-gb.text-to-speech.watson.cloud.ibm.com/instances/c0e720ca-1373-4cbb-959f-bae7d48795e0'
@@ -33,7 +32,6 @@ else:
         audio_file.write(res.content)
 
     playsound.playsound('speech.mp3')
-
 
     # use the microphone as source for input.
     with sr.Microphone() as source:
@@ -56,7 +54,8 @@ else:
         inputtext = inputtext.lower()
         inputtext = inputtext.replace(" ", "")
 
-        dateCreated = str(date.today().day) + "/" + str(date.today().month) + "/" + str(date.today().year)
+        dateCreated = str(date.today().day) + "/" + \
+            str(date.today().month) + "/" + str(date.today().year)
         jsonData = {"name": inputtext, "dateCreated": dateCreated}
         jsonString = json.dumps(jsonData)
         jsonFile = open("user.json", "w")
@@ -65,6 +64,3 @@ else:
 
     os.chdir("app")
     os.system("npm start")
-
-
-

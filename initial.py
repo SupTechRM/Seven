@@ -14,8 +14,8 @@ while True:
             r.adjust_for_ambient_noise(source, duration=0.2)
 
             # listens for the user's input
-            audio = r.listen(source)
             print("Listening")
+            audio = r.listen(source)
 
             # Using ggogle to recognize audio
             inputtext = r.recognize_google(audio)
@@ -23,7 +23,7 @@ while True:
             # print(inputtext)
 
             if " " in inputtext.strip() and "7" in inputtext.strip():
-                os.system("python3 core.py")
+                os.system("python core.py")
                 exit()
 
     except sr.RequestError as e:

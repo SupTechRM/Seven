@@ -65,10 +65,6 @@ def intents(input_to):
 
                 if pattern.lower() in intent['patterns'] and intent['patterns'].index(pattern.lower()) == 0:
                     return intent["tag"]
-                    if intent["tag"] == "CoronaInfo":
-                        get_command_words(input_to)
-                    else:
-                        get_command_words(input_to)
                 else:
                     return intent["tag"]
             else:

@@ -1,9 +1,4 @@
 {"packages": [
-        {"tag": "Calendar",
-         "patterns": ["Show", "Run my calendar", "Open the Calendar", "Open Calendar", "Show Calendar", "Show the Date and Time", "open my calendar"],
-         "responses": ["Opening Calendar","Opening Calendar for you!!!","Opening Calendar in a few seconds","trying to open Calendar quickly","Showing the Calendar in a few seconds"],
-         "context_set": ""
-        },
         {"tag": "CoronaInfo",
          "patterns": ["Corona", "Show the Corona Info ", "Tell me the Corona Cases","Show me the recent Corona Updates around the world"],
          "responses": ["Sure executing Be safe","Showing the Corona Cases in a few seconds","Showing The Corona Cases around the world, but be safe!!!","Opening Corona cases in a few seconds"],

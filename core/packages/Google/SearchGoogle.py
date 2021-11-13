@@ -1,6 +1,6 @@
 import webbrowser
 
-from main.bridges import utils
+from Seven.main.bridges import utils
 
 
 def SearchGoogle(query):

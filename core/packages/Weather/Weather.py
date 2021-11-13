@@ -4,19 +4,21 @@
 
 import requests
 import json
-from main.bridges import utils
 from pytemp import pytemp
+
 
 # Enter your API key here
 api_key = "f726177bc0a3668ac48870d798d9a623"
 
 base_url = "http://api.openweathermap.org/data/2.5/weather?"
 
-def getLocation(city):
+def getLocation():
     res = requests.get('https://ipinfo.io/')
     data = res.json()
     city_name = data['city']
     location = data['loc'].split(',')
+
+    return city_name
 
 def getWeather(city_name):
     complete_url = base_url + "appid=" + api_key + "&q=" + city_name
@@ -52,8 +54,12 @@ def getWeather(city_name):
         print("Maximum Temperature: " + str(round(temperature_max, 2)))
         print("Minimum Temperature: " + str(round(temperature_min, 2)))
         print("Humidity: " + str(current_humidity) + "%")
-        return utils.translate("Weather Successfully Accessde")
+        # return utils.translate("Weather Successfully Accessed")
 
 
     else:
-        return utils.translate("City not Found")
+        # return utils.translate("City not Found")
+        pass
+
+city = getLocation()
+getWeather(city)
