@@ -1,14 +1,12 @@
+import playsound
+
 from data.speech.RealtimeMic import takeCommand
 from intents import *
 from data.speech.RealtimeSpeech import SpeechSyntesizer
 import json
 import webbrowser
 import lib
-# Take Speech Recognition input and process it realtime running a main function
-# main function will take the query
-# query is sample input from which intent will be called, the modules will be runned
-# speech synthesis as a response 
-
+import os
 
 #####################################
 # Main Function
@@ -22,11 +20,13 @@ file.close()
 
 while True:
     try:
-        SpeechSyntesizer("Welcome " + name + ". As I have already introduced myself, I am Seven. You can now as me for help.")
+        SpeechSyntesizer(
+            "Welcome " + name + ". As I have already introduced myself, I am Seven. You can now as me for help.")
     except:
         SpeechSyntesizer(
             "Welcome " + name + ". As I have already introduced myself, I am Seven. You can now as me for help.")
 
+    # playsound.playsound("speech.mp3")
     user_input = takeCommand()
     user_input = user_input.lower()
     link = user_input.split()
@@ -39,7 +39,72 @@ while True:
             # print(link)
             print("searching on google for " + say)
             webbrowser.open('https://www.google.co.in/search?q=' + link)
-        
+
         except Exception as e:
             print(str(e))
+
+            # Weather
+
+    elif "weather" in user_input:
+        try:
+            os.system("python core/packages/Weather/Weather.py")
+
+        except Exception as a:
+            print(a)
+
+            # Corona
+
+    elif "corona" in user_input or "covid" in user_input:
+        try:
+            os.system("python core/packages/CoronaInfo/coronaGet.py")
+
+        except Exception as b:
+            print(b)
+
+            # SpeedTest
+
+    elif "test" in user_input:
+        try:
+            os.system("python core/packages/Speedtest/Speedtest.py")
+
+        except Exception as c:
+            print(c)
+
+            # To Do
+
+    elif "todo" in user_input:
+        try:
+            os.system("python core/packages/Todo/todo.py")
+
+        except Exception as d:
+            print(d)
+
+            # News
+
+    elif "news" in user_input:
+        try:
+            os.system("python core/packages/News/NewsFromBBC.py")
+
+        except Exception as e:
+            print(e)
+
+    else:
+        try:
+            with open("apiData.json") as file:
+                data = json.load(file)
+                data["input"] = user_input
+                json.dump(data, open("apiData.json", "w"), indent=4)
+            os.system("python3 core/packages/Wolframalpha/WolframAlpha.py")
+            print("Run")
+        except Exception as e:
+            print(e)
+
+
+
+
+
+
+
+
+
 
