@@ -1,5 +1,4 @@
 import requests
-from main.bridges import utils
 
 def NewsFromBBC():
 
@@ -32,6 +31,7 @@ def NewsFromBBC():
         # printing all trending news
         print(i + 1, results[i])
 
-    return utils.translate(results)
+    print(results)
 
+NewsFromBBC()
 

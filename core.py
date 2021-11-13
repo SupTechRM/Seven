@@ -3,10 +3,6 @@ from ibm_watson import TextToSpeechV1
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 import playsound
 from datetime import date
-<<<<<<< HEAD
-=======
-
->>>>>>> 089419d2b67968c7de5cf18a0285443488e0ec8f
 from main.data.speech.RealtimeMic import takeCommand
 import os
 import speech_recognition as sr
@@ -68,3 +64,4 @@ else:
 
     os.chdir("app")
     os.system("npm start")
+    os.system("python main/main.py")

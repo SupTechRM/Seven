@@ -6,6 +6,34 @@ import requests
 import json
 from pytemp import pytemp
 
+from ibm_watson import TextToSpeechV1
+from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
+import playsound
+
+apikey = '3k6i8lvhuVL0xvMjdc3H0Fe5wciOJ-qN--UhqVPQNsev'
+url = 'https://api.eu-gb.text-to-speech.watson.cloud.ibm.com/instances/c0e720ca-1373-4cbb-959f-bae7d48795e0'
+
+# Setup Service
+authenticator = IAMAuthenticator(apikey)
+tts = TextToSpeechV1(authenticator=authenticator)
+tts.set_service_url(url)
+
+
+def SpeechSyntesizer(audio):
+    try:
+        with open('speech.mp3', 'wb') as audio_file:
+            res = tts.synthesize(audio, accept='audio/mp3',
+                                 voice='en-GB_JamesV3Voice').get_result()
+            audio_file.write(res.content)
+
+    except Exception as e:
+        print(e)
+        with open('speech.mp3', 'wb') as audio_file:
+            res = tts.synthesize(audio, accept='audio/mp3',
+                                 voice='en-GB_JamesV3Voice').get_result()
+            audio_file.write(res.content)
+
+
 
 # Enter your API key here
 api_key = "f726177bc0a3668ac48870d798d9a623"
@@ -50,10 +78,10 @@ def getWeather(city_name):
         weather_description = z[0]["description"]
         print(json.dumps(temperature_max))
 
-        print("Current Temperature: " + str(round(current_temperature, 2)))
-        print("Maximum Temperature: " + str(round(temperature_max, 2)))
-        print("Minimum Temperature: " + str(round(temperature_min, 2)))
-        print("Humidity: " + str(current_humidity) + "%")
+        SpeechSyntesizer("Current Temperature: " + str(round(current_temperature, 2)))
+        SpeechSyntesizer("Maximum Temperature: " + str(round(temperature_max, 2)))
+        SpeechSyntesizer("Minimum Temperature: " + str(round(temperature_min, 2)))
+        SpeechSyntesizer("Humidity: " + str(current_humidity) + "%")
         # return utils.translate("Weather Successfully Accessed")
 
 

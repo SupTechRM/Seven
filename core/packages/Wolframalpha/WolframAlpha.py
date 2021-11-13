@@ -1,8 +1,14 @@
 import requests
 import json
 import WolframAlpha
-# from main.bridges import utils
 
+
+file = open('../../../main/apiData.json')
+
+data = json.load(file)
+inputtext = data['input']
+
+file.close()
 appid = "47P9L8-VHY6GJ54G8"
 
 def QuestionSearchByMethod(input, appid):
@@ -16,14 +22,14 @@ def QuestionSearchByMethod(input, appid):
                 finalAns = ""
             else:
                 finalAns = ans
-        # return utils.translate(finalAns)
-    
+        print(finalAns)
+
     except Exception as e:
         response = requests.get("http://api.wolframalpha.com/v2/query?appid=" +
                                 appid + "&input=" + input + "&output=json")
         jsonresp = response.json()
         outcome = jsonresp["queryresult"]["pods"][1]["subpods"][0]["plaintext"]
-        # return utils.translate(outcome)
+        print(outcome)
 
 
-QuestionSearchByMethod()
+QuestionSearchByMethod(inputtext, appid)
