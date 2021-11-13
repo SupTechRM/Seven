@@ -11,6 +11,7 @@ from datetime import date
 import os
 import speech_recognition as sr
 import random
+import time 
 
 # Import Speech Synthesizing Modules
 from ibm_watson import TextToSpeechV1
@@ -41,9 +42,8 @@ if existence:
 # if not existence(new user)
 else:
 	# Define Variable for Speech Synthesis
-	apikey = '3k6i8lvhuVL0xvMjdc3H0Fe5wciOJ-qN--UhqVPQNsev'
-	url = 'https://api.eu-gb.text-to-speech.watson.cloud.ibm.com/instances/c0e720ca-1373-4cbb-959f-bae7d48795e0'
-
+	apikey = 'hS-rPVvT204ye5fuInLK0hicBBnFCSo0DnJCFUBx6o-g'
+	url = 'hS-rPVvT204ye5fuInLK0hicBBnFCSo0DnJCFUBx6o-g'
 	# Authenticate
 	authenticator = IAMAuthenticator(apikey)
 	tts = TextToSpeechV1(authenticator=authenticator)
@@ -70,9 +70,10 @@ else:
 		continueInput = True
 
 	while continueInput:
+
 		# use the microphone as source for input.
 		with sr.Microphone() as source:
-
+			
 			# Define the Recognizer
 			r = sr.Recognizer()
 
@@ -82,8 +83,8 @@ else:
 			# Use Pause Threshold
 			r.pause_threshold = 1
 			
+			time.sleep(2)
 			print("Listening....")
-
 			audio = r.listen(source)
 
 			# Using google to recognize audio
@@ -138,8 +139,18 @@ else:
 			jsonFile.close()
 
 		# Begin the app for marketing/explaining purposes
+		with open(filename, 'wb') as audio_file:
+			res = tts.synthesize(f"{inputtext}, Follow through the documentation, and once you are done, just close the window and I'll be ready.", accept='audio/mp3',
+								voice='en-US_KevinV3Voice').get_result()
+			audio_file.write(res.content)
+				
+		playsound.playsound(filename)
+		os.remove(filename)
+
 		os.chdir("app")
 		os.system("npm start")
-
+		
+		os.chdir("../main")
+		os.system("main.py")
 
 
