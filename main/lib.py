@@ -1,19 +1,8 @@
-"""
-Import Packages
-"""
-import webbrowser
-#################################
-# Packages
-#################################
-put = "search albert on google"
-link = put.split()
-
-if put.startswith('search '):
-    try:
-        link = '+'.join(link[1:])
-        say = link.replace('+', ' ')
-        # print(link)
-        print("searching on google for " + say)
-        webbrowser.open('https://www.google.co.in/search?q=' + link)
-    except Exception as e:
-        print(str(e))
+import os
+from core.packages import Calendar as ca
+from core.packages import Weather as wt
+from core.packages import CoronaInfo as ci
+from core.packages.Google import SearchGoogle as sg
+from core.packages import News as Nw
+from core.packages import PlayYoutube as py
+from core.packages import Speedtest as st

@@ -3,7 +3,7 @@ from intents import *
 from data.speech.RealtimeSpeech import SpeechSyntesizer
 import json
 import webbrowser
-
+import lib
 # Take Speech Recognition input and process it realtime running a main function
 # main function will take the query
 # query is sample input from which intent will be called, the modules will be runned

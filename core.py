@@ -1,70 +1,145 @@
+#######################
+"""
+Import Packages -> Core.py
+"""
+#######################
+
+# Import Modules
 import json
-from ibm_watson import TextToSpeechV1
-from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 import playsound
 from datetime import date
-
-from main.data.speech.RealtimeMic import takeCommand
 import os
 import speech_recognition as sr
+import random
+
+# Import Speech Synthesizing Modules
+from ibm_watson import TextToSpeechV1
+from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 
 
+# Define A Path for Json File Containing DB Data for User
 path = './user.json'
 
+# existence(variable -> checking for existence of path)
 existence = os.path.exists(path)
 
+# while existence
 if existence:
-    opened = open('user.json')
-    data = json.load(opened)
-    opened.close()
-    os.chdir("main")
-    os.system("python3 main.py")
+	# open(variable -> opening the file)
+	opened = open('user.json')
+	
+	# data(variable -> reading the file)
+	data = json.load(opened)
+	
+	# close opened
+	opened.close()
+
+	# cd main/python main.py (redirect to main)
+	os.chdir("main")
+	os.system("python main.py")
+
+# if not existence(new user)
 else:
-    apikey = '3k6i8lvhuVL0xvMjdc3H0Fe5wciOJ-qN--UhqVPQNsev'
-    url = 'https://api.eu-gb.text-to-speech.watson.cloud.ibm.com/instances/c0e720ca-1373-4cbb-959f-bae7d48795e0'
+	# Define Variable for Speech Synthesis
+	apikey = '3k6i8lvhuVL0xvMjdc3H0Fe5wciOJ-qN--UhqVPQNsev'
+	url = 'https://api.eu-gb.text-to-speech.watson.cloud.ibm.com/instances/c0e720ca-1373-4cbb-959f-bae7d48795e0'
 
-    authenticator = IAMAuthenticator(apikey)
-    tts = TextToSpeechV1(authenticator=authenticator)
-    tts.set_service_url(url)
-    with open('speech.mp3', 'wb') as audio_file:
+	# Authenticate
+	authenticator = IAMAuthenticator(apikey)
+	tts = TextToSpeechV1(authenticator=authenticator)
+	tts.set_service_url(url)
+	
+	# Open mp3 file
+	filename  = 'speech' + str(random.randint(1,100)) + '.mp3'
+	with open(filename, 'wb') as audio_file:
 
-        res = tts.synthesize("Oh, Looks like you are a new user. I am Seven, I will just initialize, wait a few seconds.", accept='audio/mp3',
-                             voice='en-US_KevinV3Voice').get_result()
-        audio_file.write(res.content)
+		#  Synthesize
+		res = tts.synthesize("A new user I see. Welcome. Welcome to Seven. Let me introduce myself. I'm Seven. I'm a damn brilliant guy. That's all. Here let me get you through setup. Spell your name.", accept='audio/mp3',
+							 voice='en-US_KevinV3Voice').get_result()
+		audio_file.write(res.content)
 
-    playsound.playsound('speech.mp3')
+	# Play File
+	try:
+		playsound.playsound(filename)
+		os.remove(filename)
+		continueInput = True
+	
+	except:
+		os.remove(filename)
+		playsound.playsound(filename)
+		continueInput = True
 
+	while continueInput:
+		# use the microphone as source for input.
+		with sr.Microphone() as source:
 
-    # use the microphone as source for input.
-    with sr.Microphone() as source:
+			# Define the Recognizer
+			r = sr.Recognizer()
 
-        r = sr.Recognizer()
-        # the surrounding noise level
-        r.adjust_for_ambient_noise(source, duration=0.2)
+			# the surrounding noise level
+			r.adjust_for_ambient_noise(source, duration=0.2)
+			
+			# Use Pause Threshold
+			r.pause_threshold = 1
+			
+			print("Listening....")
 
-        # listens for the user's input
-        with open('speech.mp3', 'wb') as audio_file:
-            res = tts.synthesize("Please spell your name", accept='audio/mp3',
-                                 voice='en-US_KevinV3Voice').get_result()
-            audio_file.write(res.content)
+			audio = r.listen(source)
 
-        playsound.playsound('speech.mp3')
-        audio = r.listen(source)
+			# Using google to recognize audio
+			inputtext = r.recognize_google(audio)
+			
+			# Lower input text
+			inputtext = inputtext.lower()
+			
+			# Replace empty spaces
+			inputtext = inputtext.replace(" ", "")
+			if inputtext:
+				with open(filename, 'wb') as audio_file:
+					res = tts.synthesize(f"Is {inputtext} your name? If Yes(Press y), If No(Press n)", accept='audio/mp3',
+										voice='en-US_KevinV3Voice').get_result()
+					audio_file.write(res.content)
+				
+				playsound.playsound(filename)
+				os.remove(filename)
 
-        # Using ggogle to recognize audio
-        inputtext = r.recognize_google(audio)
-        inputtext = inputtext.lower()
-        inputtext = inputtext.replace(" ", "")
+				checkTrue = input("Is your name {0}? (y/n)".format(inputtext))
+				if checkTrue == "y":
+					dateCreated = str(date.today().day) + "/" + \
+										str(date.today().month) + \
+										"/" + str(date.today().year)
+					jsonData = {"name": inputtext, "dateCreated": dateCreated}
 
-        dateCreated = str(date.today().day) + "/" + str(date.today().month) + "/" + str(date.today().year)
-        jsonData = {"name": inputtext, "dateCreated": dateCreated}
-        jsonString = json.dumps(jsonData)
-        jsonFile = open("user.json", "w")
-        jsonFile.write(jsonString)
-        jsonFile.close()
+					# Dump Data
+					jsonString = json.dumps(jsonData)
 
-    os.chdir("app")
-    os.system("npm start")
+					# Open Json File
+					jsonFile = open("user.json", "w")
+
+					# Write data
+					jsonFile.write(jsonString)
+					jsonFile.close()
+				
+				else:
+					os.system("py core.py")
+			
+			# Define variables for user.json
+			dateCreated = str(date.today().day) + "/" + str(date.today().month) + "/" + str(date.today().year)
+			jsonData = {"name": inputtext, "dateCreated": dateCreated}
+			
+			# Dump Data
+			jsonString = json.dumps(jsonData)
+			
+			# Open Json File
+			jsonFile = open("user.json", "w")
+			
+			# Write data
+			jsonFile.write(jsonString)
+			jsonFile.close()
+
+		# Begin the app for marketing/explaining purposes
+		os.chdir("app")
+		os.system("npm start")
 
 
 
