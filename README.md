@@ -45,7 +45,37 @@ Future installation guide coming up
 
 ## How to use?
 
-Step by Step Usage Guide coming up
+Step by Step Usage Guide:-
+Download the files of the folder of Github Repository and then run Intial.py
+Before Running Initial.py
+Dowload the following installations:-
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+HOW TO USE SEVEN:-
+
+Seven is simple and hi-tech AI featuring user friendly commands as well as accurate Answers.
+This is how you use Seven
+After you have Installed the above things run initial .py
+When you run initial.py
+You can here Seven Speak and ask 
+If you say 
+1)Show me the Latest News
+2)Show me the Corona Virus Updates
+3)open ______ in Youtube
+4)search_____
+5)What is the answer for  2x+3x=15
+6)Gesture
+It automatically directs you to the packages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Signing up is simple:-
+Just spell your name and the date you joined will automatically be saved.
+It will redirect to initial.py(The Main File)
+And then every single time you run you can do anything from the above following things
+
+
+
 
 ## Contributions
 
