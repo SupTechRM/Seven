@@ -3,4 +3,4 @@ from main.bridges import utils
 
 def PlayYTTVideo(string):
     kit.playonyt(string)
-    return utils.translate("")
+    print("PLaying"+string)
