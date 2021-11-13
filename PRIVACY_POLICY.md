@@ -1,3 +1,5 @@
+
+                                                               ~~~PRIVACY POLICY~~~
 PRIVACY POLICY FOR SEVEN 
 ACCESSIBLE FOR EVERYONE, ONE OF OUR MAIN PRIORITIES IS THE PRIVACY OF OUR VISITORS. THIS PRIVACY POLICY DOCUMENT CONTAINS TYPES OF INFORMATION THAT IS COLLECTED AND RECORDED BY OUR APP:-SEVEN AND HOW WE USE IT.
 
@@ -29,7 +31,7 @@ COMMUNICATE WITH YOU, EITHER DIRECTLY OR THROUGH ONE OF OUR PARTNERS, INCLUDING 
 SEND YOU EMAILS
 LOG FILES
 
-ADVERTISING PARTNERS PRIVACY POLICIES
+ADVERTISING PRIVACY POLICIES
 
 YOU MAY CONSULT THIS LIST TO FIND THE PRIVACY POLICY FOR EACH OF THE ADVERTISING PARTNERS OF THE APP NAME.
 
@@ -218,13 +220,8 @@ Protect against legal liability
 Security of Your Personal Data
 The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.
 
-Children's Privacy
-Our Service does not address anyone under the age of 5. We do not knowingly collect personally identifiable information from anyone under the age of 5. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please Contact Us. If We become aware that We have collected Personal Data from anyone under the age of 5 without verification of parental consent, We take steps to remove that information from Our servers.
-If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent's consent before We collect and use that information.
 
 
-Links to Other Websites
-Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party's site. We strongly advise You to review the Privacy Policy of every site You visit.
 We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.
 
 
