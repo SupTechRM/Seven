@@ -73,7 +73,7 @@ Signing up is simple:-
 Just spell your name and the date you joined will automatically be saved.
 It will redirect to initial.py(The Main File)
 And then every single time you run you can do anything from the above following things
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 
 
