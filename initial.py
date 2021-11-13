@@ -1,9 +1,5 @@
 import os
-
 import speech_recognition as sr
-
-# Initialize the recognizer
-
 
 while True:
     try:
@@ -14,20 +10,20 @@ while True:
             # wait for a second to let the recognizer
             # adjust the energy threshold based on
             r = sr.Recognizer()
-            print("######################Listening###################")
             # the surrounding noise level
             r.adjust_for_ambient_noise(source, duration=0.2)
 
             # listens for the user's input
             audio = r.listen(source)
+            print("Listening")
 
             # Using ggogle to recognize audio
             inputtext = r.recognize_google(audio)
             inputtext = inputtext.lower()
-            print(inputtext)
+            # print(inputtext)
 
             if " " in inputtext.strip() and "7" in inputtext.strip():
-                os.system("python core.py")
+                os.system("python3 core.py")
                 exit()
 
     except sr.RequestError as e:

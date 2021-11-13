@@ -14,6 +14,6 @@ def speech_Speak(text):
     # Speak
     with open('./speech.mp3', 'wb') as audio_file:
         res = tts.synthesize(text, accept='audio/mp3',
-                            voice='en-GB_JamesV3Voice').get_result()
+                            voice='en-US_KevinV3Voice').get_result()
         audio_file.write(res.content)
 
