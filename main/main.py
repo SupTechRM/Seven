@@ -7,6 +7,7 @@ import json
 import webbrowser
 import lib
 import os
+import pywhatkit as kit
 
 #####################################
 # Main Function
@@ -44,6 +45,15 @@ while True:
             print(str(e))
 
             # Weather
+    elif user_input.startswith('play '):
+        try:
+            link = '+'.join(link[1:])
+            say = link.replace('+', ' ')
+            # print(link)
+            print("playing " + say)
+            kit.playont(say)
+        except Exception as e:
+            print(str(e))
 
     elif "weather" in user_input:
         try:
@@ -94,7 +104,7 @@ while True:
                 data = json.load(file)
                 data["input"] = user_input
                 json.dump(data, open("apiData.json", "w"), indent=4)
-            os.system("python3 core/packages/Wolframalpha/WolframAlpha.py")
+            os.system("python core/packages/Wolframalpha/WolframAlpha.py")
             print("Run")
         except Exception as e:
             print(e)
