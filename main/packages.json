@@ -11,7 +11,7 @@
         },
         {"tag": "Google",
          "patterns": ["Search",  " Search this", "Search on google", "Search "],
-         "responses": ["Opening in a few seconds","Opening Google ","Opening Google in a few seconds..","Sure opening "],
+         "responses": ["Ah that's fantastic","Dispensing. Just Kidding.","Searching...", "Well, That's factual", "Ya. I'm freaking about your interests, man."],
          "context_set": ""
         },
         {"tag": "News",
