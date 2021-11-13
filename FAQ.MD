@@ -1,8 +1,8 @@
 ~~~~~~~~~FAQ~~~~~~~~~
 
 
-Seven is a developed AI that has high processing initialization.
-Here are a frequently asked questions(FAQ)
+																								Seven is a developed AI that has high processing initialization.
+Here are a frequently asked questions(FAQ)				
 
 Q 1)Does Seven work on All OS(Operating System)?
 Ans:-Yes it works on:-Windows, Mac and Linux.
