@@ -9,22 +9,8 @@ import re
 import sys
 import json
 import os
-
-from ibm_watson import TextToSpeechV1
-from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 import playsound
-
-apikey = 'hS-rPVvT204ye5fuInLK0hicBBnFCSo0DnJCFUBx6o-g'
-url = 'https://api.eu-gb.text-to-speech.watson.cloud.ibm.com/instances/c0e720ca-1373-4cbb-959f-bae7d48795e0'
-
-# Setup Service
-authenticator = IAMAuthenticator(apikey)
-tts = TextToSpeechV1(authenticator=authenticator)
-tts.set_service_url(url)
-
-# from core import packages
-# from core.packages.Wolframalpha.WolframAlpha import QuestionSearchByMethod
-
+from data.speech.RealtimeSpeech import SpeechSyntesizer
 nlp = spacy.load('en_core_web_sm')
 
 with open('packages.json') as file:
@@ -53,18 +39,8 @@ def intents(input_to):
                 print("Found")
                 print(intent['tag'])
                 response = (random.choice(intent['responses']))
-                filename = 'speech' + str(random.randint(1,100)) + '.mp3'
-                with open(filename, 'wb') as audio_file:
-                    res = tts.synthesize(response, accept='audio/mp3',
-                                        voice='en-US_KevinV3Voice').get_result()
-                    audio_file.write(res.content)
-                
-                try:
-                    playsound.playsound(filename)
-                    os.remove(filename)
-                
-                except:
-                    return response
+                filename = 'speech' + str(random.randint(1, 100)) + '.mp3'
+                SpeechSyntesizer(response)
 
                 if pattern.lower() in intent['patterns'] and intent['patterns'].index(pattern.lower()) == 0:
                     return intent["tag"]

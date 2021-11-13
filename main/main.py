@@ -26,10 +26,10 @@ app_id = '8QU8RA-TE2GAVWTKL'
 while True:
     try:
         SpeechSyntesizer(
-            "Welcome " + name + ". As I have already introduced myself, I am Seven. You can now as me for help.")
+            "Welcome " + name + ". As I have already introduced myself, I am Seven. You can now as me for help.", "data/speech/empyrean-app-332014-6fdfdc87b1df.json")
     except:
         SpeechSyntesizer(
-            "Welcome " + name + ". As I have already introduced myself, I am Seven. You can now as me for help.")
+            "Welcome " + name + ". As I have already introduced myself, I am Seven. You can now as me for help.", "data/speech/empyrean-app-332014-6fdfdc87b1df.json")
 
     # playsound.playsound("speech.mp3")
     user_input = takeCommand()
@@ -103,6 +103,11 @@ while True:
             print(e)
 
     elif "volume controller" in user_input:
+        try:
+            os.system("python Seven/models/gesture/core/GestureExecute.py")
+        except Exception as e:
+            print(e)
+    elif "mouse controller" in user_input:
         try:
             os.system("python Seven/models/gesture/core/GestureExecute.py")
         except Exception as e:

@@ -11,11 +11,9 @@ from datetime import date
 import os
 import speech_recognition as sr
 import random
-import time 
+import time
+from main.data.speech.RealtimeSpeech import SpeechSyntesizer
 
-# Import Speech Synthesizing Modules
-from ibm_watson import TextToSpeechV1
-from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 
 
 # Define A Path for Json File Containing DB Data for User
@@ -42,34 +40,12 @@ if existence:
 # if not existence(new user)
 else:
 	# Define Variable for Speech Synthesis
-	apikey = 'hS-rPVvT204ye5fuInLK0hicBBnFCSo0DnJCFUBx6o-g'
-	url = 'hS-rPVvT204ye5fuInLK0hicBBnFCSo0DnJCFUBx6o-g'
-	# Authenticate
-	authenticator = IAMAuthenticator(apikey)
-	tts = TextToSpeechV1(authenticator=authenticator)
-	tts.set_service_url(url)
-	
 	# Open mp3 file
-	filename  = 'speech' + str(random.randint(1,100)) + '.mp3'
-	with open(filename, 'wb') as audio_file:
-
-		#  Synthesize
-		res = tts.synthesize("A new user I see. Welcome. Welcome to Seven. Let me introduce myself. I'm Seven. I'm a damn brilliant guy. That's all. Here let me get you through setup. Spell your name.", accept='audio/mp3',
-							 voice='en-US_KevinV3Voice').get_result()
-		audio_file.write(res.content)
 
 	# Play File
-	try:
-		playsound.playsound(filename)
-		os.remove(filename)
-		continueInput = True
-	
-	except:
-		os.remove(filename)
-		playsound.playsound(filename)
-		continueInput = True
+	SpeechSyntesizer("A new user I see. Welcome. Welcome to Seven. Let me introduce myself. I'm Seven. I'm a damn brilliant guy. That's all. Here let me get you through setup. Spell your name.")
 
-	while continueInput:
+	while True:
 
 		# use the microphone as source for input.
 		with sr.Microphone() as source:
@@ -96,13 +72,7 @@ else:
 			# Replace empty spaces
 			inputtext = inputtext.replace(" ", "")
 			if inputtext:
-				with open(filename, 'wb') as audio_file:
-					res = tts.synthesize(f"Is {inputtext} your name? If Yes(Press y), If No(Press n)", accept='audio/mp3',
-										voice='en-US_KevinV3Voice').get_result()
-					audio_file.write(res.content)
-				
-				playsound.playsound(filename)
-				os.remove(filename)
+				SpeechSyntesizer(f"Is {inputtext} your name? If Yes(Press y), If No(Press n)")
 
 				checkTrue = input("Is your name {0}? (y/n)".format(inputtext))
 				if checkTrue == "y":
@@ -139,14 +109,7 @@ else:
 			jsonFile.close()
 
 		# Begin the app for marketing/explaining purposes
-		with open(filename, 'wb') as audio_file:
-			res = tts.synthesize(f"{inputtext}, Follow through the documentation, and once you are done, just close the window and I'll be ready.", accept='audio/mp3',
-								voice='en-US_KevinV3Voice').get_result()
-			audio_file.write(res.content)
-				
-		playsound.playsound(filename)
-		os.remove(filename)
-
+		SpeechSyntesizer(f"{inputtext}, Follow through the documentation, and once you are done, just close the window and I'll be ready.")
 		os.chdir("app")
 		os.system("npm start")
 		

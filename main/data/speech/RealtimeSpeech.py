@@ -4,13 +4,12 @@ import playsound
 from google.cloud import texttospeech # outdated or incomplete comparing to v1
 from google.cloud import texttospeech_v1
 
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "empyrean-app-332014-6fdfdc87b1df.json"
-
 # Instantiates a client
-client = texttospeech_v1.TextToSpeechClient()
 
+def SpeechSyntesizer(audio, path="main/data/speech/empyrean-app-332014-6fdfdc87b1df.json"):
+    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = path
+    client = texttospeech_v1.TextToSpeechClient()
 
-def SpeechSyntesizer(audio):
     voice_list = []
     for voice in client.list_voices().voices:
         voice_list.append([voice.name, voice.language_codes[0], voice.ssml_gender, voice.natural_sample_rate_hertz])
@@ -48,5 +47,6 @@ def SpeechSyntesizer(audio):
         out.write(response.audio_content)
         print('Audio content written to file "output.mp3"')
         playsound.playsound('output2.mp3')
+        os.remove("output2.mp3")
 
 
