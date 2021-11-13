@@ -4,7 +4,7 @@ from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 import playsound
 from datetime import date
 
-from main.data.realtime_mic import takeCommand
+from main.data.speech.RealtimeMic import takeCommand
 import os
 import speech_recognition as sr
 

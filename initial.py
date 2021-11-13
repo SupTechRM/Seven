@@ -11,19 +11,19 @@ while True:
             # adjust the energy threshold based on
             r = sr.Recognizer()
             # the surrounding noise level
-            r.adjust_for_ambient_noise(source, duration=0.2)
-
+            r.pause_threshold = 1
             # listens for the user's input
             audio = r.listen(source)
-            print("Listening")
+            print("Listening...")
 
             # Using ggogle to recognize audio
             inputtext = r.recognize_google(audio)
+            print(inputtext)
             inputtext = inputtext.lower()
             # print(inputtext)
 
             if " " in inputtext.strip() and "7" in inputtext.strip():
-                os.system("python3 core.py")
+                os.system("python core.py")
                 exit()
 
     except sr.RequestError as e:
