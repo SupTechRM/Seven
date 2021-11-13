@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # <<<<<<< HEAD
 # # import pyttsx3
 # # import speech_recognition as sr
@@ -45,6 +46,10 @@
 # =======
 # import pyttsx3 #pip install pyttsx3
 #
+=======
+# import pyttsx3
+# import speech_recognition as sr
+>>>>>>> 089419d2b67968c7de5cf18a0285443488e0ec8f
 # import datetime
 #
 #
@@ -78,4 +83,11 @@
 #
 # if __name__ == "__main__":
 #     wishMe()
+<<<<<<< HEAD
+=======
+#     while True:
+#     # if 1:
+#         query = takeCommand().lower()
+#
+>>>>>>> 089419d2b67968c7de5cf18a0285443488e0ec8f
 #

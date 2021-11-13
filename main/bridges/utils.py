@@ -1,9 +1,10 @@
-from Seven.main.data.speech.RealtimeSpeech import SpeechSyntesizer
-import playsound
+#################################
+# UTILS
+#################################
 
 
-def translate(text):
-    SpeechSyntesizer(text)
-    playsound.playsound('speech.mp3')
+from data.speech.RealtimeSpeech import SpeechSyntesizer
 
-translate("Hello man!")
+
+def translate(input_param):
+    SpeechSyntesizer(input_param)
