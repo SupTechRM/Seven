@@ -1,6 +1,7 @@
 import pywhatkit as kit
-from ibm_watson import TextToSpeechV1
-from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
+from google.cloud import texttospeech
+from google.cloud import texttospeech_v1
+
 import playsound
 
 apikey = 'hS-rPVvT204ye5fuInLK0hicBBnFCSo0DnJCFUBx6o-g'
