@@ -1,5 +1,4 @@
-~~~FAQ~~~
-
+FAQ:-
 
 																						Seven is a developed AI that has high processing initialization.
 Here are a frequently asked questions(FAQ)				
