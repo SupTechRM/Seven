@@ -8,6 +8,7 @@ import pandas as pd  # pip install numpy==1.19.3
 import playsound
 from google.cloud import texttospeech  # outdated or incomplete comparing to v1
 from google.cloud import texttospeech_v1
+import random
 
 # Instantiates a client
 
@@ -49,12 +50,13 @@ def SpeechSynthesizer(audio, path="main/data/speech/empyrean-app-332014-6fdfdc87
     )
 
     # The response's audio_content is binary.
-    with open("./output.mp3", "wb") as out:
+    filename = "filename" + str(random.randint(1, 100)) + ".mp3"
+    with open(filename, "wb") as out:
         # Write the response to the output file.
         out.write(response.audio_content)
-        print('Audio content written to file "output.mp3"')
-        playsound.playsound('output.mp3')
-        os.remove("output.mp3")
+        print(f'Audio content written to file {filename}')
+    playsound.playsound(filename)
+    os.remove(filename)
 
 
 def NewsFromBBC():

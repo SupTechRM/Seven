@@ -1,3 +1,4 @@
+
 Acting with Integrity Employee Code of Conduct Revised August 2013 CDT-1001M PG&E Public Information Message from Tony Earley Whether it’s improving safety and reliability, 
 delivering better service for our customers, or earning back their trust and confidence, all of us at PG&E1 are working hard to ensure that our company is on a solid 
 foundation for the future. Strong performance is critical to our success, but just as important is how we go about achieving results—with honesty and respect, without taking 
@@ -107,8 +108,9 @@ additional guidance and more detailed information. Investor Inquiries Refer port
 federal or state regulatory officials to the Regulatory Relations Department. Refer inquiries about legal issues or subpoenas to the Law Department. Refer any requests for 
 information from law enforcement agencies to the Law Department and to your local security contact or the Corporate Security Department. This document is subject to revision. 
 To see the latest version, click here or go to: www.pge-corp.com/aboutus/corp_gov/coce.shtml The information provided and standards set forth in this publication do not 
-confer contractual rights of any kind on any employee or third party, or create contractual obligations of any kind for PG&E. ©2013 PG&E Corporation. All rights reserved. 
-Printed in the USA on Recycled Paper
+confer contractual rights of any kind on any employee or third party, or create contractual obligations of any kind for PG&E. 
+
+(FAKE)
 
 
 

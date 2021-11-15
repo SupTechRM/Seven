@@ -3,6 +3,7 @@ import pandas as pd  # pip install numpy==1.19.3
 import playsound
 from google.cloud import texttospeech  # outdated or incomplete comparing to v1
 from google.cloud import texttospeech_v1
+import random
 
 # Instantiates a client
 
@@ -28,7 +29,7 @@ def SpeechSynthesizer(audio, path="empyrean-app-332014-6fdfdc87b1df.json"):
 
     voice = texttospeech_v1.VoiceSelectionParams(
         # name='ar-XA-Wavenet-B', language_code="en-GB"
-        name='en-GB-Wavenet-B', language_code="en-GB"
+        name='en-GB-Wavenet-D', language_code="en-GB"
     )
 
     # Select the type of audio file you want returned
@@ -44,8 +45,9 @@ def SpeechSynthesizer(audio, path="empyrean-app-332014-6fdfdc87b1df.json"):
     )
 
     # The response's audio_content is binary.
-    with open("./output.mp3", "wb") as out:
+    filename = "./output" + str(random.randint(1, 100)) + ".mp3"
+    with open(filename, "wb") as out:
         # Write the response to the output file.
         out.write(response.audio_content)
-        playsound.playsound('output.mp3')
-        os.remove("output.mp3")
+    playsound.playsound(filename)
+    os.remove(filename)
