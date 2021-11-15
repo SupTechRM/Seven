@@ -33,7 +33,7 @@ while True:
     link = user_input.split()
     intents(user_input)
 
-    if user_input.startswith('search ') or user:
+    if user_input.startswith('search ') or 'search' in user_input:
         try:
             link = '+'.join(link[1:])
             print(link)
@@ -44,7 +44,7 @@ while True:
             print(str(e))
 
             # Weather
-    elif user_input.startswith('play '):
+    elif user_input.startswith('play ') or "play" in user_input:
         try:
             link = '+'.join(link[1:])
             say = link.replace('+', ' ')
