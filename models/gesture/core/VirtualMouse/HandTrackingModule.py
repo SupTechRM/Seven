@@ -55,9 +55,6 @@ class handDetector():
             bbox = xmin, ymin, xmax, ymax
 
             if draw:
-
-
-<< << << < HEAD
                 cv2.rectangle(img, (bbox[0]-20, bbox[1]-20),
                               (bbox[2]+20, bbox[3]+20), (0, 255, 0), 2)
 
@@ -66,9 +63,8 @@ class handDetector():
     def findDistance(self, p1, p2, img, draw = True):
         x1, y1 = self.lmList[p1][1], self.lmList[p1][2]
         x2, y2, = self.lmList[p2][1], self.lmList[p2][2]
-=======
-                cv2.rectangle(img, (bbox[0]-20, bbox[1]-20),
-                              (bbox[2]+20, bbox[3]+20), (0, 255, 0), 2)
+        cv2.rectangle(img, (bbox[0]-20, bbox[1]-20),
+                        (bbox[2]+20, bbox[3]+20), (0, 255, 0), 2)
 
         return self.lmList, bbox
 
@@ -76,7 +72,6 @@ class handDetector():
         x1 = self.lmList[p1][0]
         y1 = self.lmList[p1][1]
         x2, y2 = self.lmList[p2][0], self.lmList[p2][1]
->>>>>>> 250725c4b93d198be7775aa281fea1fe35f9abfe
         cx, cy = (x1 + x2) // 2, (y1 + y2) // 2
         if draw:
             cv2.circle(img, (x1, y1), 15, (255, 0, 255), cv2.FILLED)
@@ -102,10 +97,6 @@ class handDetector():
         return fingers
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 250725c4b93d198be7775aa281fea1fe35f9abfe
 def main():
     pTime = 0
     cTime = 0

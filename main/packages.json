@@ -16,7 +16,7 @@
         },
         {"tag": "Todo",
          "patterns": ["Open", "Open The web", "Open the Web Browser", "Open Web"],
-         "responses": [" Opening Web", "Sure Opening It","Sure opening it in a few seconds"],
+         "responses": ["Sure Opening It","Sure opening it in a few seconds"],
          "context_set": ""
         },
 
@@ -27,7 +27,7 @@
         },
 
         {"tag":"Speedtest",
-         "patterns":["What internet", "How fast", "What is my Net Speed","How much MBPS my net is running on","What is my Internet speed","What is my current net speed","What is my current net speed"],
+         "patterns":["What internet", "How fast is my network", "What is my Net Speed","How much MBPS my net is running on","What is my Internet speed","What is my current net speed","What is my current net speed"],
          "responses":["Checking the Internet Speed...", "Testing your Speed... ", "Sure checking the internet", "Connecting to Speedtest", "Checking internet"],
          "context_set": ""
         },

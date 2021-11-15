@@ -145,6 +145,13 @@ pl-PL-Wavenet-E,pl-PL,2,24000
 pl-PL-Wavenet-D,pl-PL,2,24000
 pt-BR-Wavenet-A,pt-BR,2,24000
 pt-BR-Wavenet-B,pt-BR,1,24000
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+ro-RO-Wavenet-A,ro-RO,2,24000
+>>>>>>> 24579208b636dbf285d4fec384f2b437bb8fa7d3
+>>>>>>> 58cb14814423765f3ba5720abd7ffd54154123bd
 da-DK-Standard-A,da-DK,2,22050
 da-DK-Standard-C,da-DK,1,24000
 da-DK-Standard-D,da-DK,2,24000
@@ -162,6 +169,10 @@ pt-PT-Standard-A,pt-PT,2,24000
 pt-PT-Standard-B,pt-PT,1,24000
 pt-PT-Standard-C,pt-PT,1,24000
 pt-PT-Standard-D,pt-PT,2,24000
+<<<<<<< HEAD
+ro-RO-Wavenet-A,ro-RO,2,24000
+=======
+>>>>>>> 24579208b636dbf285d4fec384f2b437bb8fa7d3
 fr-FR-Standard-A,fr-FR,2,24000
 fr-FR-Standard-B,fr-FR,1,24000
 fr-FR-Standard-C,fr-FR,2,24000

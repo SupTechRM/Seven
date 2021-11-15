@@ -3,11 +3,10 @@
 # Import Packages -> Core.py
 # """
 # #######################
-#
-# # Import Modules
-# import json
-# import playsound
-# from datetime import date
+
+import json
+import playsound
+from datetime import date
 import os
 import speech_recognition as sr
 import random
