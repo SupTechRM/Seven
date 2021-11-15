@@ -1,12 +1,9 @@
 <p align="center">
   <img src="https://github.com/SupTechRM/Seven/blob/main/assets/img/banners/Alternative%20Banner.png">
 </p>
-<p align="center"><b>
+<p align="center" style="font-family: 'Open Sans';"><b>
 Seven: The Future is Here
 </b></p>
-<p align="center">
-  <strong>INTRODUCING SEVEN BY THE AI RADAR</strong>
-</p>
 
 <p>What is the future? What is the upcoming redefining moment. There are infinite upcoming possibilites... And to harness them, to bring what the future possesses is the change of possibility and advancement of humanity. 
 </p>
