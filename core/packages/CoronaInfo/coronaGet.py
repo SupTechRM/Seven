@@ -64,7 +64,8 @@ def CoronaGet():
                                    rank_by='confirmed')
 
     SpeechSynthesizer("Latest Data, \nConfirmed: " + str(latest["confirmed"]) + "\n Deaths: " + str(
-        latest["deaths"]) + "\n Recovered: " + str(latest["recovered"]), path="../../../../main/data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+        latest["deaths"]) + "\n Recovered: " + str(latest["recovered"]), path="../../../main/data/speech/empyrean-app-332014-6fdfdc87b1df.json")
 
 
 CoronaGet()
+os.system("python ../../../main/main.py")

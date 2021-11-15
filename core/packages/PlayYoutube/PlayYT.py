@@ -61,6 +61,8 @@ def SpeechSynthesizer(audio, path="main/data/speech/empyrean-app-332014-6fdfdc87
 def PlayYTTVideo(string):
     kit.playonyt(string)
     SpeechSynthesizer("Opening", path="../../../main/data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+    os.system("python ../../../main/main.py")
 
 
-PlayYTTVideo("Something")
+PlayYTTVideo()
+os.system("python ../../../main/main.py")

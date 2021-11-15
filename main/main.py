@@ -44,7 +44,7 @@ while True:
             print(str(e))
 
             # Weather
-    elif user_input.startswith('play '):
+    elif 'play' in user_input:
         try:
             link = '+'.join(link[1:])
             say = link.replace('+', ' ')
@@ -55,7 +55,7 @@ while True:
 
     elif "weather" in user_input:
         try:
-            os.system("python core/packages/Weather/Weather.py")
+            os.system("python ../core/packages/Weather/Weather.py")
 
         except Exception as a:
             print(a)
@@ -64,7 +64,7 @@ while True:
 
     elif "corona" in user_input or "covid" in user_input:
         try:
-            os.system("python core/packages/CoronaInfo/coronaGet.py")
+            os.system("python ../core/packages/CoronaInfo/coronaGet.py")
 
         except Exception as b:
             print(b)
@@ -73,7 +73,7 @@ while True:
 
     elif "test" in user_input:
         try:
-            os.system("python core/packages/Speedtest/Speedtest.py")
+            os.system("python ../core/packages/Speedtest/Speedtest.py")
 
         except Exception as c:
             print(c)
@@ -82,7 +82,7 @@ while True:
 
     elif "todo" in user_input:
         try:
-            os.system("python core/packages/Todo/todo.py")
+            os.system("python ../core/packages/Todo/todo.py")
 
         except Exception as d:
             print(d)
@@ -91,7 +91,7 @@ while True:
 
     elif "news" in user_input:
         try:
-            os.system("python core/packages/News/NewsFromBBC.py")
+            os.system("python ../core/packages/News/NewsFromBBC.py")
 
         except Exception as e:
             print(e)
@@ -108,7 +108,7 @@ while True:
             print(e)
     elif "mouse controller" in user_input:
         try:
-            os.system("python Seven/models/gesture/core/GestureExecute.py")
+            os.system("python Seven/models/gesture/core/MouseGestureExecute.py")
         except Exception as e:
             print(e)
     elif "exit" in user_input or "stop":

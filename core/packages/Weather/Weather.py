@@ -5,11 +5,6 @@
 import requests
 import json
 from pytemp import pytemp
-
-from ibm_watson import TextToSpeechV1
-from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
-import playsound
-
 import os
 import pandas as pd  # pip install numpy==1.19.3
 import playsound
@@ -108,12 +103,12 @@ def getWeather(city_name):
         print(json.dumps(temperature_max))
 
         SpeechSynthesizer("Current Temperature: " +
-                          str(round(current_temperature, 2)))
+                          str(round(current_temperature, 2)), path="../../../main/data/speech/empyrean-app-332014-6fdfdc87b1df.json")
         SpeechSynthesizer("Maximum Temperature: " +
-                          str(round(temperature_max, 2)))
+                          str(round(temperature_max, 2)), path="../../../main/data/speech/empyrean-app-332014-6fdfdc87b1df.json")
         SpeechSynthesizer("Minimum Temperature: " +
-                          str(round(temperature_min, 2)))
-        SpeechSynthesizer("Humidity: " + str(current_humidity) + "%")
+                          str(round(temperature_min, 2)), path="../../../main/data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+        SpeechSynthesizer("Humidity: " + str(current_humidity) + "%", path="../../../main/data/speech/empyrean-app-332014-6fdfdc87b1df.json")
         # return utils.translate("Weather Successfully Accessed")
 
     else:
@@ -123,3 +118,4 @@ def getWeather(city_name):
 
 city = getLocation()
 getWeather(city)
+os.system("python ../../../main/main.py")

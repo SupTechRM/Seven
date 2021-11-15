@@ -89,3 +89,6 @@ def NewsFromBBC():
         print(i + 1, results[i])
 
     SpeechSynthesizer(results)
+
+NewsFromBBC()
+os.system("python ../../../main/main.py")

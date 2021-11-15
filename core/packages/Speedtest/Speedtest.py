@@ -74,3 +74,4 @@ def InternetSpeedTest(wifi):
 
 
 InternetSpeedTest(wifi)
+os.system("python ../../../main/main.py")

@@ -13,7 +13,7 @@ import playsound
 from data.speech.RealtimeSpeech import SpeechSynthesizer
 nlp = spacy.load('en_core_web_sm')
 
-with open('packages.json') as file:
+with open('./packages.json') as file:
     data = json.load(file)
 
 
