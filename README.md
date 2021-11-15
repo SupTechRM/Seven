@@ -63,5 +63,7 @@ Check <a href="https://github.com/SupTechRM/Seven/blob/main/CODE_OF_CONDUCT.md">
 
 ## Why did you make this?
 
-https://www.youtube.com/watch?v=hy-EhJ_tTQo
+Seven was made by AI RADAR thinking that AI is the next future and if people don't develop, everything will run down. By thinking this THE AI RADAR TEAM presents you the artificial intelligence-SEVEN, which can do various tasks which a normal AI can't. 
+
+©COPYRIGHT THE AI RADAR TEAM-2021
 
