@@ -198,6 +198,9 @@ class Seven:
 				elif "help" in self.user_input:
 					pass
 
+				else: 
+					pass
+
 			except Exception as NotRecognizedException:
 				try:
 					client = wolframalpha.Client(self.app_id)

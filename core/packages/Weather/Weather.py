@@ -15,7 +15,7 @@ from google.cloud import texttospeech_v1
 # Instantiates a client
 
 
-def SpeechSynthesizer(audio, path="../../../main/data/speech/empyrean-app-332014-6fdfdc87b1df.json"):
+def SpeechSynthesizer(audio, path="config.json"):
     os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = path
     client = texttospeech_v1.TextToSpeechClient()
 
@@ -105,12 +105,13 @@ def getWeather(city_name):
         print(json.dumps(temperature_max))
 
         SpeechSynthesizer("Current Temperature: " +
-                          str(round(current_temperature, 2)))
+                          str(round(current_temperature, 2)), path="config.json")
         SpeechSynthesizer("Maximum Temperature: " +
-                          str(round(temperature_max, 2)))
+                          str(round(temperature_max, 2)), path="config.json")
         SpeechSynthesizer("Minimum Temperature: " +
-                          str(round(temperature_min, 2)))
-        SpeechSynthesizer("Humidity: " + str(current_humidity) + "%")
+                          str(round(temperature_min, 2)), path="config.json")
+        SpeechSynthesizer("Humidity: " + str(current_humidity) + "%",
+                          path="config.json")
 
     else:
         pass

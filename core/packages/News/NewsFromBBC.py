@@ -86,7 +86,7 @@ def NewsFromBBC():
 
     for i in range(len(results)):
         SpeechSynthesizer(
-            results[i], path="Seven/core/packages/News/config.json")
+            results[i], path="config.json")
 
 
 res = NewsFromBBC()
