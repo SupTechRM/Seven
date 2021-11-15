@@ -29,7 +29,7 @@ def SpeechSynthesizer(audio, path="empyrean-app-332014-6fdfdc87b1df.json"):
 
     voice = texttospeech_v1.VoiceSelectionParams(
         # name='ar-XA-Wavenet-B', language_code="en-GB"
-        name='en-GB-Wavenet-D', language_code="en-GB"
+        name='en-IN-Standard-B', language_code="en-in"
     )
 
     # Select the type of audio file you want returned

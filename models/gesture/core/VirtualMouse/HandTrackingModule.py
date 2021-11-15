@@ -19,7 +19,7 @@ class handDetector():
     def findHands(self, img, draw=True):
         imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         self.results = self.hands.process(imgRGB)
-        #print(results.multi_hand_landmarks)
+        # print(results.multi_hand_landmarks)
 
         if self.results.multi_hand_landmarks:
             for handLms in self.results.multi_hand_landmarks:
@@ -57,6 +57,14 @@ class handDetector():
             if draw:
                 cv2.rectangle(img, (bbox[0]-20, bbox[1]-20),
                               (bbox[2]+20, bbox[3]+20), (0, 255, 0), 2)
+
+        return self.lmList, bbox
+
+    def findDistance(self, p1, p2, img, draw = True):
+        x1, y1 = self.lmList[p1][1], self.lmList[p1][2]
+        x2, y2, = self.lmList[p2][1], self.lmList[p2][2]
+        cv2.rectangle(img, (bbox[0]-20, bbox[1]-20),
+                        (bbox[2]+20, bbox[3]+20), (0, 255, 0), 2)
 
         return self.lmList, bbox
 
