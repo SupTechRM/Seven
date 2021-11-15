@@ -18,10 +18,10 @@
   <img src="https://github.com/SupTechRM/Seven/blob/main/assets/img/banners/Alternative%20Banner.png">
 </p>  </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">**Seven**</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    What is the future? What is the upcoming redefining moment. There are infinite upcoming possibilites... And to harness them, to bring what the future possesses is the change of possibility and advancement of humanity. 
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
     <br />
