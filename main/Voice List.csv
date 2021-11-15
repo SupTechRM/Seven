@@ -145,13 +145,8 @@ pl-PL-Wavenet-E,pl-PL,2,24000
 pl-PL-Wavenet-D,pl-PL,2,24000
 pt-BR-Wavenet-A,pt-BR,2,24000
 pt-BR-Wavenet-B,pt-BR,1,24000
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 ro-RO-Wavenet-A,ro-RO,2,24000
->>>>>>> 24579208b636dbf285d4fec384f2b437bb8fa7d3
->>>>>>> 58cb14814423765f3ba5720abd7ffd54154123bd
+ro-RO-Wavenet-A,ro-RO,2,24000
 da-DK-Standard-A,da-DK,2,22050
 da-DK-Standard-C,da-DK,1,24000
 da-DK-Standard-D,da-DK,2,24000
@@ -169,10 +164,31 @@ pt-PT-Standard-A,pt-PT,2,24000
 pt-PT-Standard-B,pt-PT,1,24000
 pt-PT-Standard-C,pt-PT,1,24000
 pt-PT-Standard-D,pt-PT,2,24000
-<<<<<<< HEAD
-ro-RO-Wavenet-A,ro-RO,2,24000
-=======
->>>>>>> 24579208b636dbf285d4fec384f2b437bb8fa7d3
+th-TH-Standard-A,th-TH,2,22050
+bn-IN-Standard-A,bn-IN,2,24000
+bn-IN-Standard-B,bn-IN,1,24000
+en-IN-Standard-D,en-IN,2,24000
+en-IN-Standard-A,en-IN,2,24000
+en-IN-Standard-B,en-IN,1,24000
+en-IN-Standard-C,en-IN,1,24000
+gu-IN-Standard-A,gu-IN,2,24000
+gu-IN-Standard-B,gu-IN,1,24000
+hi-IN-Standard-D,hi-IN,2,24000
+hi-IN-Standard-A,hi-IN,2,24000
+hi-IN-Standard-B,hi-IN,1,24000
+hi-IN-Standard-C,hi-IN,1,24000
+kn-IN-Standard-A,kn-IN,2,24000
+kn-IN-Standard-B,kn-IN,1,24000
+ml-IN-Standard-A,ml-IN,2,24000
+ml-IN-Standard-B,ml-IN,1,24000
+ta-IN-Standard-A,ta-IN,2,24000
+ta-IN-Standard-B,ta-IN,1,24000
+te-IN-Standard-A,te-IN,2,24000
+te-IN-Standard-B,te-IN,1,24000
+pa-IN-Standard-A,pa-IN,2,24000
+pa-IN-Standard-B,pa-IN,1,24000
+pa-IN-Standard-C,pa-IN,2,24000
+pa-IN-Standard-D,pa-IN,1,24000
 fr-FR-Standard-A,fr-FR,2,24000
 fr-FR-Standard-B,fr-FR,1,24000
 fr-FR-Standard-C,fr-FR,2,24000
@@ -199,31 +215,6 @@ en-GB-Standard-B,en-GB,1,24000
 en-GB-Standard-C,en-GB,2,24000
 en-GB-Standard-D,en-GB,1,24000
 en-GB-Standard-F,en-GB,2,24000
-th-TH-Standard-A,th-TH,2,22050
-bn-IN-Standard-A,bn-IN,2,24000
-bn-IN-Standard-B,bn-IN,1,24000
-en-IN-Standard-D,en-IN,2,24000
-en-IN-Standard-A,en-IN,2,24000
-en-IN-Standard-B,en-IN,1,24000
-en-IN-Standard-C,en-IN,1,24000
-gu-IN-Standard-A,gu-IN,2,24000
-gu-IN-Standard-B,gu-IN,1,24000
-hi-IN-Standard-D,hi-IN,2,24000
-hi-IN-Standard-A,hi-IN,2,24000
-hi-IN-Standard-B,hi-IN,1,24000
-hi-IN-Standard-C,hi-IN,1,24000
-kn-IN-Standard-A,kn-IN,2,24000
-kn-IN-Standard-B,kn-IN,1,24000
-ml-IN-Standard-A,ml-IN,2,24000
-ml-IN-Standard-B,ml-IN,1,24000
-ta-IN-Standard-A,ta-IN,2,24000
-ta-IN-Standard-B,ta-IN,1,24000
-te-IN-Standard-A,te-IN,2,24000
-te-IN-Standard-B,te-IN,1,24000
-pa-IN-Standard-A,pa-IN,2,24000
-pa-IN-Standard-B,pa-IN,1,24000
-pa-IN-Standard-C,pa-IN,2,24000
-pa-IN-Standard-D,pa-IN,1,24000
 af-ZA-Standard-A,af-ZA,2,24000
 bg-bg-Standard-A,bg-BG,2,24000
 hu-HU-Standard-A,hu-HU,2,24000
