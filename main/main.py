@@ -33,6 +33,7 @@ app_id = '47P9L8-VHY6GJ54G8'
 
 # Introduce User (Random Generated)
 
+<<<<<<< HEAD
 # SpeechSynthesizer("Welcome " + name + ". As I have already introduced myself, I am Seven. You can now as me for help.",
 #                   "data/speech/empyrean-app-332014-6fdfdc87b1df.json")
 
@@ -78,9 +79,106 @@ class Seven:
 
                 else:
                     pass
+=======
+# SpeechSynthesizer("Welcome " + name + ". As I have already introduced myself, I am Seven. You can now as me for help.", path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+
+while True:
+
+    user_input = takeCommand()
+    user_input = user_input.lower()
+    link = user_input.split()
+    intents(user_input)
+
+    if "search" in user_input:
+        try:
+            link = '+'.join(link[1:])
+            print(link)
+            say = link.replace('+', ' ')
+            webbrowser.open('https://www.google.co.in/search?q=' + link)
+
+        except Exception as e:
+            print(str(e))
+
+            # Weather
+    elif 'play' in user_input:
+        try:
+            link = '+'.join(link[1:])
+            say = link.replace('+', ' ')
+            kit.playonyt(say)
+        except Exception as e:
+            print(str(e))
+
+    elif "weather" in user_input:
+        try:
+            os.system("python ../core/packages/Weather/Weather.py")
+
+        except Exception as a:
+            print(a)
+
+            # Corona
+
+    elif "corona" in user_input or "covid" in user_input:
+        try:
+            os.system("python ../core/packages/CoronaInfo/coronaGet.py")
+
+        except Exception as b:
+            print(b)
+
+            # SpeedTest
+
+    elif "test" in user_input:
+        try:
+            os.system("python ../core/packages/Speedtest/Speedtest.py")
+
+        except Exception as c:
+            print(c)
+
+            # To Do
+
+    elif "todo" in user_input or "to do" in user_input:
+        try:
+            os.system("python ../core/packages/Todo/todo.py")
+
+        except Exception as d:
+            print(d)
+
+            # News
+
+    elif "news" in user_input:
+        try:
+            os.system("python ../core/packages/News/NewsFromBBC.py")
+
+        except Exception as e:
+            print(e)
+
+    elif "volume controller" in user_input:
+        try:
+            if platform == "darwin":
+                os.system("python ../models/gesture/core/ControllerVolumeMac/VolumeHandControlAdvanced.py")
+            elif platform == "win32":
+                os.system("python ../models/gesture/core/ControllerVolume/VolumeController.py")
+        except Exception as e:
+            print(e)
+
+    elif "mouse controller" in user_input.lower():
+        try:
+            os.system("python Seven/models/gesture/core/GestureExecute.py")
+        except Exception as e:
+            print(e)
+    
+    elif "mouse controller" in user_input:
+        try:
+            os.system("python ../models/gesture/core/VirtualMouse/VirtualMouse.py")
+        except Exception as e:
+            print(e)
+    
+    elif "exit" in user_input or "stop":
+        exit()
+>>>>>>> 24579208b636dbf285d4fec384f2b437bb8fa7d3
     
     def main(self):
         try:
+<<<<<<< HEAD
             while True:
 
                 # Search (Default Search Engine) 
@@ -217,3 +315,22 @@ class Seven:
             return WhileException
         
 Seven()
+=======
+            client = wolframalpha.Client(app_id)
+            res = client.query(user_input)
+            ans = next(res.results).text
+            if ans:
+                SpeechSynthesizer(ans, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+            else:
+                continue
+        except Exception:
+            response = requests.get("http://api.wolframalpha.com/v2/query?appid=" +
+                                    app_id + "&input=" + user_input + "&output=json")
+            jsonresp = response.json()
+            outcome = jsonresp["queryresult"]["pods"][1]["subpods"][0]["plaintext"]
+            if outcome:
+                SpeechSynthesizer(outcome, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+            else:
+                continue
+
+>>>>>>> 24579208b636dbf285d4fec384f2b437bb8fa7d3

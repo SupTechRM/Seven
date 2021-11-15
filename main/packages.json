@@ -14,7 +14,7 @@
          "responses": ["Getting news info... Here", "Ok", "Showing the latest news"],
          "context_set": ""
         },
-        {"tag": "OpenWeb",
+        {"tag": "Todo",
          "patterns": ["Open", "Open The web", "Open the Web Browser", "Open Web"],
          "responses": ["Sure Opening It","Sure opening it in a few seconds"],
          "context_set": ""

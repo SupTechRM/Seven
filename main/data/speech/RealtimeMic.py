@@ -17,5 +17,3 @@ def takeCommand():
             # print(e)
             print("Say that again please...")
             pass
-    
-    return query

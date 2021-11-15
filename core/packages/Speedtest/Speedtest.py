@@ -2,19 +2,13 @@
 # Speedtest Access Reach Internet
 ################################
 
-# Import Package Speedtest
-import Speedtest
-import speedtest
-from ibm_watson import TextToSpeechV1
-from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
-import playsound
 
 import os
 import pandas as pd  # pip install numpy==1.19.3
 import playsound
 from google.cloud import texttospeech  # outdated or incomplete comparing to v1
 from google.cloud import texttospeech_v1
-
+import speedtest
 import random
 
 # Instantiates a client
@@ -78,4 +72,4 @@ def InternetSpeedTest(wifi):
 
 
 InternetSpeedTest(wifi)
-os.system("python ../../../main/main.py")
+os.system("python ../../../main/runmain.py")

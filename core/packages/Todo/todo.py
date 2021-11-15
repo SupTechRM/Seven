@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 import os
 
+
 def newTask():
     task = my_entry.get()
     if task != "":
@@ -84,4 +85,4 @@ delTask_btn = Button(
 delTask_btn.pack(fill=BOTH, expand=True, side=LEFT)
 
 ws.mainloop()
-os.system("python ../../../main/main.py")
+os.system("python ../../../main/runmain.py")
