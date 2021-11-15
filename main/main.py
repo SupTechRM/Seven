@@ -31,7 +31,7 @@ name = data['name']
 file.close()
 
 """ Define Wolframalpha ID """
-app_id = '47P9L8-VHY6GJ54G8'
+app_id = '8QU8RA-TE2GAVWTKL'
 
 # Introduce User (Random Generated)
 
@@ -44,13 +44,10 @@ class Seven:
         """ Introduce """
 
         self.user_input = takeCommand()
-        self.user_input_link = self.user_input.lower().split()
+        self.user_input_link = self.user_input.split()
 
         """ Wolframalpha """
-        self.app_id = '47P9L8-VHY6GJ54G8'
-
-        """ Main Proccess """
-        self.main()
+        self.app_id = '8QU8RA-TE2GAVWTKL'
 
     def introduction(self, name):
         try:
@@ -62,10 +59,10 @@ class Seven:
     def intents(self, user_input):
 
         # intent check
-        for intent in data['packages']:
+        for intent in self.data['packages']:
             # check pattern
             for pattern in intent['patterns']:
-                if self.user_input.lower().lower() in pattern.lower():
+                if self.user_input.lower() in pattern.lower():
                     response = (random.choice(intent['responses']))
                     try:
                         SpeechSynthesizer(
@@ -83,144 +80,137 @@ class Seven:
 
     def main(self):
         try:
-            while True:
+            # Search (Default Search Engine)
+            if "search" in self.user_input:
+                try:
+                    # Look for Search and Keep and Empty item
+                    user_input = self.user_input.replace("search ", "")
 
-                # Search (Default Search Engine)
-                if "search" in self.user_input.lower():
-                    try:
-                        # Look for Search and Keep and Empty item
-                        user_input = self.user_input.lower().replace("search ", "")
+                    # Open link in browser
+                    webbrowser.open(
+                        'https://www.google.co.in/search?q=' + self.user_input)
 
-                        # Open link in browser
-                        webbrowser.open(
-                            'https://www.google.co.in/search?q=' + self.user_input.lower())
-                        os.system("python main.py")
+                except Exception as SearchException:
+                    return SearchException
 
-                    except Exception as SearchException:
-                        return SearchException
+            # Play video on Youtube
+            elif "play" in self.user_input:
+                try:
+                    # Look for Play and Keep and Empty item
+                    user_input = self.user_input.replace("play ", "")
 
-                # Play video on Youtube
-                elif "play" in self.user_input.lower():
-                    try:
-                        # Look for Play and Keep and Empty item
-                        user_input = self.user_input.lower().replace("play ", "")
+                    # Play the Video
+                    kit.playonyt(user_input)
 
-                        # Play the Video
-                        kit.playonyt(user_input)
+                except Exception as PlayException:
+                    return PlayException
 
-                    except Exception as PlayException:
-                        return PlayException
+            # Open link in browser
+            elif "open" in self.user_input:
+                # Open a webpage
+                try:
+                    # Look for Open and Keep and Empty item
+                    user_input = self.user_input.replace("open ", "")
 
-                # Open link in browser
-                elif "open" in self.user_input.lower():
-                    # Open a webpage
-                    try:
-                        # Look for Open and Keep and Empty item
-                        user_input = self.user_input.lower().replace("open ", "")
+                    # Open the webpage
+                    webbrowser.open('https://www.' + user_input + '.com')
 
-                        # Open the webpage
-                        webbrowser.open('https://www.' + user_input + '.com')
+                except Exception as OpenException:
+                    return OpenException
 
-                        #
+            # Check Weather Data
+            elif "weather" in self.user_input:
+                try:
+                    os.system("python ../core/packages/Weather/Weather.py")
 
-                    except Exception as OpenException:
-                        return OpenException
+                except Exception as WeatherException:
+                    return WeatherException
 
-                # Check Weather Data
-                elif "weather" in self.user_input.lower():
-                    try:
-                        os.system("python ../core/packages/Weather/Weather.py")
+            elif "corona" in self.user_input or "covid" in self.user_input:
+                try:
+                    os.system("python ../core/packages/CoronaInfo/coronaGet.py")
 
-                    except Exception as WeatherException:
-                        return WeatherException
+                except Exception as CovidException:
+                    return CovidException
 
-                elif "corona" in self.user_input.lower() or "covid" in self.user_input.lower():
-                    try:
+            # Network/Internet Check
+            elif "internet" in self.user_input or "network" in self.user_input:
+                try:
+                    SpeechSynthesizer("Checking your network speed",
+                                      "data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+                    os.system("python ../core/packages/Speedtest/Speedtest.py")
+
+                except Exception as NetworkException:
+                    return NetworkException
+
+            # See for Todo List
+            elif "todo" in self.user_input or "to do" in self.user_input:
+                try:
+                    os.system("python ../core/packages/Todo/todo.py")
+
+                except Exception as TodoException:
+                    return TodoException
+
+            # Get News
+            elif "news" in self.user_input:
+                try:
+                    os.system("python ../core/packages/News/NewsFromBBC.py")
+
+                except Exception as NewsException:
+                    return NewsException
+
+            ####################################
+            # GESTURE
+            ####################################
+
+            # Volume Controller
+            elif "volume controller" in self.user_input or "volume" in self.user_input:
+
+                try:
+                    if platform == "darwin":
                         os.system(
-                            "python ../core/packages/CoronaInfo/coronaGet.py")
-
-                    except Exception as CovidException:
-                        return CovidException
-
-                # Network/Internet Check
-                elif "internet" in self.user_input.lower() or "network" in self.user_input.lower():
-                    try:
-                        SpeechSynthesizer(
-                            "Checking your network speed", path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+                            "python ../models/gesture/core/ControllerVolumeMac/VolumeHandControlAdvanced.py")
+                    elif platform == "win32":
                         os.system(
-                            "python ../core/packages/Speedtest/Speedtest.py")
+                            "python ../models/gesture/core/ControllerVolume/VolumeController.py")
 
-                    except Exception as NetworkException:
-                        return NetworkException
+                except Exception as ControllerVolumeException:
+                    return ControllerVolumeException
 
-                # See for Todo List
-                elif "todo" in self.user_input.lower() or "to do" in self.user_input.lower():
-                    try:
-                        os.system("python ../core/packages/Todo/todo.py")
+            elif "mouse controller" in self.user_input or "mouse" in self.user_input:
+                try:
+                    os.system(
+                        "python ../models/gesture/core/VirtualMouse/VirtualMouse.py")
+                except Exception as ControllerMouseException:
+                    return ControllerMouseException
 
-                    except Exception as TodoException:
-                        return TodoException
+            #############################
+            # """ Functions """
+            #############################
 
-                # Get News
-                elif "news" in self.user_input.lower():
-                    try:
-                        os.system(
-                            "python ../core/packages/News/NewsFromBBC.py")
+            elif "exit" in self.user_input or "stop":
+                exit()
 
-                    except Exception as NewsException:
-                        return NewsException
+            elif "help" in self.user_input:
+                pass
 
-                ####################################
-                # GESTURE
-                ####################################
-
-                # Volume Controller
-                elif "volume controller" in self.user_input.lower() or "volume" in self.user_input.lower():
-
-                    try:
-                        if platform == "darwin":
-                            os.system(
-                                "python ../models/gesture/core/ControllerVolumeMac/VolumeHandControlAdvanced.py")
-                        elif platform == "win32":
-                            os.system(
-                                "python ../models/gesture/core/ControllerVolume/VolumeController.py")
-
-                    except Exception as ControllerVolumeException:
-                        return ControllerVolumeException
-
-                elif "mouse controller" in self.user_input.lower() or "mouse" in self.user_input.lower():
-                    try:
-                        os.system(
-                            "python ../models/gesture/core/VirtualMouse/VirtualMouse.py")
-                    except Exception as ControllerMouseException:
-                        return ControllerMouseException
-
-                #############################
-                # """ Functions """
-                #############################
-
-                elif "exit" in self.user_input.lower() or "stop":
-                    exit()
-
-                elif "help" in self.user_input.lower():
-                    pass
-
-                else:
-                    client = wolframalpha.Client(self.app_id)
-                    res = client.query(self.user_input.lower())
-                    ans = next(res.results).text
-                    SpeechSynthesizer(
-                        ans, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
-        except Exception:
-            response = requests.get("http://api.wolframalpha.com/v2/query?appid=" +
-                                    app_id + "&input=" + user_input + "&output=json")
-            jsonresp = response.json()
-            outcome = jsonresp["queryresult"]["pods"][1]["subpods"][0]["plaintext"]
-            if outcome:
+        except Exception as NotRecognizedException:
+            try:
+                client = wolframalpha.Client(self.app_id)
+                res = client.query(self.user_input)
+                ans = next(res.results).text
+                print(ans)
                 SpeechSynthesizer(
-                    outcome, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+                    ans, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+            except:
+                SpeechSynthesizer("Hey, I'm sorry. I couldn't understand what you said, but I'll search it for you.",
+                                  path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+                self.user_input = self.user_input.replace("search", "")
+                webbrowser.open(
+                    'https://www.google.co.in/search?q=' + self.user_input)
 
 
 if __name__ == "__main__":
-    seven = Seven()
-    seven.main()
+    while True:
+        seven = Seven()
+        seven.main()

@@ -62,7 +62,5 @@ Check <a href="https://github.com/SupTechRM/Seven/blob/main/RUNNING_LOCALLY.md">
 
 We belive in Open Source. Seven was made to be for you. It can do all your daily tasks and is ready to be your man at work. 
 
-**Copyright Seven; The Ai Radar @2021**
 
-![Cornerstone School Logo](https://user-images.githubusercontent.com/93310052/141771175-9fd496a9-0069-4ac2-be6f-23b86eba402d.jpg)
 
