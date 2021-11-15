@@ -26,7 +26,7 @@
     <a href="https://github/SupTechRM/Seven"><strong>Explore Seven »</strong></a>
     <br />
     <br />
-    <a href="[CONTRIBUTING.md](https://github.com/SupTechRM/Seven/blob/main/CONTRIBUTING.md)">View Contribution Docs</a>
+    <a href="https://github.com/SupTechRM/Seven/blob/main/CONTRIBUTING.md">View Contribution Docs</a>
     ·
     <a href="https://github.com/SupTechRM/Seven/issues">Report Bug</a>
     ·
