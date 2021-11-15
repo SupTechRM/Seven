@@ -23,14 +23,14 @@
   <p align="center">
     What is the future? What is the upcoming redefining moment. There are infinite upcoming possibilites... And to harness them, to bring what the future possesses is the change of possibility and advancement of humanity. 
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <a href="https://github/SupTechRM/Seven"><strong>Explore Seven »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="[CONTRIBUTING.md](https://github.com/SupTechRM/Seven/blob/main/CONTRIBUTING.md)">View Contribution Docs</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    <a href="https://github.com/SupTechRM/Seven/issues">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://github.com/SupTechRM/Seven/issues">Request Feature</a>
   </p>
 </div>
 
