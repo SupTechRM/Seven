@@ -207,4 +207,5 @@ class Seven:
 if __name__ == "__main__":
     while True:
         seven = Seven()
+        seven.introduction(name)
         seven.main()
