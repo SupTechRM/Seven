@@ -1,23 +1,31 @@
+<div id="top"></div>
+
+
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/SupTechRM/Seven">
 <p align="center">
   <img src="https://github.com/SupTechRM/Seven/blob/main/assets/img/banners/Alternative%20Banner.png">
-</p>
-<p align="center"><b>
-Seven: The Future is Here
-</b></p>
-<p align="center">
-  <strong>INTRODUCING SEVEN BY THE AI RADAR</strong>
-</p>
+</p>  </a>
 
-<p>What is the future? What is the upcoming redefining moment. There are infinite upcoming possibilites... And to harness them, to bring what the future possesses is the change of possibility and advancement of humanity. 
-</p>
+  <h1 align="center"><strong>Seven: The Future is Here 🚀</strong></h1>
 
-<h3 align="center">
-  <a href="https://github.com/SupTechRM/Seven/blob/main/CONTRIBUTING.md">Contribute</a>
-<span> · </span>
-  <a href="https://github.com/SupTechRM/Seven/blob/main/Documentation.md">Documentation</a>
-</h3>
+  <p align="center">
+    What is the future? What is the upcoming redefining moment. There are infinite upcoming possibilites... And to harness them, to bring what the future possesses is the change of possibility and advancement of humanity. 
+    <br />
+    <a href="https://github/SupTechRM/Seven"><strong>Explore Seven »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/SupTechRM/Seven/blob/main/CONTRIBUTING.md">View Contribution Docs</a>
+    ·
+    <a href="https://github.com/SupTechRM/Seven/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/SupTechRM/Seven/issues">Request Feature</a>
+  </p>
+</div>
 
----
+
 
 ## Structure
 
@@ -60,7 +68,7 @@ Check <a href="https://github.com/SupTechRM/Seven/blob/main/RUNNING_LOCALLY.md">
 
 ## Why did you make this?
 
-We belive in Open Source. Seven was made to be for you. It can do all your daily tasks and is ready to be your man at work. 
+We believe in Open Source. Seven was made to be for you. It can do all your daily tasks and is ready to be your man at work. 
 
 
 

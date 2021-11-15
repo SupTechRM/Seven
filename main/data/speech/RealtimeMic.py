@@ -19,7 +19,7 @@ def takeCommand():
             # print(e)
             # Say that again will be printed in case of improper voice
             print("Say that again please...")
-            return "None"  # None string will be returned
+            takeCommand()
     
     return query
     
