@@ -3,12 +3,14 @@ from intents import *
 from data.speech.RealtimeSpeech import SpeechSynthesizer
 import json
 import webbrowser
-import os
 import pywhatkit as kit
 import wolframalpha
 import requests
 from sys import platform
 import os
+import language_tool_python
+
+tool = language_tool_python.LanguageTool('en-US')
 #####################################
 # Main Function
 #####################################
@@ -34,10 +36,8 @@ while True:
 
     if "search" in user_input:
         try:
-            link = '+'.join(link[1:])
-            print(link)
-            say = link.replace('+', ' ')
-            webbrowser.open('https://www.google.co.in/search?q=' + link)
+            user_input = user_input.replace("search ", "")
+            webbrowser.open('https://www.google.co.in/search?q=' + user_input)
 
         except Exception as e:
             print(str(e))
@@ -45,15 +45,14 @@ while True:
             # Weather
     elif 'play' in user_input:
         try:
-            link = '+'.join(link[1:])
-            say = link.replace('+', ' ')
-            kit.playonyt(say)
+            user_input = user_input.replace("play ", "")
+            kit.playonyt(user_input)
         except Exception as e:
             print(str(e))
 
     elif "weather" in user_input:
         try:
-            os.system("python ../core/packages/Weather/Weather.py")
+            os.system("python ../core/packages/Weather/runweather.py")
 
         except Exception as a:
             print(a)
@@ -103,37 +102,36 @@ while True:
         except Exception as e:
             print(e)
 
-    elif "mouse controller" in user_input.lower():
-        try:
-            os.system("python Seven/models/gesture/core/GestureExecute.py")
-        except Exception as e:
-            print(e)
-    
     elif "mouse controller" in user_input:
         try:
             os.system("python ../models/gesture/core/VirtualMouse/VirtualMouse.py")
         except Exception as e:
             print(e)
-    
+
     elif "exit" in user_input or "stop":
         exit()
     
     else:
-        try:
-            client = wolframalpha.Client(app_id)
-            res = client.query(user_input)
-            ans = next(res.results).text
-            if ans:
-                SpeechSynthesizer(ans, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
-            else:
-                continue
-        except Exception:
-            response = requests.get("http://api.wolframalpha.com/v2/query?appid=" +
-                                    app_id + "&input=" + user_input + "&output=json")
-            jsonresp = response.json()
-            outcome = jsonresp["queryresult"]["pods"][1]["subpods"][0]["plaintext"]
-            if outcome:
-                SpeechSynthesizer(outcome, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
-            else:
-                continue
+        text = user_input
+        matches = tool.check(text)
+        if len(matches) > 0:
+            continue
+        else:
+            try:
+                client = wolframalpha.Client(app_id)
+                res = client.query(user_input)
+                ans = next(res.results).text
+                if ans:
+                    SpeechSynthesizer(ans, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+                else:
+                    continue
+            except Exception:
+                response = requests.get("http://api.wolframalpha.com/v2/query?appid=" +
+                                        app_id + "&input=" + user_input + "&output=json")
+                jsonresp = response.json()
+                outcome = jsonresp["queryresult"]["pods"][1]["subpods"][0]["plaintext"]
+                if outcome:
+                    SpeechSynthesizer(outcome, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+                else:
+                    continue
 

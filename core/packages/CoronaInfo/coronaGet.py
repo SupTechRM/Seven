@@ -68,4 +68,4 @@ def CoronaGet():
 
 
 CoronaGet()
-os.system("python ../../../main/runmain.py")
+os.system("python ../../../main/main.py")

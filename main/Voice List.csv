@@ -1,4 +1,5 @@
 name,language code,ssml gender,hertz rate
+ro-RO-Wavenet-A,ro-RO,2,24000
 ar-XA-Wavenet-A,ar-XA,2,24000
 ar-XA-Wavenet-B,ar-XA,1,24000
 ar-XA-Wavenet-C,ar-XA,1,24000
@@ -144,7 +145,6 @@ pl-PL-Wavenet-E,pl-PL,2,24000
 pl-PL-Wavenet-D,pl-PL,2,24000
 pt-BR-Wavenet-A,pt-BR,2,24000
 pt-BR-Wavenet-B,pt-BR,1,24000
-ro-RO-Wavenet-A,ro-RO,2,24000
 da-DK-Standard-A,da-DK,2,22050
 da-DK-Standard-C,da-DK,1,24000
 da-DK-Standard-D,da-DK,2,24000
