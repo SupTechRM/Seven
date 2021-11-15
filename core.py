@@ -12,6 +12,8 @@ import os
 import speech_recognition as sr
 import random
 import time
+import datetime
+import json
 from main.data.speech.RealtimeSpeech import SpeechSynthesizer
 
 
@@ -76,9 +78,9 @@ else:
 
                 checkTrue = input("Is your name {0}? (y/n)".format(inputtext))
                 if checkTrue == "y":
-                    dateCreated = str(date.today().day) + "/" + \
-                        str(date.today().month) + \
-                        "/" + str(date.today().year)
+                    dateCreated = str(datetime.date.today().day) + "/" + \
+                        str(datetime.date.today().month) + \
+                        "/" + str(datetime.date.today().year)
                     jsonData = {"name": inputtext, "dateCreated": dateCreated}
 
                     # Dump Data
@@ -95,8 +97,8 @@ else:
                     os.system("py core.py")
 
             # Define variables for user.json
-            dateCreated = str(date.today().day) + "/" + \
-                str(date.today().month) + "/" + str(date.today().year)
+            dateCreated = str(datetime.date.today().day) + "/" + \
+                str(datetime.date.today().month) + "/" + str(datetime.date.today().year)
             jsonData = {"name": inputtext, "dateCreated": dateCreated}
 
             # Dump Data
@@ -115,5 +117,4 @@ else:
         os.chdir("app")
         os.system("npm start")
 
-        os.chdir("../main")
-        os.system("main.py")
+        os.system("python main/main.py")

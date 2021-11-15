@@ -3,6 +3,7 @@
 #########################
 
 import requests
+import random
 import json
 from pytemp import pytemp
 import os
@@ -104,19 +105,17 @@ def getWeather(city_name):
         print(json.dumps(temperature_max))
 
         SpeechSynthesizer("Current Temperature: " +
-                          str(round(current_temperature, 2)), path="../../../main/data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+                          str(round(current_temperature, 2)))
         SpeechSynthesizer("Maximum Temperature: " +
-                          str(round(temperature_max, 2)), path="../../../main/data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+                          str(round(temperature_max, 2)))
         SpeechSynthesizer("Minimum Temperature: " +
-                          str(round(temperature_min, 2)), path="../../../main/data/speech/empyrean-app-332014-6fdfdc87b1df.json")
-        SpeechSynthesizer("Humidity: " + str(current_humidity) + "%", path="../../../main/data/speech/empyrean-app-332014-6fdfdc87b1df.json")
-        # return utils.translate("Weather Successfully Accessed")
+                          str(round(temperature_min, 2)))
+        SpeechSynthesizer("Humidity: " + str(current_humidity) + "%")
 
     else:
-        # return utils.translate("City not Found")
         pass
 
 
 city = getLocation()
 getWeather(city)
-os.system("python ../../../main/main.py")
+os.system("python ../../../main/runmain.py")

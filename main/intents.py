@@ -1,15 +1,6 @@
-from genericpath import sameopenfile
-import json
 import random
-import numpy
 import spacy
-import threading
-import string
-import re
-import sys
 import json
-import os
-import playsound
 from data.speech.RealtimeSpeech import SpeechSynthesizer
 nlp = spacy.load('en_core_web_sm')
 

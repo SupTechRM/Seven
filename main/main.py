@@ -23,9 +23,7 @@ file.close()
 app_id = '47P9L8-VHY6GJ54G8'
 
 
-# SpeechSynthesizer("Welcome " + name + ". As I have already introduced myself, I am Seven. You can now as me for help.",
-#                   "data/speech/empyrean-app-332014-6fdfdc87b1df.json")
-
+# SpeechSynthesizer("Welcome " + name + ". As I have already introduced myself, I am Seven. You can now as me for help.", path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
 
 while True:
 
@@ -45,11 +43,7 @@ while True:
             print(str(e))
 
             # Weather
-<<<<<<< HEAD
     elif 'play' in user_input:
-=======
-    elif user_input.startswith('play ') or "play" in user_input:
->>>>>>> 250725c4b93d198be7775aa281fea1fe35f9abfe
         try:
             link = '+'.join(link[1:])
             say = link.replace('+', ' ')
@@ -102,27 +96,20 @@ while True:
 
     elif "volume controller" in user_input:
         try:
-<<<<<<< HEAD
             if platform == "darwin":
                 os.system("python ../models/gesture/core/ControllerVolumeMac/VolumeHandControlAdvanced.py")
             elif platform == "win32":
                 os.system("python ../models/gesture/core/ControllerVolume/VolumeController.py")
         except Exception as e:
             print(e)
+
     elif "mouse controller" in user_input.lower():
-=======
-            os.system("python Seven/models/gesture/core/GestureExecute.py")
-        except Exception as e:
-            print(e)
-    
-    elif "mouse controller" in user_input:
         try:
             os.system("python Seven/models/gesture/core/GestureExecute.py")
         except Exception as e:
             print(e)
     
     elif "mouse controller" in user_input:
->>>>>>> 250725c4b93d198be7775aa281fea1fe35f9abfe
         try:
             os.system("python ../models/gesture/core/VirtualMouse/VirtualMouse.py")
         except Exception as e:
@@ -136,11 +123,17 @@ while True:
             client = wolframalpha.Client(app_id)
             res = client.query(user_input)
             ans = next(res.results).text
-            SpeechSynthesizer(ans, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+            if ans:
+                SpeechSynthesizer(ans, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+            else:
+                continue
         except Exception:
             response = requests.get("http://api.wolframalpha.com/v2/query?appid=" +
                                     app_id + "&input=" + user_input + "&output=json")
             jsonresp = response.json()
             outcome = jsonresp["queryresult"]["pods"][1]["subpods"][0]["plaintext"]
-            SpeechSynthesizer(outcome, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+            if outcome:
+                SpeechSynthesizer(outcome, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+            else:
+                continue
 

@@ -58,9 +58,8 @@ class handDetector():
         return self.lmList, bbox
 
     def findDistance(self, p1, p2, img, draw = True):
-        x1 = self.lmList[p1][0]
-        y1 = self.lmList[p1][1]
-        x2, y2 = self.lmList[p2][0], self.lmList[p2][1]
+        x1, y1 = self.lmList[p1][1], self.lmList[p1][2]
+        x2, y2, = self.lmList[p2][1], self.lmList[p2][2]
         cx, cy = (x1 + x2) // 2, (y1 + y2) // 2
         if draw:
             cv2.circle(img, (x1, y1), 15, (255, 0, 255), cv2.FILLED)

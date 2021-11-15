@@ -8,7 +8,7 @@ while True:
 
     # Use Try/Except to troubleshoot errors
     try:
-        # use the microphone as source for input.
+        # use the microphone as source for input.n
         with sr.Microphone() as source:
             
             # wait for a second to let the recognizer

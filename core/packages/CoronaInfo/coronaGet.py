@@ -9,7 +9,7 @@ import random
 # Instantiates a client
 
 
-def SpeechSynthesizer(audio, path="main/data/speech/empyrean-app-332014-6fdfdc87b1df.json"):
+def SpeechSynthesizer(audio, path="empyrean-app-332014-6fdfdc87b1df.json"):
     os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = path
     client = texttospeech_v1.TextToSpeechClient()
 
@@ -29,8 +29,8 @@ def SpeechSynthesizer(audio, path="main/data/speech/empyrean-app-332014-6fdfdc87
     )
 
     voice = texttospeech_v1.VoiceSelectionParams(
-        name='ar-XA-Wavenet-B', language_code="en-GB"
-        # name='vi-VN-Wavenet-D', language_code="vi-VN"
+        # name='ar-XA-Wavenet-B', language_code="en-GB"
+        name='en-GB-Wavenet-D', language_code="en-GB"
     )
 
     # Select the type of audio file you want returned
@@ -44,15 +44,14 @@ def SpeechSynthesizer(audio, path="main/data/speech/empyrean-app-332014-6fdfdc87
     response = client.synthesize_speech(
         input=synthesis_input, voice=voice, audio_config=audio_config
     )
-    filename = "output.mp3" + str(random.randint(1, 100)) + ".mp3"
+
     # The response's audio_content is binary.
+    filename = "./output" + str(random.randint(1, 100)) + ".mp3"
     with open(filename, "wb") as out:
         # Write the response to the output file.
         out.write(response.audio_content)
-        print(f'Audio content written to file {filename}')
     playsound.playsound(filename)
     os.remove(filename)
-
 
 def CoronaGet():
     covid = COVID19Py.COVID19(data_source="jhu")
@@ -64,9 +63,9 @@ def CoronaGet():
     locations = covid.getLocations(timelines=True,
                                    rank_by='confirmed')
 
-    SpeechSynthesizer("Latest Data, \nConfirmed: " + str(latest["confirmed"]) + "\n Deaths: " + str(
-        latest["deaths"]) + "\n Recovered: " + str(latest["recovered"]), path="../../../main/data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+    SpeechSynthesizer("Latest Data, \nConfirmed: " + str(latest["confirmed"]) + "\n. Deaths: " + str(
+        latest["deaths"]) + "\n. Recovered: " + str(latest["recovered"]), path="config.json")
 
 
 CoronaGet()
-os.system("python ../../../main/main.py")
+os.system("python ../../../main/runmain.py")

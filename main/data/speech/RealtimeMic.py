@@ -1,7 +1,8 @@
 import speech_recognition as sr
 
+
 def takeCommand():
-    #It takes microphone input from the user and returns string output
+    # It takes microphone input from the user and returns string output
 
     r = sr.Recognizer()
     with sr.Microphone() as source:
@@ -17,5 +18,5 @@ def takeCommand():
     except Exception as e:
         # print(e)
         print("Say that again please...")
-        return "None"
+        pass
     return query
