@@ -22,8 +22,8 @@ file.close()
 app_id = '47P9L8-VHY6GJ54G8'
 
 
-# SpeechSynthesizer("Welcome " + name + ". As I have already introduced myself, I am Seven. You can now as me for help.",
-#                   "data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+SpeechSynthesizer("Welcome " + name + ". As I have already introduced myself, I am Seven. You can now as me for help.",
+                  "data/speech/empyrean-app-332014-6fdfdc87b1df.json")
 
 
 while True:
@@ -123,6 +123,7 @@ while True:
             res = client.query(user_input)
             ans = next(res.results).text
             SpeechSynthesizer(ans, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+        
         except Exception:
             response = requests.get("http://api.wolframalpha.com/v2/query?appid=" +
                                     app_id + "&input=" + user_input + "&output=json")
