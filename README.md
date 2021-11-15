@@ -1,23 +1,25 @@
 <p align="center">
   <img src="https://github.com/SupTechRM/Seven/blob/main/assets/img/banners/Alternative%20Banner.png">
 </p>
-
- <h1 align="center">
-  <a >
-    Seven: The Future is <u>Here</u>
-    </a>
-</h1>
+<p align="center"><b>
+Seven: The Future is Here
+</b></p>
 <p align="center">
-  <strong>We Welcome you To Seven</strong>
-
-</img>
-  <br>
-  What is the future? What is the upcoming redefining moment. There are infinite upcoming possibilites... And to harness them, to bring what the future possesses is the change of possibility and advancement of humanity. 
+  <strong>THE FUTURE IS AI AND WE PRESENT YOU SEVEN BY AI RADAR</strong>
 </p>
 
-## Build status
 
-In Development(Seven is on the verge of completion, and therefore we recommend pausing on installation and testing for a better experience. We hope to see you continue using Seven as your daily man at work! ) 
+<h3 align="center">
+  <a href="https://github.com/SupTechRM/Seven/blob/main/CONTRIBUTING.md">Contribute</a>
+<span> · </span>
+  <a href="https://github.com/SupTechRM/Seven/blob/main/Documentation.md">Documentation</a>
+</h3>
+
+---
+
+## Important SEVEN Notice
+
+[Seven:-A Glimpse To The Future](https://github.com/SupTechRM/Seven)
 
 ## Structure
 
@@ -30,19 +32,36 @@ In Development(Seven is on the verge of completion, and therefore we recommend p
 | [models](models)        |   Code for Speech, Gesture, and Initialiation      |
 
 
-## Installation
 
-Future installation guide coming up
 
-## API Reference
+## Contributions
 
-1. Google Cloud Text to Speech
-2. Spotify
-3. Product Hunt
-4. Github
+Seven is open to all and can be used by anyone around the world. It is free, fast and accurate
 
-**(Future Api References on Tag)**
+Please read [CONTRIBUTING.md](https://github.com/SupTechRM/Seven/blob/main/CONTRIBUTING.md) for details on this project.
 
 
 
+
+## SevenReviewers
+
+Developers Who Made SEVEN
+THE AI RADAR TEAM:-
+
+- [@Shubham Mishra](https://github.com/Shubham23999)
+- [@Rishabh Mishra](https://github.com/SupTechRM)
+- [@Sarthak Rawool](https://github.com/anrawool)
+
+
+## Code of Conduct
+
+Please read [CODE_OF_CONDUCT.md](https://github.com/SupTechRM/Seven/blob/main/CODE_OF_CONDUCT.md) for details on our code of conduct.
+
+## How to run locally
+
+Check <a href="https://github.com/SupTechRM/Seven/blob/main/CODE_OF_CONDUCT.md">here</a> on how to run locally</a>
+
+## Why did you make this?
+
+https://www.youtube.com/watch?v=hy-EhJ_tTQo
 
