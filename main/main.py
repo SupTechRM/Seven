@@ -1,24 +1,21 @@
 """ Packages """
 from data.speech.RealtimeSpeech import SpeechSynthesizer
 from data.speech.RealtimeMic import takeCommand
-import random
 import language_tool_python
 import json
 import webbrowser
 import pywhatkit as kit
 import wolframalpha
 import requests
+import intents
 from sys import platform
 import os
-<< << << < HEAD
 
 tool = language_tool_python.LanguageTool('en-US')
-== == == =
+
 
 """ Speech Data """
 
-
->>>>>> > 58cb14814423765f3ba5720abd7ffd54154123bd
 #####################################
 # Main Function
 #####################################
@@ -127,7 +124,6 @@ while True:
     elif "exit" in user_input or "stop":
         exit()
 
-<< << << < HEAD
     else:
         text = user_input
         matches = tool.check(text)
@@ -153,10 +149,10 @@ while True:
                         outcome, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
                 else:
                     continue
-== == == =
+
     def main(self):
         try:
-<< << << < HEAD
+
             while True:
 
                 # Search (Default Search Engine)
@@ -282,20 +278,6 @@ while True:
                     ans = next(res.results).text
                     SpeechSynthesizer(
                         ans, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
-
-
-        except Exception as WhileException:
-            return WhileException
-        
-Seven()
-=======
-            client = wolframalpha.Client(app_id)
-            res = client.query(user_input)
-            ans = next(res.results).text
-            if ans:
-                SpeechSynthesizer(ans, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
-            else:
-                continue
         except Exception:
             response = requests.get("http://api.wolframalpha.com/v2/query?appid=" +
                                     app_id + "&input=" + user_input + "&output=json")
@@ -303,8 +285,5 @@ Seven()
             outcome = jsonresp["queryresult"]["pods"][1]["subpods"][0]["plaintext"]
             if outcome:
                 SpeechSynthesizer(outcome, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
-            else:
-                continue
->>>>>>> 58cb14814423765f3ba5720abd7ffd54154123bd
 
->>>>>>> 24579208b636dbf285d4fec384f2b437bb8fa7d3
+Seven()

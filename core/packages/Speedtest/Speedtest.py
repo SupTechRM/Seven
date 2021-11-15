@@ -67,8 +67,7 @@ wifi = speedtest.Speedtest()
 def InternetSpeedTest(wifi):
     download = wifi.download()
     upload = wifi.upload()
-    SpeechSynthesizer("Download Speed: " + str(int(download)/int(1000000)) +
-                      " Mbps", "Upload Speed: ", str(int(upload)/int(1000000)) + " Mbps")
+    SpeechSynthesizer("Dowload Speed:" + str(round()))
 
 
 InternetSpeedTest(wifi)
