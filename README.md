@@ -1,15 +1,6 @@
 <div id="top"></div>
 
 
-<!-- PROJECT SHIELDS -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-
-
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -18,7 +9,7 @@
   <img src="https://github.com/SupTechRM/Seven/blob/main/assets/img/banners/Alternative%20Banner.png">
 </p>  </a>
 
-  <h1 align="center"><strong>Seven</strong></h1>
+  <h1 align="center"><strong>Seven: The Future is Here 🚀</strong></h1>
 
   <p align="center">
     What is the future? What is the upcoming redefining moment. There are infinite upcoming possibilites... And to harness them, to bring what the future possesses is the change of possibility and advancement of humanity. 
@@ -35,23 +26,6 @@
 </div>
 
 
-
-<p align="center">
-  <img src="https://github.com/SupTechRM/Seven/blob/main/assets/img/banners/Alternative%20Banner.png">
-</p>
-<p align="center" style="font-family: 'Open Sans';"><b>
-Seven: The Future is Here 🚀
-</b></p>
-<p>W hat is the future? What is the upcoming redefining moment. There are infinite upcoming possibilites... And to harness them, to bring what the future possesses is the change of possibility and advancement of humanity. 
-</p>
-
-<h3 align="center">
-  <a href="https://github.com/SupTechRM/Seven/blob/main/CONTRIBUTING.md">Contribute</a>
-<span> · </span>
-  <a href="https://github.com/SupTechRM/Seven/blob/main/Documentation.md">Documentation</a>
-</h3>
-
----
 
 ## Structure
 
