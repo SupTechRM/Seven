@@ -66,5 +66,5 @@ Check <a href="https://github.com/SupTechRM/Seven/blob/main/RUNNING_LOCALLY.md">
 
 We belive in Open Source. Seven was made to be for you. It can do all your daily tasks and is ready to be your man at work. 
 
-<p>** Copyright The Ai Radar @2021 **</p>
+<p>**Copyright The Ai Radar @2021**</p>
 
