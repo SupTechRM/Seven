@@ -11,11 +11,10 @@ import pandas as pd  # pip install numpy==1.19.3
 import playsound
 from google.cloud import texttospeech  # outdated or incomplete comparing to v1
 from google.cloud import texttospeech_v1
-
 # Instantiates a client
 
 
-def SpeechSynthesizer(audio, path="config.json"):
+def SpeechSynthesizer(audio, path=""):
     os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = path
     client = texttospeech_v1.TextToSpeechClient()
 
@@ -35,7 +34,7 @@ def SpeechSynthesizer(audio, path="config.json"):
     )
 
     voice = texttospeech_v1.VoiceSelectionParams(
-        name='ar-XA-Wavenet-B', language_code="en-GB"
+        name='ar-XA-Wavenet-D', language_code="en-GB"
         # name='vi-VN-Wavenet-D', language_code="vi-VN"
     )
 
@@ -71,8 +70,6 @@ def getLocation():
     res = requests.get('https://ipinfo.io/')
     data = res.json()
     city_name = data['city']
-    location = data['loc'].split(',')
-
     return city_name
 
 
@@ -102,20 +99,14 @@ def getWeather(city_name):
         z = x["weather"]
 
         weather_description = z[0]["description"]
-        print(json.dumps(temperature_max))
 
-        SpeechSynthesizer("Current Temperature: " +
-                          str(round(current_temperature, 2)))
-        SpeechSynthesizer("Maximum Temperature: " +
-                          str(round(temperature_max, 2)))
-        SpeechSynthesizer("Minimum Temperature: " +
-                          str(round(temperature_min, 2)))
-        SpeechSynthesizer("Humidity: " + str(current_humidity) + "%")
-
+        print("Current Temperature: " + str(round(current_temperature, 2)))
+        print("Maximum Temperature: " + str(round(temperature_max, 2)))
+        print("Minimum Temperature: " + str(round(temperature_min, 2)))
+        print("Humidity: " + str(current_humidity) + "%")
     else:
         pass
 
 
 city = getLocation()
 getWeather(city)
-os.system("python ../../../main/runmain.py")
