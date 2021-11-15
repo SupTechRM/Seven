@@ -64,3 +64,5 @@ We belive in Open Source. Seven was made to be for you. It can do all your daily
 
 **Copyright Seven; The Ai Radar @2021**
 
+<img src="Cornerstone School Logo.jpg" alt="School" style,width="500" height="600">
+
