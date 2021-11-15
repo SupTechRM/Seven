@@ -22,8 +22,8 @@ file.close()
 app_id = '47P9L8-VHY6GJ54G8'
 
 
-SpeechSynthesizer("Welcome " + name + ". As I have already introduced myself, I am Seven. You can now as me for help.",
-                  "data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+# SpeechSynthesizer("Welcome " + name + ". As I have already introduced myself, I am Seven. You can now as me for help.",
+#                   "data/speech/empyrean-app-332014-6fdfdc87b1df.json")
 
 
 while True:
@@ -33,7 +33,7 @@ while True:
     link = user_input.split()
     intents(user_input)
 
-    if user_input.startswith('search '):
+    if user_input.startswith('search ') or user:
         try:
             link = '+'.join(link[1:])
             print(link)
@@ -101,18 +101,22 @@ while True:
             os.system("python Seven/models/gesture/core/GestureExecute.py")
         except Exception as e:
             print(e)
+    
     elif "mouse controller" in user_input:
         try:
             os.system("python Seven/models/gesture/core/GestureExecute.py")
         except Exception as e:
             print(e)
+    
     elif "mouse controller" in user_input:
         try:
             os.system("python Seven/models/gesture/core/GestureExecute.py")
         except Exception as e:
             print(e)
+    
     elif "exit" in user_input or "stop":
         exit()
+    
     else:
         try:
             client = wolframalpha.Client(app_id)
