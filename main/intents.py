@@ -39,8 +39,11 @@ def intents(input_to):
                 # print("Found")
                 # print(intent['tag'])
                 response = (random.choice(intent['responses']))
-                SpeechSynthesizer(
-                    response, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+                try:
+                    SpeechSynthesizer(
+                        response, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+                except Exception:
+                    pass
 
                 if pattern.lower() in intent['patterns'] and intent['patterns'].index(pattern.lower()) == 0:
                     return intent["tag"]

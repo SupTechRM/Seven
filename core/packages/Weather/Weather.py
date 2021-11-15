@@ -14,7 +14,7 @@ from google.cloud import texttospeech_v1
 # Instantiates a client
 
 
-def SpeechSynthesizer(audio, path="main/data/speech/empyrean-app-332014-6fdfdc87b1df.json"):
+def SpeechSynthesizer(audio, path="../../../main/data/speech/empyrean-app-332014-6fdfdc87b1df.json"):
     os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = path
     client = texttospeech_v1.TextToSpeechClient()
 

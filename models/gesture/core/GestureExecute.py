@@ -3,6 +3,6 @@ import os
 
 
 if platform == "darwin":
-    os.system("python ControllerVolumeMac/VolumeHandControllerAdvanced.py")    
+    os.system("python ../../../ControllerVolumeMac/VolumeHandControllerAdvanced.py")
 elif platform == "win32":
-    os.system("python ControllerVolume/VolumeController.py")
+    os.system("python Seven/models/core/ControllerVolume/VolumeController.py")
