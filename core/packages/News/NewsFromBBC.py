@@ -13,7 +13,7 @@ for p in sys.path:
 # Instantiates a client
 
 
-def SpeechSynthesizer(audio, path="empyrean-app-332014-6fdfdc87b1df.json"):
+def SpeechSynthesizer(audio, path="config.json"):
     os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = path
     client = texttospeech_v1.TextToSpeechClient()
 
@@ -84,9 +84,7 @@ def NewsFromBBC():
     for ar in article:
         results.append(ar["title"])
 
-    for i in range(len(results)):
-        SpeechSynthesizer(
-            results[i], path="Seven/core/packages/News/config.json")
+        SpeechSynthesizer(results[:4], path="Seven/core/packages/News/config.json")
 
 
 res = NewsFromBBC()

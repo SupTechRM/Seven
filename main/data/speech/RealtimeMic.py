@@ -18,6 +18,6 @@ def takeCommand():
             print("Say that again please...")
             continue
         if query:
-            return query
+            return query.lower()
         else:
             continue
