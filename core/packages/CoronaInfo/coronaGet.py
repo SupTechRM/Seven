@@ -9,7 +9,7 @@ import random
 # Instantiates a client
 
 
-def SpeechSynthesizer(audio, path="empyrean-app-332014-6fdfdc87b1df.json"):
+def SpeechSynthesizer(audio, path="config.json"):
     os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = path
     client = texttospeech_v1.TextToSpeechClient()
 
@@ -68,4 +68,4 @@ def CoronaGet():
 
 
 CoronaGet()
-os.system("python ../../../main/runmain.py")
+os.system("python ../../../main/main.py")

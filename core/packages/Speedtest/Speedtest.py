@@ -14,7 +14,7 @@ import random
 # Instantiates a client
 
 
-def SpeechSynthesizer(audio, path="main/data/speech/empyrean-app-332014-6fdfdc87b1df.json"):
+def SpeechSynthesizer(audio, path="config.json"):
     os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = path
     client = texttospeech_v1.TextToSpeechClient()
 
@@ -67,8 +67,7 @@ wifi = speedtest.Speedtest()
 def InternetSpeedTest(wifi):
     download = wifi.download()
     upload = wifi.upload()
-    SpeechSynthesizer(("Download Speed: " + str(int(download)/int(1000000)) +
-                      " Mbps" + "Upload Speed: ", str(int(upload)/int(1000000)) + " Mbps"), path="config.json")
+    SpeechSynthesizer("Dowload Speed:" + str(round(download, 2)) + ".Upload Speed:" + str(int(round(download, 2))))
 
 
 InternetSpeedTest(wifi)

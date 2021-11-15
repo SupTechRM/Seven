@@ -1,18 +1,20 @@
 """ Packages """
+from data.speech.RealtimeSpeech import SpeechSynthesizer
+from data.speech.RealtimeMic import takeCommand
+import language_tool_python
 import json
 import webbrowser
-import os
 import pywhatkit as kit
 import wolframalpha
 import requests
+import random
 from sys import platform
 import os
-import random
+
+tool = language_tool_python.LanguageTool('en-US')
+
 
 """ Speech Data """
-from data.speech.RealtimeMic import takeCommand
-from data.speech.RealtimeSpeech import SpeechSynthesizer
-
 
 #####################################
 # Main Function
@@ -36,188 +38,179 @@ app_id = '8QU8RA-TE2GAVWTKL'
 # SpeechSynthesizer("Welcome " + name + ". As I have already introduced myself, I am Seven. You can now as me for help.",
 #                   "data/speech/empyrean-app-332014-6fdfdc87b1df.json")
 
+
 class Seven:
-	def __init__(self):
-		
-		""" Introduce """
-		
-		self.user_input = takeCommand()
-		self.user_input_link = self.user_input.split()
-		
-		""" Wolframalpha """
-		self.app_id = '8QU8RA-TE2GAVWTKL'
+    def __init__(self):
+        """ Introduce """
 
-	def introduction(self, name):
-		try:
-			SpeechSynthesizer("Hello " + name + ". I am Seven. I am here to assist you with your daily tasks. You can ask me for help.",
-							  "data/speech/empyrean-app-332014-6fdfdc87b1df.json")
-		except Exception:
-			return Exception
-   
-	def intents(self, user_input):
-		
-		# intent check
-		for intent in self.data['packages']:
-			# check pattern
-			for pattern in intent['patterns']:
-				if self.user_input.lower() in pattern.lower():
-					response = (random.choice(intent['responses']))
-					try:
-						SpeechSynthesizer(
-							response, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
-					except Exception:
-						print(Exception)
+        self.user_input = takeCommand()
+        self.user_input_link = self.user_input.split()
 
-					if pattern.lower() in intent['patterns'] and intent['patterns'].index(pattern.lower()) == 0:
-						pass
-					else:
-						return intent["tag"]
+        """ Wolframalpha """
+        self.app_id = '8QU8RA-TE2GAVWTKL'
 
-				else:
-					pass
-	
-	def main(self):
-			try:
-				# Search (Default Search Engine)
-				if "search" in self.user_input:
-					try:
-						# Look for Search and Keep and Empty item
-						user_input = self.user_input.replace("search ", "")
-						
-						# Open link in browser
-						webbrowser.open('https://www.google.co.in/search?q=' + self.user_input)
+    def introduction(self, name):
+        try:
+            SpeechSynthesizer("Hello " + name + ". I am Seven. I am here to assist you with your daily tasks. You can ask me for help.",
+                              "data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+        except Exception:
+            return Exception
 
-					except Exception as SearchException:
-						return SearchException
+    def intents(self, user_input):
 
-				# Play video on Youtube
-				elif "play" in self.user_input:
-					try:
-						# Look for Play and Keep and Empty item
-						user_input = self.user_input.replace("play ", "")
+        # intent check
+        for intent in self.data['packages']:
+            # check pattern
+            for pattern in intent['patterns']:
+                if self.user_input.lower() in pattern.lower():
+                    response = (random.choice(intent['responses']))
+                    try:
+                        SpeechSynthesizer(
+                            response, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+                    except Exception:
+                        print(Exception)
 
-						# Play the Video
-						kit.playonyt(user_input)
+                    if pattern.lower() in intent['patterns'] and intent['patterns'].index(pattern.lower()) == 0:
+                        pass
+                    else:
+                        return intent["tag"]
 
+                else:
+                    pass
 
-					except Exception as PlayException:
-						return PlayException
+    def main(self):
+        try:
+            # Search (Default Search Engine)
+            if "search" in self.user_input:
+                try:
+                    # Look for Search and Keep and Empty item
+                    user_input = self.user_input.replace("search ", "")
 
-				# Open link in browser
-				elif "open" in self.user_input:
-					# Open a webpage
-					try:
-						# Look for Open and Keep and Empty item
-						user_input = self.user_input.replace("open ", "")
+                    # Open link in browser
+                    webbrowser.open(
+                        'https://www.google.co.in/search?q=' + self.user_input)
 
-						# Open the webpage
-						webbrowser.open('https://www.' + user_input + '.com')
-						
-					except Exception as OpenException:
-						return OpenException
+                except Exception as SearchException:
+                    return SearchException
 
-				# Check Weather Data
-				elif "weather" in self.user_input:
-					try:
-						os.system("python ../core/packages/Weather/Weather.py")
-						
+            # Play video on Youtube
+            elif "play" in self.user_input:
+                try:
+                    # Look for Play and Keep and Empty item
+                    user_input = self.user_input.replace("play ", "")
 
-					except Exception as WeatherException:
-						return WeatherException
+                    # Play the Video
+                    kit.playonyt(user_input)
 
+                except Exception as PlayException:
+                    return PlayException
 
-				elif "corona" in self.user_input or "covid" in self.user_input:
-					try:
-						os.system("python ../core/packages/CoronaInfo/coronaGet.py")
-						
-					
-					except Exception as CovidException:
-						return CovidException
+            # Open link in browser
+            elif "open" in self.user_input:
+                # Open a webpage
+                try:
+                    # Look for Open and Keep and Empty item
+                    user_input = self.user_input.replace("open ", "")
 
-				# Network/Internet Check
-				elif "internet" in self.user_input or "network" in self.user_input:
-					try:
-						SpeechSynthesizer("Checking your network speed",
-											"data/speech/empyrean-app-332014-6fdfdc87b1df.json")
-						os.system("python ../core/packages/Speedtest/Speedtest.py")
-					
-					except Exception as NetworkException:
-						return NetworkException
+                    # Open the webpage
+                    webbrowser.open('https://www.' + user_input + '.com')
 
-				# See for Todo List
-				elif "todo" in self.user_input or "to do" in self.user_input:
-					try:
-						os.system("python ../core/packages/Todo/todo.py")
-						
-					
-					except Exception as TodoException:
-						return TodoException
+                except Exception as OpenException:
+                    return OpenException
 
-				# Get News
-				elif "news" in self.user_input:
-					try:
-						os.system("python ../core/packages/News/NewsFromBBC.py")
-						
-					
-					except Exception as NewsException:
-						return NewsException
+            # Check Weather Data
+            elif "weather" in self.user_input:
+                try:
+                    os.system("python ../core/packages/Weather/Weather.py")
 
-				####################################
-				# GESTURE
-				####################################
+                except Exception as WeatherException:
+                    return WeatherException
 
-				# Volume Controller
-				elif "volume controller" in self.user_input or "volume" in self.user_input:
-					
-					try:
-						if platform == "darwin":
-							os.system(
-								"python ../models/gesture/core/ControllerVolumeMac/VolumeHandControlAdvanced.py")
-						elif platform == "win32":
-							os.system(
-								"python ../models/gesture/core/ControllerVolume/VolumeController.py")
-					
-					except Exception as ControllerVolumeException:
-						return ControllerVolumeException
+            elif "corona" in self.user_input or "covid" in self.user_input:
+                try:
+                    os.system("python ../core/packages/CoronaInfo/coronaGet.py")
 
-				elif "mouse controller" in self.user_input or "mouse" in self.user_input:
-					try:
-						os.system(
-							"python ../models/gesture/core/VirtualMouse/VirtualMouse.py")
-					except Exception as ControllerMouseException:
-						return ControllerMouseException
+                except Exception as CovidException:
+                    return CovidException
 
-				#############################
-				# """ Functions """
-				#############################
+            # Network/Internet Check
+            elif "internet" in self.user_input or "network" in self.user_input:
+                try:
+                    SpeechSynthesizer("Checking your network speed",
+                                      "data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+                    os.system("python ../core/packages/Speedtest/Speedtest.py")
 
+                except Exception as NetworkException:
+                    return NetworkException
 
-				elif "exit" in self.user_input or "stop":
-					exit()
-				
-				elif "help" in self.user_input:
-					pass
+            # See for Todo List
+            elif "todo" in self.user_input or "to do" in self.user_input:
+                try:
+                    os.system("python ../core/packages/Todo/todo.py")
 
-				else: 
-					pass
+                except Exception as TodoException:
+                    return TodoException
 
-			except Exception as NotRecognizedException:
-				try:
-					client = wolframalpha.Client(self.app_id)
-					res = client.query(self.user_input)
-					ans = next(res.results).text
-					print(ans)
-					SpeechSynthesizer(
-						ans, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
-				except:
-					SpeechSynthesizer("Hey, I'm sorry. I couldn't understand what you said, but I'll search it for you.",
-									  path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
-					self.user_input = self.user_input.replace("search", "")
-					webbrowser.open('https://www.google.co.in/search?q=' + self.user_input)
+            # Get News
+            elif "news" in self.user_input:
+                try:
+                    os.system("python ../core/packages/News/NewsFromBBC.py")
+
+                except Exception as NewsException:
+                    return NewsException
+
+            ####################################
+            # GESTURE
+            ####################################
+
+            # Volume Controller
+            elif "volume controller" in self.user_input or "volume" in self.user_input:
+
+                try:
+                    if platform == "darwin":
+                        os.system(
+                            "python ../models/gesture/core/ControllerVolumeMac/VolumeHandControlAdvanced.py")
+                    elif platform == "win32":
+                        os.system(
+                            "python ../models/gesture/core/ControllerVolume/VolumeController.py")
+
+                except Exception as ControllerVolumeException:
+                    return ControllerVolumeException
+
+            elif "mouse controller" in self.user_input or "mouse" in self.user_input:
+                try:
+                    os.system(
+                        "python ../models/gesture/core/VirtualMouse/VirtualMouse.py")
+                except Exception as ControllerMouseException:
+                    return ControllerMouseException
+
+            #############################
+            # """ Functions """
+            #############################
+
+            elif "exit" in self.user_input or "stop":
+                exit()
+
+            elif "help" in self.user_input:
+                pass
+
+        except Exception as NotRecognizedException:
+            try:
+                client = wolframalpha.Client(self.app_id)
+                res = client.query(self.user_input)
+                ans = next(res.results).text
+                print(ans)
+                SpeechSynthesizer(
+                    ans, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+            except:
+                SpeechSynthesizer("Hey, I'm sorry. I couldn't understand what you said, but I'll search it for you.",
+                                  path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+                self.user_input = self.user_input.replace("search", "")
+                webbrowser.open(
+                    'https://www.google.co.in/search?q=' + self.user_input)
 
 
-		
 if __name__ == "__main__":
-	while True:
-		seven = Seven()
-		seven.main()
+    while True:
+        seven = Seven()
+        seven.main()

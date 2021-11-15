@@ -73,7 +73,7 @@ else:
             inputtext = inputtext.replace(" ", "")
             if inputtext:
                 SpeechSynthesizer(
-                    f"Is {inputtext} your name? If Yes(Press y), If No(Press n)", path="main/data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+                    f"Is {inputtext} your name? If Yes(Press y), If No(Press n)", path="./main/data/speech/empyrean-app-332014-6fdfdc87b1df.json")
 
                 checkTrue = input("Is your name {0}? (y/n)".format(inputtext))
                 if checkTrue == "y":
@@ -93,7 +93,7 @@ else:
                     jsonFile.close()
 
                 else:
-                    os.system("py core.py")
+                    os.system("python core.py")
 
             # Define variables for user.json
             dateCreated = str(datetime.date.today().day) + "/" + \
