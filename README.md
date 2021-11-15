@@ -43,7 +43,7 @@ Please read [CONTRIBUTING.md](https://github.com/SupTechRM/Seven/blob/main/CONTR
 
 
 
-## SevenReviewers
+## SEVEN Developers(THE AI RADAR TEAM)
 
 Developers Who Made SEVEN
 THE AI RADAR TEAM:-
