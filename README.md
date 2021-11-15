@@ -18,7 +18,7 @@
   <img src="https://github.com/SupTechRM/Seven/blob/main/assets/img/banners/Alternative%20Banner.png">
 </p>  </a>
 
-  <h3 align="center"><strong>Seven</strong></h3>
+  <h1 align="center"><strong>Seven</strong></h1>
 
   <p align="center">
     What is the future? What is the upcoming redefining moment. There are infinite upcoming possibilites... And to harness them, to bring what the future possesses is the change of possibility and advancement of humanity. 
