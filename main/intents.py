@@ -9,22 +9,8 @@ import re
 import sys
 import json
 import os
-
-from ibm_watson import TextToSpeechV1
-from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 import playsound
-
-apikey = 'hS-rPVvT204ye5fuInLK0hicBBnFCSo0DnJCFUBx6o-g'
-url = 'https://api.eu-gb.text-to-speech.watson.cloud.ibm.com/instances/c0e720ca-1373-4cbb-959f-bae7d48795e0'
-
-# Setup Service
-authenticator = IAMAuthenticator(apikey)
-tts = TextToSpeechV1(authenticator=authenticator)
-tts.set_service_url(url)
-
-# from core import packages
-# from core.packages.Wolframalpha.WolframAlpha import QuestionSearchByMethod
-
+from data.speech.RealtimeSpeech import SpeechSynthesizer
 nlp = spacy.load('en_core_web_sm')
 
 with open('packages.json') as file:
@@ -40,31 +26,21 @@ def get_command_words(str):
     for ent in doc:
         if ent.pos_ == "VERB":
             Dict["Command Words"] = ent.text
-            print("Command Words: ", Dict["Command Words"])
+            # print("Command Words: ", Dict["Command Words"])
         else:
             Dict["Attributes"] = ent.text
-            print("Attributes", Dict["Attributes"])
+            # print("Attributes", Dict["Attributes"])
 
 
 def intents(input_to):
     for intent in data['packages']:
         for pattern in intent['patterns']:
             if pattern.lower() in input_to.split():
-                print("Found")
-                print(intent['tag'])
+                # print("Found")
+                # print(intent['tag'])
                 response = (random.choice(intent['responses']))
-                filename = 'speech' + str(random.randint(1,100)) + '.mp3'
-                with open(filename, 'wb') as audio_file:
-                    res = tts.synthesize(response, accept='audio/mp3',
-                                        voice='en-US_KevinV3Voice').get_result()
-                    audio_file.write(res.content)
-                
-                try:
-                    playsound.playsound(filename)
-                    os.remove(filename)
-                
-                except:
-                    return response
+                SpeechSynthesizer(
+                    response, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
 
                 if pattern.lower() in intent['patterns'] and intent['patterns'].index(pattern.lower()) == 0:
                     return intent["tag"]

@@ -2,7 +2,7 @@ from ibm_watson import TextToSpeechV1
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 import playsound
 import random
-import os 
+import os
 
 apikey = 'hS-rPVvT204ye5fuInLK0hicBBnFCSo0DnJCFUBx6o-g'
 url = 'https://api.eu-gb.text-to-speech.watson.cloud.ibm.com/instances/c0e720ca-1373-4cbb-959f-bae7d48795e0'
@@ -13,7 +13,7 @@ tts = TextToSpeechV1(authenticator=authenticator)
 tts.set_service_url(url)
 
 
-def SpeechSyntesizer(text):
+def SpeechSynthesizer(text):
     # Speak
     filename = 'speech' + random.randint(1, 100) + '.mp3'
     with open(filename, 'wb') as audio_file:

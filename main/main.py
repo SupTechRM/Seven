@@ -1,14 +1,12 @@
-import playsound
-
 from data.speech.RealtimeMic import takeCommand
 from intents import *
-from data.speech.RealtimeSpeech import SpeechSyntesizer
+from data.speech.RealtimeSpeech import SpeechSynthesizer
 import json
 import webbrowser
-import lib
 import os
 import pywhatkit as kit
 import wolframalpha
+import requests
 
 #####################################
 # Main Function
@@ -21,17 +19,15 @@ name = data['name']
 
 file.close()
 
-app_id = '8QU8RA-TE2GAVWTKL'
+app_id = '47P9L8-VHY6GJ54G8'
+
+
+SpeechSynthesizer("Welcome " + name + ". As I have already introduced myself, I am Seven. You can now as me for help.",
+                  "data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+
 
 while True:
-    try:
-        SpeechSyntesizer(
-            "Welcome " + name + ". As I have already introduced myself, I am Seven. You can now as me for help.")
-    except:
-        SpeechSyntesizer(
-            "Welcome " + name + ". As I have already introduced myself, I am Seven. You can now as me for help.")
 
-    # playsound.playsound("speech.mp3")
     user_input = takeCommand()
     user_input = user_input.lower()
     link = user_input.split()
@@ -40,9 +36,8 @@ while True:
     if user_input.startswith('search '):
         try:
             link = '+'.join(link[1:])
+            print(link)
             say = link.replace('+', ' ')
-            # print(link)
-            print("searching on google for " + say)
             webbrowser.open('https://www.google.co.in/search?q=' + link)
 
         except Exception as e:
@@ -54,8 +49,7 @@ while True:
             link = '+'.join(link[1:])
             say = link.replace('+', ' ')
             # print(link)
-            print("playing " + say)
-            kit.playont(say)
+            kit.playonyt(say)
         except Exception as e:
             print(str(e))
 
@@ -107,9 +101,28 @@ while True:
             os.system("python Seven/models/gesture/core/GestureExecute.py")
         except Exception as e:
             print(e)
+    elif "mouse controller" in user_input:
+        try:
+            os.system("python Seven/models/gesture/core/GestureExecute.py")
+        except Exception as e:
+            print(e)
+    elif "mouse controller" in user_input:
+        try:
+            os.system("python Seven/models/gesture/core/GestureExecute.py")
+        except Exception as e:
+            print(e)
+    elif "exit" in user_input or "stop":
+        exit()
     else:
-        client = wolframalpha.Client(app_id)
-        res = client.query(user_input)
-        ans = next(res.results).text
-        print(ans)
-        
+        try:
+            client = wolframalpha.Client(app_id)
+            res = client.query(user_input)
+            ans = next(res.results).text
+            SpeechSynthesizer(ans, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+        except Exception:
+            response = requests.get("http://api.wolframalpha.com/v2/query?appid=" +
+                                    app_id + "&input=" + user_input + "&output=json")
+            jsonresp = response.json()
+            outcome = jsonresp["queryresult"]["pods"][1]["subpods"][0]["plaintext"]
+            SpeechSynthesizer(outcome, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+

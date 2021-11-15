@@ -3,8 +3,8 @@
 #################################
 
 
-from data.speech.RealtimeSpeech import SpeechSyntesizer
+from data.speech.RealtimeSpeech import SpeechSynthesizer
 
 
 def translate(input_param):
-    SpeechSyntesizer(input_param)
+    SpeechSynthesizer(input_param)
