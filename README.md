@@ -86,9 +86,11 @@ To setup of Seven for local development and contribution follow the details.
 ### Prerequisites
 
 Required
-* [python 3.7 above](https://www.python.org/)
-* [npm and node](https://docs.npmjs.com/cli/v8/commands/npm-install)
-* [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+* [Python](https://www.python.org/)
+* [Node & Npm](https://www.nodejs.org/)
+* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+
+
   ```sh
   npm install npm@latest -g
   ```
