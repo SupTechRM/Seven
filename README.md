@@ -44,7 +44,7 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#structure">Structure</a></li>
-    <li><a href="#running">Running Locally</a></li>
+    <li><a href="#running-locally">Running Locally</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
