@@ -43,11 +43,11 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
+    <li><a href="#structure">Structure</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -109,7 +109,7 @@ Required
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
+<!-- STRUCTURE -->
 ## Structure
 
 | Codebase              |      Description          |
@@ -126,13 +126,13 @@ Required
 <!-- ROADMAP -->
 ## Roadmap
 
-- [] Gesture Control
-- [] Play Videos and Music
-- [] Open Multiple Websites
-- [] Search Data
-- [] Give Latest News
-- [] Show Corona Data Visualisations
-- [] (More Features Tagged)
+-  Gesture Control
+-  Play Videos and Music
+-  Open Multiple Websites
+-  Search Data
+-  Give Latest News
+-  Show Corona Data Visualisations
+-  (More Features Tagged)
 
 
 See the [open issues](https://github.com/SupTechRM/Seven/issues) for a full list of proposed features (and known issues).
