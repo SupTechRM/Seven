@@ -56,7 +56,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img src="https://github.com/SupTechRM/Seven/blob/main/assets/img/SevenAppPage.png"></img>)
+<img src="https://github.com/SupTechRM/Seven/blob/main/assets/img/SevenAppPage.png"></img>
 
 Seven is an AI that was made to be for you. The future is to have the ability to do things in a much faster, much more productive, and in a much easier way than what is seemed in a long forseen past... and Seven, let's just he's a damn brilliant guy. 
 
