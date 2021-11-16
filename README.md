@@ -44,6 +44,7 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#structure">Structure</a></li>
+    <li><a href="#initialisaing">Initialising</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -109,6 +110,7 @@ Required
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+
 <!-- STRUCTURE -->
 ## Structure
 
@@ -122,7 +124,16 @@ Required
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<!-- RUNNNIG LOCALLY -->
+## Initialising
+**Run initial.py. This execute the other programs, once you say any intialising word with seven in it, Seven will begin to respond. 
 
+- Hey Seven
+- Ok Seven
+- Begin Seven
+- How's Life? Seven
+
+**
 <!-- ROADMAP -->
 ## Roadmap
 
