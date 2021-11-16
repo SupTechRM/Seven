@@ -91,10 +91,6 @@ Required
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 
-  ```sh
-  npm install npm@latest -g
-  ```
-
 ### Installation
 
 1. Clone the repo
@@ -114,17 +110,32 @@ Required
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
+## Structure
+
+| Codebase              |      Description          |
+| :-------------------- | :-----------------------: |
+| [app](app)        |     Electron Frontend(Configuration)    |
+| [assets](assets)  |     Image Data: Banners/Logos/Covers        |
+| [core](core)      |    Packages(Containing Functions to Execute Tasks)    |
+| [main](main)    |   Identifying Sentences and Classifying Packages     |
+| [models](models)        |   Code for Speech, Gesture, and Initialiation      |
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 <!-- ROADMAP -->
 ## Roadmap
 
-- [] Feature 1
-- [] Feature 2
-- [] Feature 3
-    - [] Nested Feature
+- [] Gesture Control
+- [] Play Videos and Music
+- [] Open Multiple Websites
+- [] Search Data
+- [] Give Latest News
+- [] Show Corona Data Visualisations
+- [] (More Features Tagged)
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
+
+See the [open issues](https://github.com/SupTechRM/Seven/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -135,8 +146,8 @@ See the [open issues](https://github.com/github_username/repo_name/issues) for a
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
+If you have a suggestion that would make this better, we suggest you fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks!
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
@@ -160,65 +171,15 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Your Name - [@twitter_handle](https://twitter.com/MyJarvis1234) - bestatcricketinaparna@gmail.com
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-* []()
-* []()
-* []()
+Project Link: [https://github.com/SupTechRM/Seven](https://github.com/github_username/repo_name)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## Structure
-
-| Codebase              |      Description          |
-| :-------------------- | :-----------------------: |
-| [app](app)        |     Electron Frontend(Configuration)    |
-| [assets](assets)  |     Image Data: Banners/Logos/Covers        |
-| [core](core)      |    Packages(Containing Functions to Execute Tasks)    |
-| [main](main)    |   Identifying Sentences and Classifying Packages     |
-| [models](models)        |   Code for Speech, Gesture, and Initialiation      |
-
-
-
-
-## Contributions
-
-Seven is open to all and can be used by anyone around the world. It is free, fast and accurate
-
-** All you have to do is fork and star the project and you can begin contributing to Seven. **
-
-Please read [CONTRIBUTING.md](https://github.com/SupTechRM/Seven/blob/main/CONTRIBUTING.md) for details on this project.
-
-
-## Developed By
-
-The Ai Radar Team:- 
-
-- [@Shubham Mishra](https://github.com/Shubham23999)
-- [@Rishabh Mishra](https://github.com/SupTechRM)
-- [@Sarthak Rawool](https://github.com/anrawool)
 
 
 ## Code of Conduct
 
 Please read [CODE_OF_CONDUCT.md](https://github.com/SupTechRM/Seven/blob/main/CODE_OF_CONDUCT.md) for details on our code of conduct.
-
-## How to run locally
-
-Check <a href="https://github.com/SupTechRM/Seven/blob/main/RUNNING_LOCALLY.md">here</a> on how to run locally</a>
-
-## Why did you make this?
-
-We believe in Open Source. Seven was made to be for you. It can do all your daily tasks and is ready to be your man at work. 
-
-
 
