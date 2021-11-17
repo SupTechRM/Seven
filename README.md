@@ -42,7 +42,6 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#structure">Structure</a></li>
     <li><a href="#running-locally">Running Locally</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
