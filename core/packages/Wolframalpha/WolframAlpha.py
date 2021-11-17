@@ -11,7 +11,7 @@ import random
 # Instantiates a client
 
 
-def SpeechSynthesizer(audio, path="main/data/speech/empyrean-app-332014-6fdfdc87b1df.json"):
+def SpeechSynthesizer(audio, path=""):
     os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = path
     client = texttospeech_v1.TextToSpeechClient()
 
@@ -83,7 +83,6 @@ def QuestionSearchByMethod(input, appid):
                                 appid + "&input=" + input + "&output=json")
         jsonresp = response.json()
         outcome = jsonresp["queryresult"]["pods"][1]["subpods"][0]["plaintext"]
-        return outcome
+        print(outcome)
 
-
-outcome = QuestionSearchByMethod(inputtext, appid)
+QuestionSearchByMethod(inputtext, appid)

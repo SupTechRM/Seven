@@ -14,7 +14,7 @@ import random
 # Instantiates a client
 
 
-def SpeechSynthesizer(audio, path="config.json"):
+def SpeechSynthesizer(audio, path=""):
     os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = path
     client = texttospeech_v1.TextToSpeechClient()
 
@@ -67,8 +67,7 @@ wifi = speedtest.Speedtest()
 def InternetSpeedTest(wifi):
     download = wifi.download()
     upload = wifi.upload()
-    SpeechSynthesizer("Dowload Speed:" + str(round(download, 2)) + ".Upload Speed:" + str(int(round(download, 2))))
+    print("Dowload Speed:" + str(round(download, 2)) + ".Upload Speed:" + str(int(round(download, 2))))
 
 
 InternetSpeedTest(wifi)
-os.system("python ../../../main/runmain.py")

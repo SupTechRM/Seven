@@ -33,12 +33,6 @@ file.close()
 """ Define Wolframalpha ID """
 app_id = '8QU8RA-TE2GAVWTKL'
 
-# Introduce User (Random Generated)
-
-# SpeechSynthesizer("Welcome " + name + ". As I have already introduced myself, I am Seven. You can now as me for help.",
-#                   "data/speech/empyrean-app-332014-6fdfdc87b1df.json")
-
-
 class Seven:
     def __init__(self):
         """ Introduce """
@@ -194,24 +188,25 @@ class Seven:
 
             elif "help" in self.user_input:
                 pass
-
-        except Exception as NotRecognizedException:
-            try:
-                client = wolframalpha.Client(self.app_id)
-                res = client.query(self.user_input)
-                ans = next(res.results).text
-                print(ans)
-                SpeechSynthesizer(
-                    ans, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
-            except:
-                SpeechSynthesizer("Hey, I'm sorry. I couldn't understand what you said, but I'll search it for you.",
-                                  path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
-                self.user_input = self.user_input.replace("search", "")
-                webbrowser.open(
-                    'https://www.google.co.in/search?q=' + self.user_input)
-
+            else:
+                try:
+                    client = wolframalpha.Client(self.app_id)
+                    res = client.query(self.user_input)
+                    ans = next(res.results).text
+                    print(ans)
+                    SpeechSynthesizer(
+                        ans, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+                except Exception:
+                    response = requests.get("http://api.wolframalpha.com/v2/query?appid=" +
+                                            app_id + "&input=" + self.user_input + "&output=json")
+                    jsonresp = response.json()
+                    outcome = jsonresp["queryresult"]["pods"][1]["subpods"][0]["plaintext"]
+                    SpeechSynthesizer(outcome, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+        except Exception:
+            pass
 
 if __name__ == "__main__":
     while True:
         seven = Seven()
+        seven.introduction(name)
         seven.main()

@@ -5,15 +5,8 @@ import playsound
 from google.cloud import texttospeech  # outdated or incomplete comparing to v1
 from google.cloud import texttospeech_v1
 import random
-import sys
 
-for p in sys.path:
-    print(p)
-
-# Instantiates a client
-
-
-def SpeechSynthesizer(audio, path="config.json"):
+def SpeechSynthesizer(audio, path=""):
     os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = path
     client = texttospeech_v1.TextToSpeechClient()
 
@@ -84,8 +77,9 @@ def NewsFromBBC():
     for ar in article:
         results.append(ar["title"])
 
-        SpeechSynthesizer(results[:4], path="Seven/core/packages/News/config.json")
+    for i in range(len(results)):
+        # printing all trending news
+        print(i + 1, results[i])
 
 
 res = NewsFromBBC()
-os.system("python ../../../main/runmain.py")

@@ -1,4 +1,6 @@
-{
+import json
+
+credentials = {
   "type": "service_account",
   "project_id": "empyrean-app-332014",
   "private_key_id": "6fdfdc87b1dfc464e3d435c1ff670ae428959e27",
@@ -10,3 +12,6 @@
   "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
   "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/seventexttospeech%40empyrean-app-332014.iam.gserviceaccount.com"
 }
+
+with open("something.json", "w") as fp:
+  json.dump(credentials, fp)

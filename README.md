@@ -1,15 +1,6 @@
 <div id="top"></div>
 
 
-<!-- PROJECT SHIELDS -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-
-
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -18,7 +9,7 @@
   <img src="https://github.com/SupTechRM/Seven/blob/main/assets/img/banners/Alternative%20Banner.png">
 </p>  </a>
 
-  <h1 align="center"><strong>Seven</strong></h1>
+  <h1 align="center"><strong>Seven: The Future is Here 🚀</strong></h1>
 
   <p align="center">
     What is the future? What is the upcoming redefining moment. There are infinite upcoming possibilites... And to harness them, to bring what the future possesses is the change of possibility and advancement of humanity. 
@@ -33,8 +24,6 @@
     <a href="https://github.com/SupTechRM/Seven/issues">Request Feature</a>
   </p>
 </div>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -54,11 +43,12 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
+    <li><a href="#structure">Structure</a></li>
+    <li><a href="#running-locally">Running Locally</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -67,35 +57,22 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<img src="https://github.com/SupTechRM/Seven/blob/main/assets/img/SevenAppPage.png"></img>
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+Seven is an AI that was made to be for you. The future is to have the ability to do things in a much faster, much more productive, and in a much easier way than what is seemed in a long forseen past... and Seven, let's just he's a damn brilliant guy. 
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
-Use the `BLANK_README.md` to get started.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right"><a href="#top">back to top</a></p>
 
 
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
-* [Next.js](https://nextjs.org/)
-* [React.js](https://reactjs.org/)
-* [Vue.js](https://vuejs.org/)
-* [Angular](https://angular.io/)
-* [Svelte](https://svelte.dev/)
-* [Laravel](https://laravel.com)
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
+* [Tensorflow](https://www.tensorflow.org/)
+* [Python](https://www.python.org/)
+* [Google Cloud](https://cloud.google.com/text-to-speech/?utm_source=google&utm_medium=cpc&utm_campaign=japac-IN-all-en-dr-bkws-all-pkws-trial-e-dr-1009882&utm_content=text-ad-none-none-DEV_c-CRE_497186278768-ADGP_Hybrid%20%7C%20BKWS%20-%20EXA%20%7C%20Txt%20~%20AI%20%26%20ML%20~%20Text-to-Speech_Global%20gap%20analysis-KWID_43700060670685257-kwd-506032294992&userloc_20465-network_g&utm_term=KW_google%20cloud%20text%20to%20speech&gclid=CjwKCAiAp8iMBhAqEiwAJb94z08Qmvt0-V01MIjuvdXURX5mUZIcr2EEV6KaGn243bRWs09GlH-UShoCgMIQAvD_BwE&gclsrc=aw.ds)
+* [Electron](https://www.electronjs.org/)
+* [Soft UI Dashboard](https://www.creative-tim.com/product/soft-ui-design-system)
+* And More
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -104,62 +81,72 @@ This section should list any major frameworks/libraries used to bootstrap your p
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+How to run Seven locally? 
+To setup of Seven for local development and contribution follow the details. 
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+Required
+* [Python](https://www.python.org/)
+* [Node & Npm](https://www.nodejs.org/)
+* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/SupTechRM/Seven
    ```
-3. Install NPM packages
+3. Install Packages
    ```sh
-   npm install
+   pip install -r requirements.txt
    ```
-4. Enter your API in `config.js`
+4. Setup Frontend
    ```js
-   const API_KEY = 'ENTER YOUR API';
+   $ cd app
+   $ npm install --save-dev electron
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
+<!-- STRUCTURE -->
+## Structure
 
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+| Codebase              |      Description          |
+| :-------------------- | :-----------------------: |
+| [app](app)        |     Electron Frontend(Configuration)    |
+| [assets](assets)  |     Image Data: Banners/Logos/Covers        |
+| [core](core)      |    Packages(Containing Functions to Execute Tasks)    |
+| [main](main)    |   Identifying Sentences and Classifying Packages     |
+| [models](models)        |   Code for Speech, Gesture, and Initialiation      |
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<!-- RUNNING -->
+## Running Locally
+Run initial.py. This execute the other programs, once you say any intialising word with seven in it, Seven will begin to respond. 
+
+- Hey Seven
+- Ok Seven
+- Begin Seven
+- How's Life? Seven
 
 
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
+-  Gesture Control
+-  Play Videos and Music
+-  Open Multiple Websites
+-  Search Data
+-  Give Latest News
+-  Show Corona Data Visualisations
+-  (More Features Tagged)
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+
+See the [open issues](https://github.com/SupTechRM/Seven/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -170,8 +157,8 @@ See the [open issues](https://github.com/othneildrew/Best-README-Template/issues
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
+If you have a suggestion that would make this better, we suggest you fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks!
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
@@ -195,107 +182,15 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Your Name - [@twitter_handle](https://twitter.com/MyJarvis1234) - bestatcricketinaparna@gmail.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
-
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
+Project Link: [https://github.com/SupTechRM/Seven](https://github.com/github_username/repo_name)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
-
-<p align="center">
-  <img src="https://github.com/SupTechRM/Seven/blob/main/assets/img/banners/Alternative%20Banner.png">
-</p>
-<p align="center" style="font-family: 'Open Sans';"><b>
-Seven: The Future is Here 🚀
-</b></p>
-<p>W hat is the future? What is the upcoming redefining moment. There are infinite upcoming possibilites... And to harness them, to bring what the future possesses is the change of possibility and advancement of humanity. 
-</p>
-
-<h3 align="center">
-  <a href="https://github.com/SupTechRM/Seven/blob/main/CONTRIBUTING.md">Contribute</a>
-<span> · </span>
-  <a href="https://github.com/SupTechRM/Seven/blob/main/Documentation.md">Documentation</a>
-</h3>
-
----
-
-## Structure
-
-| Codebase              |      Description          |
-| :-------------------- | :-----------------------: |
-| [app](app)        |     Electron Frontend(Configuration)    |
-| [assets](assets)  |     Image Data: Banners/Logos/Covers        |
-| [core](core)      |    Packages(Containing Functions to Execute Tasks)    |
-| [main](main)    |   Identifying Sentences and Classifying Packages     |
-| [models](models)        |   Code for Speech, Gesture, and Initialiation      |
-
-
-
-
-## Contributions
-
-Seven is open to all and can be used by anyone around the world. It is free, fast and accurate
-
-** All you have to do is fork and star the project and you can begin contributing to Seven. **
-
-Please read [CONTRIBUTING.md](https://github.com/SupTechRM/Seven/blob/main/CONTRIBUTING.md) for details on this project.
-
-
-## Developed By
-
-The Ai Radar Team:- 
-
-- [@Shubham Mishra](https://github.com/Shubham23999)
-- [@Rishabh Mishra](https://github.com/SupTechRM)
-- [@Sarthak Rawool](https://github.com/anrawool)
 
 
 ## Code of Conduct
 
 Please read [CODE_OF_CONDUCT.md](https://github.com/SupTechRM/Seven/blob/main/CODE_OF_CONDUCT.md) for details on our code of conduct.
-
-## How to run locally
-
-Check <a href="https://github.com/SupTechRM/Seven/blob/main/RUNNING_LOCALLY.md">here</a> on how to run locally</a>
-
-## Why did you make this?
-
-We believe in Open Source. Seven was made to be for you. It can do all your daily tasks and is ready to be your man at work. 
-
-
 
