@@ -14,7 +14,7 @@ from google.cloud import texttospeech_v1
 # Instantiates a client
 
 
-def SpeechSynthesizer(audio, path="config.json"):
+def SpeechSynthesizer(audio, path="../config.json"):
     os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = path
     client = texttospeech_v1.TextToSpeechClient()
 
@@ -66,5 +66,5 @@ def PlayYTTVideo(string):
     SpeechSynthesizer("Opening")
 
 
-PlayYTTVideo("")
+
 os.system("python ../../../main/runmain.py")

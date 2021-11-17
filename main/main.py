@@ -90,6 +90,7 @@ class Seven:
                     webbrowser.open(
                         'https://www.google.co.in/search?q=' + self.user_input)
 
+
                 except Exception as SearchException:
                     return SearchException
 
