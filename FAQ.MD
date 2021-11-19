@@ -31,4 +31,4 @@ yes
 
 ## Do I have to install Seven from Github? 
 
-An office release of Seven will be coming shortly. 
+An official release of Seven will be coming shortly. 
