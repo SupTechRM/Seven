@@ -3,7 +3,7 @@
 ## Does Seven work on all Operating Systems? 
 Seven functions on Windows, Mac, Linux.
 
-## Does Seven exploit my Data? 
+## How does Seven use my Data? 
 We assure you all privacy mentions are being handled. No personal info will be collected. 
 
 ## Can people under the age of 13 use Seven? 
