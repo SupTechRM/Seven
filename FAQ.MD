@@ -8,8 +8,16 @@ We assure you all privacy mentions are being handled. No personal info will be c
 
 ## Can people under the age of 13 use Seven? 
 
-If you are below the age of 13, take permission to use Seven from Guardian/Parents. 
+Our Service does not address anyone under the age of 18.
 
+We do not knowingly collect personally identifiable information from anyone under the age of 18. If you are a parent or
+guardian and you are aware that your Children has provided us with Personal Data, please contact us. If we become aware
+that we have collected Personal Data from children without verification of parental consent, we take steps to remove
+that information from our servers.
+
+Seven does not use or share your information with anyone outside of Seven, except to provide the Service. 
+
+We collect information that you provide to us, such as your name, in some cases, your email address, and to access weather location data.
 ## Can Seven be used Anywhere? 
 
 yes
