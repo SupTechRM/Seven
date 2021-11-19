@@ -31,4 +31,4 @@ yes
 
 ## Do I have to install Seven from Github? 
 
-An official release of Seven will be coming shortly. To test the app, follow through https://github.com/SupTechRM/Seven/blob/main/README.md
+An official release of Seven will be coming shortly. To test the app, follow through [README](https://github.com/SupTechRM/Seven/blob/main/README.md)
