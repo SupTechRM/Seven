@@ -18,7 +18,7 @@ that information from our servers.
 Seven does not use or share your information with anyone outside of Seven, except to provide the Service. 
 
 We collect information that you provide to us, such as your name, in some cases, your email address, and to access weather location data.
-## Can Seven be used Anywhere? 
+## Can Seven be used anywhere? 
 
 yes
 
