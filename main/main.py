@@ -1,7 +1,6 @@
 """ Packages """
 from data.speech.RealtimeSpeech import SpeechSynthesizer
 from data.speech.RealtimeMic import takeCommand
-import language_tool_python
 import json
 import webbrowser
 import pywhatkit as kit
@@ -11,7 +10,6 @@ import random
 from sys import platform
 import os
 
-tool = language_tool_python.LanguageTool('en-US')
 
 
 """ Speech Data """
@@ -36,12 +34,11 @@ app_id = '8QU8RA-TE2GAVWTKL'
 class Seven:
     def __init__(self):
         """ Introduce """
-
-        self.user_input = takeCommand()
-        self.user_input_link = self.user_input.split()
-
+        
         """ Wolframalpha """
         self.app_id = '8QU8RA-TE2GAVWTKL'
+
+
 
     def introduction(self, name):
         try:
@@ -73,6 +70,10 @@ class Seven:
                     pass
 
     def main(self):
+
+        self.user_input = input("What can I do for you? ")
+        self.user_input_link = self.user_input.split()
+
         try:
             # Search (Default Search Engine)
             if "search" in self.user_input:
@@ -208,5 +209,4 @@ class Seven:
 if __name__ == "__main__":
     while True:
         seven = Seven()
-        seven.introduction(name)
         seven.main()
