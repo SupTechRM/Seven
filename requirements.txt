@@ -1,6 +1,5 @@
 absl-py==1.0.0
 attrs==21.2.0
-autopy==4.0.0
 beautifulsoup4==4.10.0
 blis==0.7.5
 cachetools==4.2.4
@@ -223,3 +222,4 @@ websocket-client==1.1.0
 wikipedia==1.4.0
 wolframalpha==5.0.0
 xmltodict==0.12.0
+autopy
