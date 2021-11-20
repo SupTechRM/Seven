@@ -1,25 +1,34 @@
-FAQ:-
+# FAQ
 
-Seven is a developed AI that has high processing initialization.
-Here are a frequently asked questions(FAQ)				
+## Does Seven work on all Operating Systems? 
+Seven functions on Windows, Mac, Linux.
 
-Q 1)Does Seven work on All OS(Operating System)?
-Ans:-Yes it works on:-Windows, Mac and Linux.
+## How does Seven use my Data? 
+We assure you all privacy mentions are being handled. No personal info will be collected. 
 
-Q 2)What is so special about Seven?
-Ans:-Seven uses fast initialization speed and can recognize your voice accurately, It can find any answer quickly and accurately. 
+## Can people under the age of 13 use Seven? 
 
-Q 3)Is Seven Safe?
-Ans:-Seven Is completely Safe and doesn't use any personal information except name, email address and location(FOR WEATHER)
+Our Service does not address anyone under the age of 18.
 
-Q 4)Is Seven very very slow?
-Ans:-No, Seven is a highly developed app. It may run slow if you have fewer data left, otherwise, it is a quick and accurate App. 
+We do not knowingly collect personally identifiable information from anyone under the age of 18. If you are a parent or
+guardian and you are aware that your Children has provided us with Personal Data, please contact us. If we become aware
+that we have collected Personal Data from children without verification of parental consent, we take steps to remove
+that information from our servers.
 
-Q 5)Can Seven be used by all the people?
-Ans:-Seven can be used by all the people above the age of 3(3+)
+Seven does not use or share your information with anyone outside of Seven, except to provide the Service. 
 
-Q 6)Can Seven be used in any part of the world?
-Ans:- Yes, It can be used.
+We collect information that you provide to us, such as your name, in some cases, your email address, and to access weather location data.
+## Can Seven be used anywhere? 
 
-Q 7)Can Seven be used in daily life?
-Ans:-Seven can show you the weather around you, it will also show the Corona Cases around the world, Open Calendar, Open Google, open Youtube, Tell you the recent news, Check your Internet speed, Answer any question(accurate).
+yes
+
+## Features that make Seven unique? 
+
+- Gesture Recognition
+- Compatibility
+- Fast Boot
+- Running multiple processes
+
+## Do I have to install Seven from Github? 
+
+An official release of Seven will be coming shortly. To test the app, follow through [README](https://github.com/SupTechRM/Seven/blob/main/README.md)

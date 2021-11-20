@@ -42,7 +42,6 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#structure">Structure</a></li>
     <li><a href="#running-locally">Running Locally</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
@@ -182,9 +181,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/MyJarvis1234) - bestatcricketinaparna@gmail.com
+Your Name - [@twitter_handle](https://www.youtube.com/watch?v=dQw4w9WgXcQ) - bestatcricketinaparna@gmail.com
 
-Project Link: [https://github.com/SupTechRM/Seven](https://github.com/github_username/repo_name)
+Project Link: [https://github.com/SupTechRM/Seven](https://github.com/SupTechRM/Seven)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
