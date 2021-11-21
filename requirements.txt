@@ -20,8 +20,6 @@ googleapis-common-protos==1.53.0
 grpcio==1.41.1
 grpcio-status==1.41.1
 halo==0.0.31
-ibm-cloud-sdk-core==3.13.0
-ibm-watson==5.3.0
 idna==3.3
 jaraco.context==4.1.1
 Jinja2==3.0.3
