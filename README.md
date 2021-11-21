@@ -103,8 +103,8 @@ Required
    ```
 4. Setup Frontend
    ```js
-   $ cd app
-   $ npm install --save-dev electron
+    cd app
+    npm install --save-dev electron
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
