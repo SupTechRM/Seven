@@ -97,15 +97,19 @@ Required
    ```sh
    git clone https://github.com/SupTechRM/Seven
    ```
-3. Install Packages
+2. Install Packages
    ```sh
    pip install -r requirements.txt
    ```
-4. Setup Frontend
+3. Setup Frontend
    ```js
     cd app
     npm install --save-dev electron
    ```
+4. Final Working Process
+   ```sh
+    cd ..
+    python core.py
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
