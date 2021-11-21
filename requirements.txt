@@ -12,6 +12,7 @@ COVID19Py==0.3.0
 cycler==0.11.0t
 cymem==2.0.6
 en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.2.0/en_core_web_sm-3.2.0-py3-none-any.whl
+google-cloud==0.34.0
 google-api-core==2.2.2
 google-auth==2.3.3
 google-cloud-texttospeech==2.7.1
@@ -29,7 +30,7 @@ langcodes==3.3.0
 language-tool-python==2.6.1
 log-symbols==0.0.14
 MarkupSafe==2.0.1
-matplotlib==3.4.3
+matplotlib==3.5.0
 mediapipe==0.8.9
 more-itertools==8.11.0
 MouseInfo==0.1.3
