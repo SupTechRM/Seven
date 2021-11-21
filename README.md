@@ -86,7 +86,7 @@ To setup of Seven for local development and contribution follow the details.
 ### Prerequisites
 
 Required
-* [Python](https://www.python.org/)
+* [Python 3.8 Version Or 3.7 Version](https://www.python.org/)
 * [Node & Npm](https://www.nodejs.org/)
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
