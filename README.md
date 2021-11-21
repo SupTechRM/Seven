@@ -107,7 +107,7 @@ Required
     npm install --save-dev electron
    ```
 4. Final Working Process
-   ```sh
+   ```
     cd ..
     python core.py
 
