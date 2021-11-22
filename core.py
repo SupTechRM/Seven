@@ -59,7 +59,7 @@ else:
             # Use Pause Threshold
             r.pause_threshold = 1
 
-            time.sleep(2)
+
             print("Listening....")
             audio = r.listen(source)
 
