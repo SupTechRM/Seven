@@ -83,11 +83,11 @@ class Seven:
             if "search" in self.user_input:
                 try:
                     # Look for Search and Keep and Empty item
-                    self.user_input = self.user_input.replace("search ", "")
+                    user_input = self.user_input.replace("search ", "")
 
                     # Open link in browser
                     webbrowser.open(
-                        'https://www.google.co.in/search?q=' + user_input)
+                        'https://www.google.co.in/search?q=' + user_input )
 
                     # Speak out
                     response = random.choice([f"Here is what I found for {user_input}", f"Oookay, searching for {user_input} in your browser", "Well that's factual? ", "Got It", "I'm on it",
