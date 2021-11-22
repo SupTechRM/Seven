@@ -35,7 +35,8 @@ if existence:
 # if not existence(new user)
 else:
     # Greetings
-    SpeechSynthesizer("A new user I see. Welcome. Welcome to Seven. Let me introduce myself. I'm Seven. I'm a damn brilliant guy. That's all. Here let me get you through setup. Spell your name.", path="main/data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+    SpeechSynthesizer("A new user I see. Welcome. Welcome to Seven. Let me introduce myself. I'm Seven. I'm a damn brilliant guy. That's all. Here let me get you through setup. Spell your name.",
+                      path="main/data/speech/empyrean-app-332014-6fdfdc87b1df.json")
 
     while True:
 
@@ -51,7 +52,8 @@ else:
             # Use Pause Threshold
             r.pause_threshold = 1
 
-            time.sleep(2)
+            print("Listening....")
+            audio = r.listen(source)
 
             audio = r.listen(source)
             print("Listening....")
@@ -88,7 +90,8 @@ else:
                     continue
             # Define variables for user.json
             dateCreated = str(datetime.date.today().day) + "/" + \
-                str(datetime.date.today().month) + "/" + str(datetime.date.today().year)
+                str(datetime.date.today().month) + \
+                "/" + str(datetime.date.today().year)
             jsonData = {"name": inputtext, "dateCreated": dateCreated}
 
             # Dump Data
@@ -108,7 +111,3 @@ os.chdir("app")
 os.system("npm start")
 
 os.system("python ../main/main.py")
-
-
-
-
