@@ -20,7 +20,7 @@ while True:
             
             # listens for the user's input
             audio = r.listen(source)
-            print("Listening (ctrl-C to exit)...")
+            print("Listening...")
 
             # Using google speech recognition to recognize audio
             inputtext = r.recognize_google(audio)

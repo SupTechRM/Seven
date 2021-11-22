@@ -11,7 +11,6 @@ from sys import platform
 import os
 
 
-
 """ Speech Data """
 
 #####################################
@@ -31,12 +30,13 @@ file.close()
 """ Define Wolframalpha ID """
 app_id = '8QU8RA-TE2GAVWTKL'
 
+
 class Seven:
     def __init__(self):
         """ Introduce """
 
         """ Wolframalpha """
-        self.app_id = '8QU8RA-TE2GAVWTKL'
+        self.app_id = '74XVJK-XLRGUXJH9X'
 
     def speak(self, data):
         path = "data/speech/empyrean-app-332014-6fdfdc87b1df.json"
@@ -83,14 +83,15 @@ class Seven:
             if "search" in self.user_input:
                 try:
                     # Look for Search and Keep and Empty item
-                    user_input = self.user_input.replace("search ", "")
+                    self.user_input = self.user_input.replace("search ", "")
 
                     # Open link in browser
                     webbrowser.open(
                         'https://www.google.co.in/search?q=' + user_input)
-                    
+
                     # Speak out
-                    response = random.choice([f"Here is what I found for {user_input}", f"Oookay, searching for {user_input} in your browser", "Well that's factual? ", "Got It", "I'm on it", f"So, {user_input}. Something dear to you I presume. ", "Interesting", "My man, Fantastic interest. I'm searching..", "Should I search or not? I'll search. "])
+                    response = random.choice([f"Here is what I found for {user_input}", f"Oookay, searching for {user_input} in your browser", "Well that's factual? ", "Got It", "I'm on it",
+                                              f"So, {user_input}. Something dear to you I presume. ", "Interesting", "My man, Fantastic interest. I'm searching..", "Should I search or not? I'll search. "])
                     self.speak(response)
 
                 except Exception as SearchException:
@@ -106,7 +107,8 @@ class Seven:
                     kit.playonyt(user_input)
 
                     # Speak out
-                    response = random.choice([f"Playing {user_input} on youtube", "God, That's got to be fantastic", "Man I love that", "Damn, that's interesting", "You've got some taste, eh? ", "I watched it, it's spectacular.", "You watched that? I watched it a few ages ago. Burn. My jokes are presumably the best on the planet.", "O'l Sakes, That's the art", f"That was beatiful. In the time of playing it for you, I finished the whole video. "])
+                    response = random.choice([f"Playing {user_input} on youtube", "God, That's got to be fantastic", "Man I love that", "Damn, that's interesting", "You've got some taste, eh? ", "I watched it, it's spectacular.",
+                                              "You watched that? I watched it a few ages ago. Burn. My jokes are presumably the best on the planet.", "O'l Sakes, That's the art", f"That was beatiful. In the time of playing it for you, I finished the whole video. "])
                     self.speak(response)
 
                 except Exception as PlayException:
@@ -123,7 +125,8 @@ class Seven:
                     webbrowser.open('https://www.' + user_input + '.com')
 
                     # Speak out
-                    response = random.choice([f"Opening {user_input}. Great website. ", "I mostly do my work there. It's a haven of learning.", f"Anyhows, {user_input}, pretty popular.", "Bleep that website. Horrible UI. ", "It good. Could use a bit of designing, but it's fine. Well content is what matters.", f"Ok, I'mma open this {user_input} for you.", "You're boring me, kid."])
+                    response = random.choice([f"Opening {user_input}. Great website. ", "I mostly do my work there. It's a haven of learning.", f"Anyhows, {user_input}, pretty popular.", "Bleep that website. Horrible UI. ",
+                                              "It good. Could use a bit of designing, but it's fine. Well content is what matters.", f"Ok, I'mma open this {user_input} for you.", "You're boring me, kid."])
                     self.speak(response)
 
                 except Exception as OpenException:
@@ -133,7 +136,8 @@ class Seven:
             elif "weather" in self.user_input:
                 try:
                     os.system("python ../core/packages/Weather/Weather.py")
-                    response = random.choice(["I'm on it. ", "Getting Weather Info", "You know, you have a delightful weather. For me it's just digital heat, sometimes cold. ", "Weather, my favourite thing to use as an excuse. "])
+                    response = random.choice(
+                        ["I'm on it. ", "Getting Weather Info", "You know, you have a delightful weather. For me it's just digital heat, sometimes cold. ", "Weather, my favourite thing to use as an excuse. "])
                     self.speak()
                 except Exception as WeatherException:
                     return WeatherException
@@ -141,7 +145,8 @@ class Seven:
             elif "corona" in self.user_input or "covid" in self.user_input:
                 try:
                     os.system("python ../core/packages/CoronaInfo/coronaGet.py")
-                    response = random.choice(["I'm on it. ", "Getting Corona Info", "Hey Stay Safe", "Wear your mask when you go outside man", f"{name}, you've got to take care of yourself.", "Wishing your family and you to stay safe and when in problems to be able to face it."])
+                    response = random.choice(["I'm on it. ", "Getting Corona Info", "Hey Stay Safe", "Wear your mask when you go outside man",
+                                              f"{name}, you've got to take care of yourself.", "Wishing your family and you to stay safe and when in problems to be able to face it."])
                     self.speak(response)
 
                 except Exception as CovidException:
@@ -153,7 +158,8 @@ class Seven:
                     SpeechSynthesizer("Checking your network speed",
                                       "data/speech/empyrean-app-332014-6fdfdc87b1df.json")
                     os.system("python ../core/packages/Speedtest/Speedtest.py")
-                    response = random.choice(["Checking your internet", "That's delicate.", "Wonderful.", "Wonder how I process stuff. Whoo! ", "Checking results... So far so good."])
+                    response = random.choice(["Checking your internet", "That's delicate.", "Wonderful.",
+                                              "Wonder how I process stuff. Whoo! ", "Checking results... So far so good."])
                     self.speak(response)
 
                 except Exception as NetworkException:
@@ -206,17 +212,24 @@ class Seven:
 
             elif "exit" in self.user_input or "stop":
                 exit()
-
-            elif "help" in self.user_input:
-                pass
             else:
-                client = wolframalpha.Client(app_id)
-                res = client.query(self.user_input)
-                ans = next(res.results).text
-                self.speak(ans)
+                try:
+                    client = wolframalpha.Client(self.app_id)
+                    res = client.query(self.user_input)
+                    ans = next(res.results).text
+                    print(ans)
+                    SpeechSynthesizer(
+                        ans, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+                except Exception:
+                    response = requests.get("http://api.wolframalpha.com/v2/query?appid=" +
+                                            app_id + "&input=" + self.user_input + "&output=json")
+                    jsonresp = response.json()
+                    outcome = jsonresp["queryresult"]["pods"][1]["subpods"][0]["plaintext"]
+                    SpeechSynthesizer(
+                        outcome, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+        except Exception as e:
+            print(e)
 
-        except Exception:
-            pass
 
 if __name__ == "__main__":
     while True:
