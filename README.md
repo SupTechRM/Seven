@@ -14,7 +14,7 @@
   <p align="center">
     What is the future? What is the upcoming redefining moment. There are infinite upcoming possibilites... And to harness them, to bring what the future possesses is the change of possibility and advancement of humanity. 
     <br />
-    <a href="https://github/SupTechRM/Seven"><strong>Explore Seven »</strong></a>
+    <a href="https://github.com/SupTechRM/Seven"><strong>Explore Seven »</strong></a>
     <br />
     <br />
     <a href="https://github.com/SupTechRM/Seven/blob/main/CONTRIBUTING.md">View Contribution Docs</a>
@@ -86,7 +86,7 @@ To setup of Seven for local development and contribution follow the details.
 ### Prerequisites
 
 Required
-* [Python](https://www.python.org/)
+* [Python 3.8.0 Version Or 3.7.0 Version](https://www.python.org/)
 * [Node & Npm](https://www.nodejs.org/)
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
@@ -97,15 +97,19 @@ Required
    ```sh
    git clone https://github.com/SupTechRM/Seven
    ```
-3. Install Packages
+2. Install Packages
    ```sh
    pip install -r requirements.txt
    ```
-4. Setup Frontend
+3. Setup Frontend
    ```js
-   $ cd app
-   $ npm install --save-dev electron
+    cd app
+    npm install --save-dev electron
    ```
+4. Final Working Process
+   ```
+    cd ..
+    python core.py
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
