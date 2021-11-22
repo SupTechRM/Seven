@@ -51,7 +51,7 @@ while True:
 
 		# Find distance between index and thumb
 		length, img, lineInfo = detector.findDistance(4, 8, img)            
-		print(length)
+		# print(length)
 
 		# Convert Volume
 		volBar = np.interp(length,[50, 200], [400, 150])
@@ -72,8 +72,24 @@ while True:
 			colorVol = (0, 255, 0)
 		else:
 			colorVol = (0, 0, 255)
+		thumbindex, img, soemthing = detector.findDistance(4, 8, img, draw=False)
+		middleindex, img1, abc = detector.findDistance(12, 8, img, draw=False)
+		ringindex, im2, dye = detector.findDistance(16, 8, img, draw=False)
+		pinkyindex, im34, scd = detector.findDistance(20, 8, img, draw=False)
+
+		if thumbindex < 60 and middleindex < 60 and ringindex < 60 and pinkyindex < 60:
+			volume.SetMasterVolumeLevel(40, None)
+			exit()
 
 	# Drawings to Render on Indicator
+	thumbindex = detector.findDistance(4, 8, img)
+	middleindex = detector.findDistance(12, 8, img)
+	ringindex = detector.findDistance(16, 8, img)
+	pinkyindex = detector.findDistance(20, 8, img)
+
+	if fingers[0] != 0 and fingers[1] != 0 and fingers[2] != 0 and fingers[3] != 0 and fingers[4] != 0:
+		if thumbindex < 60 and middleindex < 60 and ringindex < 60 and pinkyindex < 60:
+			exit()
 	cv2.rectangle(img, (50, 150), (85, 400), (255, 0, 0), 3)
 	cv2.rectangle(img, (50, int(volBar)), (85, 400), (255, 0, 0), cv2.FILLED)
 	cv2.putText(img, f'{int(volPer)} %', (40, 450), cv2.FONT_HERSHEY_COMPLEX,

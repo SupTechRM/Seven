@@ -1,8 +1,3 @@
-# #######################
-# """
-# Import Packages -> Core.py
-# """
-# #######################
 
 import json
 import playsound
@@ -39,10 +34,7 @@ if existence:
 
 # if not existence(new user)
 else:
-    # Define Variable for Speech Synthesis
-    # Open mp3 file
-
-    # Play File
+    # Greetings
     SpeechSynthesizer("A new user I see. Welcome. Welcome to Seven. Let me introduce myself. I'm Seven. I'm a damn brilliant guy. That's all. Here let me get you through setup. Spell your name.", path="main/data/speech/empyrean-app-332014-6fdfdc87b1df.json")
 
     while True:
@@ -60,9 +52,9 @@ else:
             r.pause_threshold = 1
 
             time.sleep(2)
-            print("Listening....")
-            audio = r.listen(source)
 
+            audio = r.listen(source)
+            print("Listening....")
             # Using google to recognize audio
             inputtext = r.recognize_google(audio)
 
@@ -93,8 +85,7 @@ else:
                     jsonFile.close()
 
                 else:
-                    os.system("python core.py")
-
+                    continue
             # Define variables for user.json
             dateCreated = str(datetime.date.today().day) + "/" + \
                 str(datetime.date.today().month) + "/" + str(datetime.date.today().year)
@@ -113,7 +104,11 @@ else:
         # Begin the app for marketing/explaining purposes
         SpeechSynthesizer(
             f"{inputtext}, Follow through the documentation, and once you are done, just close the window and I'll be ready.", path="main/data/speech/empyrean-app-332014-6fdfdc87b1df.json")
-        os.chdir("app")
-        os.system("npm start")
+os.chdir("app")
+os.system("npm start")
 
-        os.system("python main/main.py")
+os.system("python ../main/main.py")
+
+
+
+

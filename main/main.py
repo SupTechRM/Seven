@@ -36,7 +36,7 @@ class Seven:
         """ Introduce """
         
         """ Wolframalpha """
-        self.app_id = '8QU8RA-TE2GAVWTKL'
+        self.app_id = '74XVJK-XLRGUXJH9X'
 
 
 
@@ -71,7 +71,7 @@ class Seven:
 
     def main(self):
 
-        self.user_input = input("What can I do for you? ")
+        self.user_input = takeCommand()
         self.user_input_link = self.user_input.split()
 
         try:
@@ -79,7 +79,7 @@ class Seven:
             if "search" in self.user_input:
                 try:
                     # Look for Search and Keep and Empty item
-                    user_input = self.user_input.replace("search ", "")
+                    self.user_input = self.user_input.replace("search ", "")
 
                     # Open link in browser
                     webbrowser.open(
@@ -186,9 +186,6 @@ class Seven:
 
             elif "exit" in self.user_input or "stop":
                 exit()
-
-            elif "help" in self.user_input:
-                pass
             else:
                 try:
                     client = wolframalpha.Client(self.app_id)
@@ -203,8 +200,8 @@ class Seven:
                     jsonresp = response.json()
                     outcome = jsonresp["queryresult"]["pods"][1]["subpods"][0]["plaintext"]
                     SpeechSynthesizer(outcome, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
-        except Exception:
-            pass
+        except Exception as e:
+            print(e)
 
 if __name__ == "__main__":
     while True:

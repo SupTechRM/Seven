@@ -24,7 +24,7 @@ area = 0
 
 while True:
     # Find Hand
-    success, img = cap.read()
+    success, img = cap.read(0)
     img = detector.findHands(img, draw=False)
     lmList, bbox = detector.findPosition(img, draw=False)
     if len(lmList) != 0:
@@ -45,7 +45,15 @@ while True:
             fingers = detector.fingersUp()
             # print(fingers)
             if not fingers[4]:
+                osascript.osascript("set volume output volume " + str(40))
+            thumbindex, img, soemthing = detector.findDistance(4, 8, img, draw=False)
+            middleindex, img1, abc = detector.findDistance(12, 8, img, draw=False)
+            ringindex, im2, dye = detector.findDistance(16, 8, img, draw=False)
+            pinkyindex, im34, scd = detector.findDistance(20, 8, img, draw=False)
+
+            if thumbindex < 60 and middleindex < 60 and ringindex < 60 and pinkyindex < 60:
                 osascript.osascript("set volume output volume " + str(volPer))
+                exit()
 
     cVol = osascript.osascript("get output volume of (get volume settings)")
     # cv2.putText(img, f'Volume: {int(cVol[1])} %', (40, 450), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 250, 0), 3)
