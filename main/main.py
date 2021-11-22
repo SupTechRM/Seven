@@ -1,11 +1,10 @@
 """ Packages """
 from data.speech.RealtimeSpeech import SpeechSynthesizer
-from data.speech.RealtimeMic import takeCommand
+from data.speech.RealtimeMic import Stream_Speech
 import json
 import webbrowser
 import pywhatkit as kit
 import wolframalpha
-import requests
 import random
 from sys import platform
 import os
@@ -37,6 +36,9 @@ class Seven:
 
         """ Wolframalpha """
         self.app_id = '74XVJK-XLRGUXJH9X'
+
+        """ Define Listening State """
+        self.state = True
 
     def speak(self, data):
         path = "data/speech/empyrean-app-332014-6fdfdc87b1df.json"
@@ -71,10 +73,35 @@ class Seven:
 
                 else:
                     pass
+    
+    def wolframalpha(self, user_input):
+        client = wolframalpha.Client(self.app_id)
+        res = client.query(user_input)
+        try:
+            answer = next(res.results).text
+            self.speak(answer)
+        except:
+            response = random.choice(["Hey, Couldn't find an answer! ", "I don't know what you're talking about. ", "Ok, No answer to that."])
+            self.speak("Would you like me to search this on google? ")
+
+            # Create the Speech Object and Listen based on State
+            self.object = Stream_Speech()
+            self.user_input = self.object.takeCommand(self.state)
+
+            if "yes" in self.user_input or "yeah" in self.user_input or "would love it" in self.user_input:
+                webbrowser.open("https://www.google.com/search?q=" + user_input)
+                response = random.choice(["K, I got your back.", "Sure thing, Right Away.", "Alright, I'll do it."])
+                self.speak(response)
+            else:
+                self.speak("Ok I'm here if you need anything else")
 
     def main(self):
-
-        self.user_input = takeCommand()
+        
+        # Create the Speech Object and Listen based on State
+        self.object = Stream_Speech()
+        self.user_input = self.object.takeCommand(self.state)
+        
+        # Proccess user spoken data
         self.user_input = self.user_input.lower()
         self.user_input_link = self.user_input.split()
 
@@ -126,7 +153,7 @@ class Seven:
 
                     # Speak out
                     response = random.choice([f"Opening {user_input}. Great website. ", "I mostly do my work there. It's a haven of learning.", f"Anyhows, {user_input}, pretty popular.", "Bleep that website. Horrible UI. ",
-                                              "It good. Could use a bit of designing, but it's fine. Well content is what matters.", f"Ok, I'mma open this {user_input} for you.", "You're boring me, kid."])
+                                              "It's good. Could use a bit of designing, but it's fine. Well content is what matters.", f"Ok, I'mma open this {user_input} for you.", "You're boring me, kid."])
                     self.speak(response)
 
                 except Exception as OpenException:
@@ -210,23 +237,29 @@ class Seven:
             # """ Functions """
             #############################
 
-            elif "exit" in self.user_input or "stop":
+            elif "exit" in self.user_input:
                 exit()
-            else:
+            
+            elif "help" in self.user_input:
                 try:
-                    client = wolframalpha.Client(self.app_id)
-                    res = client.query(self.user_input)
-                    ans = next(res.results).text
-                    print(ans)
-                    SpeechSynthesizer(
-                        ans, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
-                except Exception:
-                    response = requests.get("http://api.wolframalpha.com/v2/query?appid=" +
-                                            app_id + "&input=" + self.user_input + "&output=json")
-                    jsonresp = response.json()
-                    outcome = jsonresp["queryresult"]["pods"][1]["subpods"][0]["plaintext"]
-                    SpeechSynthesizer(
-                        outcome, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+                    os.system("python ../core/packages/Help/Help.py")
+                except Exception as HelpException:
+                    return HelpException
+
+            elif "start" in self.user_input or "wake up" in self.user_input:
+                self.state = True
+
+                response = random.choice(["Back to Work! ", "I'm here", "You know, I would normally say at your service, but you did kind of wake me from my peace sleep. It's ok, Go ahead. "])
+                self.speak(response)
+            
+            elif "sleep" in self.user_input or "stop" in self.user_input:
+                self.state = False
+                response = random.choice(["Well, That's my cue.", "Adios", "See you, {name}. I'll be back in a bit. "])
+                self.speak(response)
+
+            else:
+                self.wolframalpha(self.user_input)
+
         except Exception as e:
             print(e)
 
