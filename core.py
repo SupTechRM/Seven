@@ -29,14 +29,14 @@ class Initialisation:
         
         # while existence not true
         else:
-            # self.welcomeUser()
+            self.welcomeUser()
             self.yourName()
     
     """ Task Execution """
 
     def speakData(self, data):
         path = "main/data/speech/empyrean-app-332014-6fdfdc87b1df.json"
-        # SpeechSynthesizer(data, path)
+        SpeechSynthesizer(data, path)
         print(data)
 
     def listen_Data(self):
@@ -106,6 +106,7 @@ class Initialisation:
         os.system("npm start")
 
 
+
     """ Proccess Execution """
     def runMain(self):
         # json_file(variable -> opening the file)
@@ -143,17 +144,16 @@ class Initialisation:
             self.speakData("Is {} your name? ".format(self.your_name))
             
             self.your_name_confirm = self.listen_Data()
-            if "yes" in self.your_name_confirm or "yeah" in self.user_input:
-                self.speakData("Okay. Let's get started. ")
-                self.db_save(self.your_name)
-                self.startDocumentation(self.your_name)
-                os.system("python main/main.py")
-
-
+            if "yes" in self.your_name_confirm or "yeah" in self.your_name_confirm:
+                self.speakData("Okay. Let's get started. ")          
+                
             else:
                 self.yourName()
-
-
+        
+        self.db_save(self.your_name)      
+        self.startDocumentation(self.your_name)
+        
+        os.system("python ../main/main.py")
 
 
 
