@@ -128,7 +128,7 @@ Required
 5. Final Working Process
    ```
     cd ..
-    python core.py
+    python initial.py
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
