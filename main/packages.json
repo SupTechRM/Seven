@@ -1,7 +1,7 @@
 {"packages": [
         {"tag": "CoronaInfo",
          "patterns": ["Corona", "Show the Corona Info ", "Tell me the Corona Cases","Show me the recent Corona Updates around the world"],
-         "responses": ["Sure executing Be safe","Showing the Corona Cases in a few seconds","Showing The Corona Cases around the world, but be safe!!!","Opening Corona cases in a few seconds"],
+         "responses": ["Sure executing Be safe","Showing the Corona Cases in a few seconds","Showing The Corona Cases around the world, but be safe!!!","Opening Corona cases in a few second"],
          "context_set": ""
         },
         {"tag": "Google",

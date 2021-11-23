@@ -75,8 +75,7 @@ class Seven:
     def main(self):
 
         self.user_input = takeCommand()
-        self.user_input = self.user_input.lower()
-        self.user_input_link = self.user_input.split()
+        self.user_input = self.user_input
 
         try:
             # Search (Default Search Engine)
@@ -210,23 +209,20 @@ class Seven:
             # """ Functions """
             #############################
 
-            elif "exit" in self.user_input or "stop":
-                exit()
+            elif "exit" in self.user_input or "stop" in self.user_input:
+                os.system("python3 ../initial.py")
             else:
                 try:
                     client = wolframalpha.Client(self.app_id)
                     res = client.query(self.user_input)
                     ans = next(res.results).text
                     print(ans)
-                    SpeechSynthesizer(
-                        ans, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
                 except Exception:
                     response = requests.get("http://api.wolframalpha.com/v2/query?appid=" +
                                             app_id + "&input=" + self.user_input + "&output=json")
                     jsonresp = response.json()
                     outcome = jsonresp["queryresult"]["pods"][1]["subpods"][0]["plaintext"]
-                    SpeechSynthesizer(
-                        outcome, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+                    print(outcome)
         except Exception as e:
             print(e)
 
