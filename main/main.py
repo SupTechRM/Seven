@@ -8,6 +8,9 @@ import wolframalpha
 import random
 from sys import platform
 import os
+import ssl
+
+ssl._create_default_https_context = ssl._create_unverified_context
 
 
 """ Speech Data """
@@ -75,12 +78,12 @@ class Seven:
                     pass
     
     def wolframalpha(self, user_input):
-        client = wolframalpha.Client(self.app_id)
-        res = client.query(user_input)
         try:
+            client = wolframalpha.Client(self.app_id)
+            res = client.query(user_input)
             answer = next(res.results).text
             self.speak(answer)
-        except:
+        except Exception:
             response = random.choice(["Hey, Couldn't find an answer! ", "I don't know what you're talking about. ", "Ok, No answer to that."])
             self.speak("Would you like me to search this on google? ")
 
@@ -237,7 +240,7 @@ class Seven:
             # """ Functions """
             #############################
 
-            elif "exit" in self.user_input:
+            elif "exit" in self.user_input or "stop" in self.user_input:
                 exit()
             
             elif "help" in self.user_input:
