@@ -100,6 +100,7 @@ class Seven:
         # Create the Speech Object and Listen based on State
         self.object = Stream_Speech()
         self.user_input = self.object.takeCommand()
+        print(self.user_input)
         
         # Proccess user spoken data
         self.user_input = self.user_input.lower()

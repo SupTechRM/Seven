@@ -152,7 +152,7 @@ class Initialisation:
         
         self.db_save(self.your_name)      
         self.startDocumentation(self.your_name)
-        
+        print("Processing, it will take less than a minute...")
         os.system("python ../main/main.py")
 
 
