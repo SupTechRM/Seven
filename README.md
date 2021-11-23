@@ -101,12 +101,35 @@ Required
    ```sh
    pip install -r requirements.txt
    ```
-3. Setup Frontend
+3. Install Pyaudio
+  ```sh
+  pipwin install pyaudio
+   ```
+   
+3. Debug Issues
+ 
+   If Pyaudio related errors:- 
+   ```sh
+   pip install pipwin
+   pipwin install pyaudio
+   ```
+  
+  For Module Errors:- 
+  Contact us or Install it using 
+  ```sh
+   pip install [module_name]
+   ```
+   
+  We recommend searching by [module_name] install python.
+   
+   
+4. Setup Frontend
    ```js
     cd app
     npm install --save-dev electron
    ```
-4. Final Working Process
+   
+5. Final Working Process
    ```
     cd ..
     python core.py
