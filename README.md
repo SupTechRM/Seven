@@ -102,10 +102,9 @@ Required
    pip install -r requirements.txt
    ```
 3. Install Pyaudio
-  ```sh
-  pipwin install pyaudio
+   ```sh
+   pipwin install pyaudio
    ```
-   
 3. Debug Issues
  
    If Pyaudio related errors:- 
@@ -113,15 +112,12 @@ Required
    pip install pipwin
    pipwin install pyaudio
    ```
-  
-  For Module Errors:- 
-  Contact us or Install it using 
-  ```sh
+   
+   Module Not Recognized Error
+   ```sh
    pip install [module_name]
    ```
-   
-  We recommend searching by [module_name] install python.
-   
+   We recommend searching [module_name] install python to identify with what name to install the package.
    
 4. Setup Frontend
    ```js
