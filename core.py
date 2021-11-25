@@ -132,7 +132,7 @@ class Initialisation:
         # your_name(variable -> your name)
         # Introduce your name
 
-        self.speakData("Spell your name please.")
+        self.speakData("What is your name? ")
 
         # your_name(variable -> your name)
         # Get your name
