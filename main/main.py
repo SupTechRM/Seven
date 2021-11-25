@@ -8,6 +8,9 @@ import wolframalpha
 import random
 from sys import platform
 import os
+import ssl
+
+ssl._create_default_https_context = ssl._create_unverified_context
 
 
 """ Speech Data """
@@ -37,9 +40,6 @@ class Seven:
         
         """ Wolframalpha """
         self.app_id = '8QU8RA-TE2GAVWTKL'
-
-        """ Define Listening State """
-        self.state = True
 
     def speak(self, data):
         path = "data/speech/empyrean-app-332014-6fdfdc87b1df.json"
@@ -76,18 +76,18 @@ class Seven:
                     pass
     
     def wolframalpha(self, user_input):
-        client = wolframalpha.Client(self.app_id)
-        res = client.query(user_input)
         try:
+            client = wolframalpha.Client(self.app_id)
+            res = client.query(user_input)
             answer = next(res.results).text
             self.speak(answer)
-        except:
+        except Exception:
             response = random.choice(["Hey, Couldn't find an answer! ", "I don't know what you're talking about. ", "Ok, No answer to that."])
             self.speak("Would you like me to search this on google? ")
 
             # Create the Speech Object and Listen based on State
             self.object = Stream_Speech()
-            self.user_input = self.object.takeCommand(self.state)
+            self.user_input = self.object.takeCommand()
 
             if "yes" in self.user_input or "yeah" in self.user_input or "would love it" in self.user_input:
                 webbrowser.open("https://www.google.com/search?q=" + user_input)
@@ -100,7 +100,8 @@ class Seven:
         
         # Create the Speech Object and Listen based on State
         self.object = Stream_Speech()
-        self.user_input = self.object.takeCommand(self.state)
+        self.user_input = self.object.takeCommand()
+        print(self.user_input)
         
         # Proccess user spoken data
         self.user_input = self.user_input.lower()
@@ -237,8 +238,12 @@ class Seven:
             #############################
             # """ Functions """
             #############################
+            elif "sleep" in self.user_input or "bye" in self.user_input:
+                response = random.choice(["Well, That's my cue.", "Adios", f"See you, {name}. I'll be back in a bit. "])
+                self.speak(response)
+                os.system("python ../initial.py")
 
-            elif "exit" in self.user_input:
+            elif "exit" in self.user_input or "stop" in self.user_input:
                 exit()
             
             elif "help" in self.user_input:
@@ -247,15 +252,7 @@ class Seven:
                 except Exception as HelpException:
                     return HelpException
 
-            elif "start" in self.user_input or "wake up" in self.user_input:
-                self.state = True
-
                 response = random.choice(["Back to Work! ", "I'm here", "You know, I would normally say at your service, but you did kind of wake me from my peace sleep. It's ok, Go ahead. "])
-                self.speak(response)
-            
-            elif "sleep" in self.user_input or "stop" in self.user_input:
-                self.state = False
-                response = random.choice(["Well, That's my cue.", "Adios", "See you, {name}. I'll be back in a bit. "])
                 self.speak(response)
 
             else:

@@ -101,15 +101,34 @@ Required
    ```sh
    pip install -r requirements.txt
    ```
-3. Setup Frontend
+3. Install Pyaudio
+   ```sh
+   pipwin install pyaudio
+   ```
+3. Debug Issues
+ 
+   If Pyaudio related errors:- 
+   ```sh
+   pip install pipwin
+   pipwin install pyaudio
+   ```
+   
+   Module Not Recognized Error
+   ```sh
+   pip install [module_name]
+   ```
+   We recommend searching [module_name] install python to identify with what name to install the package.
+   
+4. Setup Frontend
    ```js
     cd app
     npm install --save-dev electron
    ```
-4. Final Working Process
+   
+5. Final Working Process
    ```
     cd ..
-    python core.py
+    python initial.py
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
