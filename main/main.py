@@ -33,9 +33,10 @@ app_id = '8QU8RA-TE2GAVWTKL'
 class Seven:
     def __init__(self):
         """ Introduce """
-
+        self.introduction()
+        
         """ Wolframalpha """
-        self.app_id = '74XVJK-XLRGUXJH9X'
+        self.app_id = '8QU8RA-TE2GAVWTKL'
 
         """ Define Listening State """
         self.state = True
@@ -47,8 +48,8 @@ class Seven:
 
     def introduction(self, name):
         try:
-            SpeechSynthesizer("Hello " + name + ". I am Seven. I am here to assist you with your daily tasks. You can ask me for help.",
-                              "data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+            response = random.choice([f"Hey {name}, I'm Seven. Here to help you out.", "Hey Dude, I'm ready to help you out.", f"Hey Buns, (insert laughing sound), {name}, How you doin'? I am ready to help"])
+            self.speak(response)
         except Exception:
             return Exception
 

@@ -125,9 +125,8 @@ class Initialisation:
     def welcomeUser(self):
         # welcome_user(variable -> welcome user)
         # Introduce Seven
-
-        self.speakData("A new user I see. Welcome. Welcome to Seven. Let me introduce myself. I'm Seven. I'm a damn brilliant guy. That's all. Here let me get you through setup. ")
-
+        response = random.choice(["A new user I see. Welcome. Welcome to Seven. Allow me to introduce myself. I am Seven, made by Rishabh Mishra, Sarthak Rawool, and Shubham Mishra. And about me well, I'm a damn brilliant guy! Here let me get you through setup", "Hey. I am Seven. Let me introduce myself, As you know me I am Seven. I was made by a few brilliant idiots Rishabh Mishra, Shubham Mishra, Sarthak Rawool. The Guys, eh? Anyways, let me get you through setup. ", "Here's looking at you Kid. I'm Seven. I was made by Rishabh Mishra, Shubham Mishra, and Sarthak Rawool, Ya. Let me get you through setup. "])
+        self.speakData(response)
 
     def yourName(self):
         # your_name(variable -> your name)
@@ -144,7 +143,7 @@ class Initialisation:
             self.speakData("Is {} your name? ".format(self.your_name))
             
             self.your_name_confirm = self.listen_Data()
-            if "yes" in self.your_name_confirm or "yeah" in self.your_name_confirm:
+            if "yes" in self.your_name_confirm.lower() or "yeah" in self.your_name_confirm.lower():
                 self.speakData("Okay. Let's get started. ")          
                 
             else:
