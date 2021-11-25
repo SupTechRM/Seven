@@ -27,7 +27,7 @@
 
 <!-- VIDEOS ON SEVEN -->
 ## Introducing Seven
-[![Introducing Seven](https://i.ytimg.com/an_webp/GH-WzDzgfIY/mqdefault_6s.webp?du=3000&sqp=CKbA_IwG&rs=AOn4CLCHMr_3UPzu1Qg5otsWx8sYWzg70Q)](https://www.youtube.com/watch?v=GH-WzDzgfIY)
+[![Introducing Seven](https://i.ytimg.com/an_webp/GH-WzDzgfIY/mqdefault_6s.webp?du=3000&sqp=CLi2_owG&rs=AOn4CLCByUVxyxs65HmcXEujcb89kmwU-Q)](https://www.youtube.com/watch?v=GH-WzDzgfIY)
 
 <!-- TABLE OF CONTENTS -->
 <details>
