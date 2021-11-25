@@ -25,7 +25,10 @@
   </p>
 </div>
 
-
+<!-- VIDEOS ON SEVEN -->
+## Introducing Seven
+https://youtu.be/GH-WzDzgfIY
+https://www.youtube.com/channel/UCFV0myRu2BhcOYN1m8P5dNQ/videos
 
 <!-- TABLE OF CONTENTS -->
 <details>
