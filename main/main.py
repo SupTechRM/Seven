@@ -32,12 +32,30 @@ file.close()
 """ Define Wolframalpha ID """
 app_id = '8QU8RA-TE2GAVWTKL'
 
+""" Intro Class -> Main """
+class Introduction:
+    def __init__(self):
 
+        """ Run the Introduction Function """
+        self.introduction()
+
+    def introduction(self):
+        try:
+            response = random.choice([f"Hey {name}, I'm Seven. Here to help you out.", "Hey Dude, I'm ready to help you out.", f"Hey Buns, (insert laughing sound), {name}, How you doin'? I am ready to help"])
+            self.speak(response)
+
+        except Exception:
+            return Exception
+
+    def speak(self, data):
+        path = "data/speech/empyrean-app-332014-6fdfdc87b1df.json"
+        SpeechSynthesizer(data, path)
+        print(data)
+
+""" Seven Class (Run Data -> Main) """
 class Seven:
     def __init__(self):
-        """ Introduce """
-        self.introduction()
-        
+
         """ Wolframalpha """
         self.app_id = '8QU8RA-TE2GAVWTKL'
 
@@ -46,12 +64,6 @@ class Seven:
         SpeechSynthesizer(data, path)
         print(data)
 
-    def introduction(self, name):
-        try:
-            response = random.choice([f"Hey {name}, I'm Seven. Here to help you out.", "Hey Dude, I'm ready to help you out.", f"Hey Buns, (insert laughing sound), {name}, How you doin'? I am ready to help"])
-            self.speak(response)
-        except Exception:
-            return Exception
 
     def intents(self, user_input):
 
@@ -100,7 +112,7 @@ class Seven:
         
         # Create the Speech Object and Listen based on State
         self.object = Stream_Speech()
-        self.user_input = self.object.takeCommand()
+        self.user_input = self.object.takeText()
         print(self.user_input)
         
         # Proccess user spoken data
@@ -261,6 +273,7 @@ class Seven:
         except Exception as e:
             print(e)
 
+introObj = Introduction()
 
 if __name__ == "__main__":
     while True:

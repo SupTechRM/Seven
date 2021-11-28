@@ -36,5 +36,27 @@ class Stream_Speech:
                 except sr.RequestError as e:
                     print(
                         "Could not request results from Google Speech Recognition service{0}".format(e))
-                return query.lower()
+                if query:
+                    return query.lower()
+                else: # If query is not recognized
+                    self.takeCommand()
         return False
+    
+    def takeText(self):
+        """ Use input (recognize -> text object) """
+        
+        # Take an input as query
+        query = input("How can I help? ")
+        query = query.lower()
+
+        
+
+        # If query is recognized
+        if query:
+
+            # Return the query
+            return query
+
+        else: # If query is not recognized
+            self.takeText()
+
