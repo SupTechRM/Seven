@@ -25,6 +25,10 @@
   </p>
 </div>
 
+<!-- VIDEOS ON SEVEN -->
+## Introducing Seven
+[![Introducing Seven](https://i.ytimg.com/an_webp/GH-WzDzgfIY/mqdefault_6s.webp?du=3000&sqp=CLi2_owG&rs=AOn4CLCByUVxyxs65HmcXEujcb89kmwU-Q)](https://www.youtube.com/watch?v=GH-WzDzgfIY)
+
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
@@ -204,7 +208,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://www.youtube.com/watch?v=dQw4w9WgXcQ) - bestatcricketinaparna@gmail.com
+Your Name - [@The Ai Radar Youtube Channel](https://www.youtube.com/channel/UCFV0myRu2BhcOYN1m8P5dNQ) - theairadar@gmail.com
 
 Project Link: [https://github.com/SupTechRM/Seven](https://github.com/SupTechRM/Seven)
 
