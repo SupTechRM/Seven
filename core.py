@@ -98,23 +98,35 @@ class Initialisation:
         jsonFile.close()
     
     def startDocumentation(self, inputtext):
-        # Begin the app for marketing/explaining purposes
-        self.speakData(
-            f"{inputtext}, Follow through the documentation, and once you are done, just close the window and I'll be ready.")
-        
-        # Change Active Directory
-        os.chdir("app")
-        # if node_modules exists
-        if os.path.isdir("node_modules"):
+        try: 
+            # Begin the app for marketing/explaining purposes
+            self.speakData(
+                f"{inputtext}, Follow through the documentation, and once you are done, just close the window and I'll be ready.")
+            # Change Active Directory
+            os.chdir("app")
+            # if node_modules exists
+            if os.path.isdir("node_modules"):
+                # Start the app
+                os.system("npm start")
+
+            self.speakData("Installing Desktop App Packages. Executing Data. Predicting Output. Loading files... ")
+            self.speakData("This will take some time depending on your internet connection. Please wait. ")
+            # Install node_modules/electron packages    
+            os.system("npm install --save-dev electron")
             # Start the app
+            self.speakData("And Done. Starting the app. ")
             os.system("npm start")
+        
+        except Exception as AppStartBundleException:
+            self.speakData(AppStartBundleException)
+            self.speakData("Sorry. I have encountered an issue. Please try again later. For now you can manually try installing packages. Follow these instructions. ")
+            self.speakData("Open your terminal.")
+            self.speakData("Go to the directory where you installed Seven.")
+            self.speakData("Change Directory to app by typing cd app")
+            self.speakData("Type npm install --save-dev electron")
+            self.speakData("Try again")
 
-        # Install node_modules/electron packages    
-        os.system("npm install --save-dev electron")
-        # Start the app
-        os.system("npm start")
-
-
+            pass
 
     """ Proccess Execution """
     def runMain(self):
