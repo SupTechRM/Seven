@@ -129,7 +129,7 @@ Required
     cd ..
     python initial.py
     
-** For NPM Related Issues **
+**For Frontend Documentation Related Issues**
 Follow the instructions given by Seven, or check the [app](app) directory for instructions related to package installation for the frontend. 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
