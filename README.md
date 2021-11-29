@@ -27,7 +27,7 @@
 
 <!-- VIDEOS ON SEVEN -->
 ## Introducing Seven
-[![Introducing Seven](https://i.ytimg.com/an_webp/GH-WzDzgfIY/mqdefault_6s.webp?du=3000&sqp=CLi2_owG&rs=AOn4CLCByUVxyxs65HmcXEujcb89kmwU-Q)](https://www.youtube.com/watch?v=GH-WzDzgfIY)
+**[Introducing Seven](https://www.youtube.com/watch?v=GH-WzDzgfIY)**
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -122,17 +122,15 @@ Required
    pip install [module_name]
    ```
    We recommend searching [module_name] install python to identify with what name to install the package.
+  
    
-4. Setup Frontend
-   ```js
-    cd app
-    npm install --save-dev electron
-   ```
-   
-5. Final Working Process
+4. Final Working Process
    ```
     cd ..
     python initial.py
+    
+**For Frontend Documentation Related Issues**
+Follow the instructions given by Seven, or check the [app](app) directory for instructions related to package installation for the frontend. 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
