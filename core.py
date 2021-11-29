@@ -15,7 +15,6 @@ class Initialisation:
 
         # Define A Path for Json File Containing DB Data for User
         self.path = './user.json'
-        
         # existence(variable -> checking for existence of path)
         self.existence = os.path.exists(self.path)
 
@@ -102,7 +101,17 @@ class Initialisation:
         # Begin the app for marketing/explaining purposes
         self.speakData(
             f"{inputtext}, Follow through the documentation, and once you are done, just close the window and I'll be ready.")
+        
+        # Change Active Directory
         os.chdir("app")
+        # if node_modules exists
+        if os.path.isdir("node_modules"):
+            # Start the app
+            os.system("npm start")
+
+        # Install node_modules/electron packages    
+        os.system("npm install --save-dev electron")
+        # Start the app
         os.system("npm start")
 
 
