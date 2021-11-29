@@ -27,7 +27,7 @@
 
 <!-- VIDEOS ON SEVEN -->
 ## Introducing Seven
-[![Introducing Seven. **Check out the introduction video to Seven here**](https://www.youtube.com/watch?v=GH-WzDzgfIY)
+**[Introducing Seven](https://www.youtube.com/watch?v=GH-WzDzgfIY)**
 
 <!-- TABLE OF CONTENTS -->
 <details>
