@@ -214,6 +214,8 @@ Project Link: [https://github.com/SupTechRM/Seven](https://github.com/SupTechRM/
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+## Copyright
+**USE OF CODE IN PUBLISHING, MARKETING FROM AN EXTERNAL SOURCE CAN LEAD TO SERIOUS COPYRIGHT ISSUES.**
 
 
 ## Code of Conduct
