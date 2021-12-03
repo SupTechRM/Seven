@@ -33,12 +33,10 @@ class OnSeven:
                     inputtext = r.recognize_google(audio)
 
                     # Proccesing and Logging Recognized Text
-                    print(inputtext)
                     inputtext = inputtext.lower()
 
                     # If Seven in Inputtext then execute the following
                     if " " in inputtext.strip() and "7" in inputtext.strip():
-                        print(inputtext)
                         # Redirect to core.py
                         os.system("python core.py")
 
