@@ -9,6 +9,8 @@ import random
 from sys import platform
 import os
 import ssl
+import pytrends                    
+from pytrends.request import TrendReq
 
 ssl._create_default_https_context = ssl._create_unverified_context
 
@@ -41,7 +43,7 @@ class Introduction:
 
     def introduction(self):
         try:
-            response = random.choice([f"Hey {name}, I'm Seven. Here to help you out.", "Hey Dude, I'm ready to help you out.", f"Hey Buns, (insert laughing sound), {name}, How you doin'? I am ready to help"])
+            response = random.choice([f"Hey {name}, I'm Seven. Here to help you out.", "Hey Dude, I'm ready to help you out.", f"Hey {name}, (insert laughing sound), {name}, How are you doing? I am ready to help"])
             self.speak(response)
 
         except Exception:
@@ -51,6 +53,57 @@ class Introduction:
         path = "data/speech/empyrean-app-332014-6fdfdc87b1df.json"
         SpeechSynthesizer(data, path)
         print(data)
+
+
+""" Try Asking Class - Intent/Attribute """ 
+
+
+class TryExample:
+    def __init__(self):
+        # Create a Pytrend Obj
+        self.pytrend = TrendReq()
+        # Define a Region
+        self.regions = ["india", "united_states", "canada"]
+        # Define a list to store the Regions
+        self.keywords = []
+        # Define a list to store the trending searches
+        self.trends = [] 
+
+        """ Run The Intent Function to Have A Try Asking Example """
+        self.intents()
+
+    def speak(self, data):
+        path = "data/speech/empyrean-app-332014-6fdfdc87b1df.json"
+        SpeechSynthesizer(data, path)
+        print(data)
+
+    def trendAt(self):
+        try:
+            # Loop through each region and find the trending searches
+            for region in self.regions:
+                # Get the trending searches
+                trend = self.pytrend.trending_searches(pn=region)
+                # Add the trending searches to self.trends as a list
+                self.trends.append(trend)
+            # Return self.trends
+            return self.trends
+        
+        except:
+            # Define a Default to Try Asking At
+            self.trends.append(["open gmail", "open notion", "play mario kart", "the time", "the date", "weather", "how fast is my network", "latest news", "play mario kart", "play spiderman no way home", "play the batman trailer", "open youtube", "search albert einsiten", "search quantum chromodynamics", "what is the capital of india"])
+            return self.trends
+
+    def intents(self):
+        # Add A To Try Example
+        data = random.choice(["Try Saying", "Try Asking"])
+        # Add an attribute to try
+        trendForNow = ["open gmail", "open notion", "play mario kart", "the time", "the date", "weather", "how fast is my network", "latest news", "play mario kart", "play spiderman no way home", "play the batman trailer", "open youtube", "search albert einsiten", "search quantum chromodynamics", "what is the capital of india"]
+        # Add a random choice from the list
+        response = random.choice(trendForNow)
+
+        # Join together the data variable and repsonse and
+        return self.speak(data+ " " + response)
+
 
 """ Seven Class (Run Data -> Main) """
 class Seven:
@@ -64,35 +117,28 @@ class Seven:
         SpeechSynthesizer(data, path)
         print(data)
 
-
-    def intents(self, user_input):
-
-        # intent check
-        for intent in self.data['packages']:
-            # check pattern
-            for pattern in intent['patterns']:
-                if self.user_input.lower() in pattern.lower():
-                    response = (random.choice(intent['responses']))
-                    try:
-                        SpeechSynthesizer(
-                            response, path="data/speech/empyrean-app-332014-6fdfdc87b1df.json")
-                    except Exception:
-                        print(Exception)
-
-                    if pattern.lower() in intent['patterns'] and intent['patterns'].index(pattern.lower()) == 0:
-                        pass
-                    else:
-                        return intent["tag"]
-
-                else:
-                    pass
-    
     def wolframalpha(self, user_input):
         try:
+            # Define Wolfram Client
             client = wolframalpha.Client(self.app_id)
             res = client.query(user_input)
             answer = next(res.results).text
+           
+            # Define a Whitelisted
+            whiteListed = ["Wolfram|Alpha", "Wolframlpha", "Wolfram alpha", "Wolfram", "Stephen"]
+            
+            # if answer in whiteListed
+            if any(x in answer for x in whiteListed):
+                # Check for "name" or "created" or "developed" or "built" in x
+                if any(x in answer for x in ["name", "created", "developed", "built", "birthday", "made"]):
+                    return self.speak("I am Seven. I was created by Rishabh Mishra, Shubham Mishra, and Sarthak Rawool. To be honest the day I was finally considered in a beta version was November 15th 2021 IST 21:12, Do I know the seconds? No I don't know. I like to call that my starting point. Since then I've learned a lot. ")
+                answer = "I'm sorry, I can't answer that"
+            else:
+                answer = answer
+
+            # Speak Answer
             self.speak(answer)
+
         except Exception:
             response = random.choice(["Hey, Couldn't find an answer! ", "I don't know what you're talking about. ", "Ok, No answer to that."])
             self.speak("Would you like me to search this on google? ")
@@ -106,13 +152,14 @@ class Seven:
                 response = random.choice(["K, I got your back.", "Sure thing, Right Away.", "Alright, I'll do it."])
                 self.speak(response)
             else:
+                response = random.choice(["Ok I'm here if you need anything else", "Ok my man, I'm here for any other help.", "Sorry if I did not get that. I must have missed a keyword, you can try again. ", "Hey I'm here, alright."])
                 self.speak("Ok I'm here if you need anything else")
 
     def main(self):
         
         # Create the Speech Object and Listen based on State
         self.object = Stream_Speech()
-        self.user_input = self.object.takeText()
+        self.user_input = self.object.takeCommand()
         print(self.user_input)
         
         # Proccess user spoken data
@@ -250,21 +297,17 @@ class Seven:
             #############################
             # """ Functions """
             #############################
-            elif "sleep" in self.user_input or "bye" in self.user_input:
+            elif "sleep" in self.user_input or "bye" in self.user_input or "stop" in self.user_input:
                 response = random.choice(["Well, That's my cue.", "Adios", f"See you, {name}. I'll be back in a bit. "])
                 self.speak(response)
                 os.system("python ../initial.py")
 
-            elif "exit" in self.user_input or "stop" in self.user_input:
-                exit()
-            
-            elif "help" in self.user_input:
+            elif "help" in self.user_input or "documentation" in self.user_input:
                 try:
                     os.system("python ../core/packages/Help/Help.py")
                 except Exception as HelpException:
                     return HelpException
-
-                response = random.choice(["Back to Work! ", "I'm here", "You know, I would normally say at your service, but you did kind of wake me from my peace sleep. It's ok, Go ahead. "])
+                response = random.choice(["Sure opening the documentation", "Ok", "Right helping you out."])
                 self.speak(response)
 
             else:
@@ -274,6 +317,7 @@ class Seven:
             print(e)
 
 introObj = Introduction()
+tryExampleObj = TryExample()
 
 if __name__ == "__main__":
     while True:

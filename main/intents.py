@@ -1,15 +1,32 @@
-import wolframalpha
+# Get Trending Searches using pytrends
+import pytrends                    
+from pytrends.request import TrendReq
+pytrend = TrendReq()
 
-app_id = '74XVJK-XLRGUXJH9X'
+class TrendingSearches:
+    def __init__(self):
+        
+        # Define a Region
+        self.region = ["india", "united_states", "canada"]
+        
+        # Define a list to store the Regions
+        self.keywords = []
+        
+        # Define a list to store the trending searches
+        self.trends = [] 
 
-# Create a client
-client = wolframalpha.Client(app_id)
+        self.intents()
 
-# Get results
-res = client.query("What is the capital of France?")
+    def intents(self):
+        # Loop through each region and find the trending searches
+        for region in self.region:
+            # Get the trending searches
+            trend = pytrend.trending_searches(pn=region)
+            # Add the trending searches to self.trends as a list
+            self.trends.append(trend.head())
+        
+        # Return self.trends
+        return self.trends
 
-# Get the first pod
-pod = next(res.results).text
 
-# print the pod
-print(pod)
+TrendingsearchObj = TrendingSearches()
