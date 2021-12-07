@@ -106,6 +106,7 @@ class handDetector():
         x1 = self.lmList[p1][0]
         y1 = self.lmList[p1][1]
         x2, y2 = self.lmList[p2][0], self.lmList[p2][1]
+       
         cx, cy = (x1 + x2) // 2, (y1 + y2) // 2
         
         if draw: 

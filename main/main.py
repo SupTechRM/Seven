@@ -1,6 +1,10 @@
 """ Packages """
+
+# Speech Library Import
 from data.speech.RealtimeSpeech import SpeechSynthesizer
 from data.speech.RealtimeMic import Stream_Speech
+
+# Module base import 
 import json
 import webbrowser
 import pywhatkit as kit
@@ -9,13 +13,15 @@ import random
 from sys import platform
 import os
 import ssl
-import pytrends                    
-from pytrends.request import TrendReq
+import time
 
+# Import Seven Functions
+from lib.introduction.introduction import IntroClass
+from lib.tryExec.tryExec import TryExample
+
+""" ssl context """
 ssl._create_default_https_context = ssl._create_unverified_context
 
-
-""" Speech Data """
 
 #####################################
 # Main Function
@@ -30,80 +36,6 @@ data = json.load(file)
 name = data['name']
 
 file.close()
-
-""" Define Wolframalpha ID """
-app_id = '8QU8RA-TE2GAVWTKL'
-
-""" Intro Class -> Main """
-class Introduction:
-    def __init__(self):
-
-        """ Run the Introduction Function """
-        self.introduction()
-
-    def introduction(self):
-        try:
-            response = random.choice([f"Hey {name}, I'm Seven. Here to help you out.", "Hey Dude, I'm ready to help you out.", f"Hey {name}, (insert laughing sound), {name}, How are you doing? I am ready to help"])
-            self.speak(response)
-
-        except Exception:
-            return Exception
-
-    def speak(self, data):
-        path = "data/speech/empyrean-app-332014-6fdfdc87b1df.json"
-        SpeechSynthesizer(data, path)
-        print(data)
-
-
-""" Try Asking Class - Intent/Attribute """ 
-
-
-class TryExample:
-    def __init__(self):
-        # Create a Pytrend Obj
-        self.pytrend = TrendReq()
-        # Define a Region
-        self.regions = ["india", "united_states", "canada"]
-        # Define a list to store the Regions
-        self.keywords = []
-        # Define a list to store the trending searches
-        self.trends = [] 
-
-        """ Run The Intent Function to Have A Try Asking Example """
-        self.intents()
-
-    def speak(self, data):
-        path = "data/speech/empyrean-app-332014-6fdfdc87b1df.json"
-        SpeechSynthesizer(data, path)
-        print(data)
-
-    def trendAt(self):
-        try:
-            # Loop through each region and find the trending searches
-            for region in self.regions:
-                # Get the trending searches
-                trend = self.pytrend.trending_searches(pn=region)
-                # Add the trending searches to self.trends as a list
-                self.trends.append(trend)
-            # Return self.trends
-            return self.trends
-        
-        except:
-            # Define a Default to Try Asking At
-            self.trends.append(["open gmail", "open notion", "play mario kart", "the time", "the date", "weather", "how fast is my network", "latest news", "play mario kart", "play spiderman no way home", "play the batman trailer", "open youtube", "search albert einsiten", "search quantum chromodynamics", "what is the capital of india"])
-            return self.trends
-
-    def intents(self):
-        # Add A To Try Example
-        data = random.choice(["Try Saying", "Try Asking"])
-        # Add an attribute to try
-        trendForNow = ["open gmail", "open notion", "play mario kart", "the time", "the date", "weather", "how fast is my network", "latest news", "play mario kart", "play spiderman no way home", "play the batman trailer", "open youtube", "search albert einsiten", "search quantum chromodynamics", "what is the capital of india"]
-        # Add a random choice from the list
-        response = random.choice(trendForNow)
-
-        # Join together the data variable and repsonse and
-        return self.speak(data+ " " + response)
-
 
 """ Seven Class (Run Data -> Main) """
 class Seven:
@@ -316,7 +248,8 @@ class Seven:
         except Exception as e:
             print(e)
 
-introObj = Introduction()
+
+introObj = IntroClass()
 tryExampleObj = TryExample()
 
 if __name__ == "__main__":

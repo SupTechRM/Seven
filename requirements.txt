@@ -88,4 +88,5 @@ websocket-client==1.1.0
 wikipedia==1.4.0
 wolframalpha==5.0.0
 xmltodict==0.12.0
+pytrends
 autopy==4.0.0
