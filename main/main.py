@@ -16,8 +16,8 @@ import ssl
 import time
 
 # Import Seven Functions
-from lib.introduction.introduction import IntroClass
-from lib.tryExec.tryExec import TryExample
+# from lib.introduction.introduction import IntroClass
+# from lib.tryExec.tryExec import TryExample
 
 """ ssl context """
 ssl._create_default_https_context = ssl._create_unverified_context
@@ -186,6 +186,11 @@ class Seven:
                     return NetworkException
 
             # See for Todo List
+            elif "exit" in self.user_input or "bye" in self.user_input:
+                response = random.choice(["Okay, Bye!", "See you later.", "Have a nice day.",
+                                              "Adios! ", "Bye!", "Good Bye!"])
+                SpeechSynthesizer(response)
+                exit()
             elif "todo" in self.user_input or "to do" in self.user_input:
                 try:
                     os.system("python ../core/packages/Todo/todo.py")
@@ -249,8 +254,8 @@ class Seven:
             print(e)
 
 
-introObj = IntroClass()
-tryExampleObj = TryExample()
+# introObj = IntroClass()
+# tryExampleObj = TryExample()
 
 if __name__ == "__main__":
     while True:

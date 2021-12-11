@@ -36,10 +36,13 @@ class Stream_Speech:
                 except sr.RequestError as e:
                     print(
                         "Could not request results from Google Speech Recognition service{0}".format(e))
-                if query:
-                    return query.lower()
-                else: # If query is not recognized
-                    self.takeCommand()
+                try:
+                    if query:
+                        return query.lower()
+                    else: # If query is not recognized
+                        self.takeCommand()
+                except UnboundLocalError:
+                    pass
         return False
     
     def takeText(self):
