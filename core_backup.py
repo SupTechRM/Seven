@@ -31,8 +31,7 @@ else:
     # Open mp3 file
 
     # Play File
-    SpeechSynthesizer("A new user I see. Welcome. Welcome to Seven. Let me introduce myself. I'm Seven. I'm a damn brilliant guy. That's all. Here let me get you through setup. Spell your name.",
-                      path="main/data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+    SpeechSynthesizer("A new user I see. Welcome. Welcome to Seven. Let me introduce myself. I'm Seven. I'm a damn brilliant guy. That's all. Here let me get you through setup. Spell your name.")
 
     while True:
 
@@ -61,7 +60,7 @@ else:
             inputtext = inputtext.replace(" ", "")
             if inputtext:
                 SpeechSynthesizer(
-                    f"Is {inputtext} your name? ", path="./main/data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+                    f"Is {inputtext} your name? ")
 
                 checkTrue = input("Is your name {0}? (y/n)".format(inputtext))
                 if checkTrue == "y":
@@ -101,7 +100,7 @@ else:
 
         # Begin the app for marketing/explaining purposes
         SpeechSynthesizer(
-            f"{inputtext}, Follow through the documentation, and once you are done, just close the window and I'll be ready.", path="main/data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+            f"{inputtext}, Follow through the documentation, and once you are done, just close the window and I'll be ready.")
         os.chdir("app")
         os.system("npm start")
 

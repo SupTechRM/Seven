@@ -36,8 +36,7 @@ class Initialisation:
 
 	def speakData(self, data):
 		try:
-			path = "main/data/speech/empyrean-app-332014-6fdfdc87b1df.json"
-			SpeechSynthesizer(data, path)
+			SpeechSynthesizer(data)
 		except:
 			print(data)
 	

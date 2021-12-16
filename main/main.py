@@ -45,8 +45,7 @@ class Seven:
         self.app_id = '8QU8RA-TE2GAVWTKL'
 
     def speak(self, data):
-        path = "data/speech/empyrean-app-332014-6fdfdc87b1df.json"
-        SpeechSynthesizer(data, path)
+        SpeechSynthesizer(data)
         print(data)
 
     def wolframalpha(self, user_input):
@@ -175,8 +174,7 @@ class Seven:
             # Network/Internet Check
             elif "internet" in self.user_input or "network" in self.user_input:
                 try:
-                    SpeechSynthesizer("Checking your network speed",
-                                      "data/speech/empyrean-app-332014-6fdfdc87b1df.json")
+                    SpeechSynthesizer("Checking your network speed")
                     os.system("python ../core/packages/Speedtest/Speedtest.py")
                     response = random.choice(["Checking your internet", "That's delicate.", "Wonderful.",
                                               "Wonder how I process stuff. Whoo! ", "Checking results... So far so good."])
