@@ -13,6 +13,6 @@
   "author": "Rishabh Mishra",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^15.3.2"
+    "electron": "^15.3.3"
   }
 }

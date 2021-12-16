@@ -82,18 +82,27 @@ class Initialisation:
 			print(
 				"Could not request results from Google Speech Recognition service{0}".format(e))
 
-	def db_save(self, inputtext):
+	def db_save(self, name, weather_api_key, compute_engine_api_key):
 
 		dateCreated = str(datetime.date.today().day) + "/" + \
 			str(datetime.date.today().month) + \
 			"/" + str(datetime.date.today().year)
-		jsonData = {"name": inputtext, "dateCreated": dateCreated}
+		jsonData = {"name": name, "dateCreated": dateCreated, "wolframalpha_api": compute_engine_api_key}
 
 		# Dump Data
 		jsonString = json.dumps(jsonData)
 
 		# Open Json File
 		jsonFile = open("user.json", "w")
+
+		# Write data
+		jsonFile.write(jsonString)
+		jsonFile.close()
+		jsonData = {"weather_api": weather_api_key}
+		jsonString = json.dumps(jsonData)
+
+		# Open Json File
+		jsonFile = open("core/packages/Weather/user.json", "w")
 
 		# Write data
 		jsonFile.write(jsonString)
@@ -127,8 +136,6 @@ class Initialisation:
 			self.speakData("Change Directory to app by typing cd app")
 			self.speakData("Type npm install --save-dev electron")
 			self.speakData("Try again")
-
-			pass
 
 	""" Proccess Execution """
 	def runMain(self):
@@ -172,10 +179,20 @@ class Initialisation:
 			else:
 				self.yourName()
 		
-		self.db_save(self.your_name)      
-		self.startDocumentation(self.your_name)
-		print("Processing, it will take less than a minute...")
-		os.system("python ../main/main.py")
+		self.apprun = input("Do you want to run the app locally too (Y/N) [NPM is required]: ")
+		self.weather_input = input("Please enter your weather api key (If you do not have one, Please make one at https://openweathermap.org/api): ")
+		self.compute_engine_input = input("Please enter your WolframAlpha API key (If you do not have one, Please make one at https://products.wolframalpha.com/api/): ")
+
+
+		
+		self.db_save(self.your_name, self.weather_input, self.compute_engine_input)
+		if self.apprun != "N": 
+			self.startDocumentation(self.your_name)
+			print("Processing, it will take less than a minute...")
+			os.system("python ../main/main.py")
+		else:
+			print("Processing, it will take less than a minute...")
+			os.system("python ../main/main.py")
 
 
 

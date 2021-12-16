@@ -42,7 +42,9 @@ class Seven:
     def __init__(self):
 
         """ Wolframalpha """
-        self.app_id = '8QU8RA-TE2GAVWTKL'
+        file = open('../user.json')
+        data = json.load(file)
+        self.app_id = data['wolframalpha_api']
 
     def speak(self, data):
         SpeechSynthesizer(data)

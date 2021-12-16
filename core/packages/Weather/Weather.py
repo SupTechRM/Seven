@@ -8,6 +8,7 @@ import os
 import playsound
 import random
 from gtts import gTTS
+import json
 
 # Instantiates a client
 
@@ -22,10 +23,6 @@ def SpeechSynthesizer(audio):
 
 
 # Enter your API key here
-api_key = "f726177bc0a3668ac48870d798d9a623"
-
-base_url = "http://api.openweathermap.org/data/2.5/weather?"
-
 
 def getLocation():
     res = requests.get('https://ipinfo.io/')
@@ -35,13 +32,17 @@ def getLocation():
 
 
 def getWeather(city_name):
-    complete_url = base_url + "appid=" + api_key + "&q=" + city_name
+    file = open('../core/packages/Weather/user.json')
+    data = json.load(file)
+    api_key = data['weather_api']
+    base_url = "http://api.openweathermap.org/data/2.5/weather?"
 
+    complete_url = base_url + "appid=" + api_key + "&q=" + city_name
     response = requests.get(complete_url)
 
     x = response.json()
 
-    if x["cod"] != "404":
+    if x["cod"] != "404" and x["cod"] != "401":
 
         y = x["main"]
 
@@ -66,6 +67,7 @@ def getWeather(city_name):
         print("Minimum Temperature: " + str(round(temperature_min, 2)))
         print("Humidity: " + str(current_humidity) + "%")
     else:
+        print("Sorry, Something Went Wrong...")
         pass
 
 
