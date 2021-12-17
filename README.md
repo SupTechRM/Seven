@@ -24,6 +24,7 @@
     <a href="https://github.com/SupTechRM/Seven/issues">Request Feature</a>
   </p>
 </div>
+  <h1 align="center"><strong>BETA STAGE: STABLE BUILD COMING UP</strong></h1>
 
 <!-- VIDEOS ON SEVEN -->
 ## Introducing Seven
