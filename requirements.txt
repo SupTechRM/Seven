@@ -84,7 +84,6 @@ typer==0.4.0
 typing-extensions==3.10.0.2
 urllib3==1.26.7
 wasabi==0.8.2
-webrtcvad==2.0.10
 websocket-client==1.1.0
 wikipedia==1.4.0
 wolframalpha==5.0.0
