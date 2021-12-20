@@ -1,4 +1,3 @@
-
 import json
 import playsound
 from datetime import date
@@ -8,7 +7,7 @@ import random
 import time
 import datetime
 import json
-from main.data.speech.RealtimeSpeech import SpeechSynthesizer
+from main.data.speech.RealtimeSpeech import SpeechSynthesis
 
 
 class Initialisation:
@@ -36,7 +35,9 @@ class Initialisation:
 
 	def speakData(self, data):
 		try:
-			SpeechSynthesizer(data)
+			synthesis = SpeechSynthesis()
+			synthesis.synthesize(data)
+
 		except:
 			print(data)
 	
@@ -181,10 +182,7 @@ class Initialisation:
 		
 		self.apprun = input("Do you want to run the app locally too (Y/N) [NPM is required]: ")
 		self.weather_input = input("Please enter your weather api key (If you do not have one, Please make one at https://openweathermap.org/api): ")
-		self.compute_engine_input = input("Please enter your WolframAlpha API key (If you do not have one, Please make one at https://products.wolframalpha.com/api/): ")
-
-
-		
+		self.compute_engine_input = input("Please enter your WolframAlpha API key (If you do not have one, Please make one at https://products.wolframalpha.com/api/): ")		
 		self.db_save(self.your_name, self.weather_input, self.compute_engine_input)
 		if self.apprun != "N": 
 			self.startDocumentation(self.your_name)

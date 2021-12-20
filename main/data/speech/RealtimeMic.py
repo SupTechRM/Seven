@@ -43,7 +43,6 @@ class Stream_Speech:
                         self.takeCommand()
                 except UnboundLocalError:
                     pass
-        return False
     
     def takeText(self):
         """ Use input (recognize -> text object) """
@@ -51,8 +50,6 @@ class Stream_Speech:
         # Take an input as query
         query = input("How can I help? ")
         query = query.lower()
-
-        
 
         # If query is recognized
         if query:
