@@ -1,0 +1,23 @@
+{
+  "name": "setup",
+  "version": "1.0.0",
+  "description": "Seven: Setup UI to Introduce, and Access Info",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SupTechRM/Seven.git"
+  },
+  "author": "Rishabh Mishra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SupTechRM/Seven/issues"
+  },
+  "homepage": "https://github.com/SupTechRM/Seven#readme",
+  "devDependencies": {
+    "electron": "^16.0.5"
+  }
+}
