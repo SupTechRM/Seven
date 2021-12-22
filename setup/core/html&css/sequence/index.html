@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Seven</title>
+		<meta name="description" content="Text Opening Sequence with CSS Animations" />
+		<meta name="keywords" content="text, opening sequence, opening credits, css animations, typography, lettering.js" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico"> 
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+	<body style="overflow: hidden;">
+		<embed src="./audio/BePrepared.mp3" loop="true" autostart="true" width="2" height="0" controls>	
+
+		<div class="container">	
+			<div class="os-phrases" id="os-phrases" style="font-weight: 800 !important ">
+				<h2>Hey </h2>
+				<h2>I'm Seven</h2>
+				<h2>Contrary to Popular Belief</h2>
+				<h2>You're about to go on a ride.</h2>
+				<h2>Prepare</h2>
+			</div>
+
+		</div><!-- /container -->
+		<canvas>
+            
+		</canvas>
+		<script src="./js/matrix.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="js/jquery.lettering.js"></script>
+		<script>
+			$(document).ready(function() {
+				$("#os-phrases > h2").lettering('words').children("span").lettering().children("span").lettering(); 
+			})
+		</script>
+	</body>
+</html>
