@@ -14,7 +14,7 @@
   <p align="center">
     What is the future? What is the upcoming redefining moment. There are infinite upcoming possibilites... And to harness them, to bring what the future possesses is the change of possibility and advancement of humanity. 
     <br />
-    <a href="https://github.com/SupTechRM/Seven"><strong>Explore Seven »</strong></a>
+    <a href="https://theairadar.wixsite.com/seven"><strong>Explore Seven »</strong></a>
     <br />
     <br />
     <a href="https://github.com/SupTechRM/Seven/blob/main/CONTRIBUTING.md">View Contribution Docs</a>
