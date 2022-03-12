@@ -1,8 +1,8 @@
 from sys import platform
-import os 
+import os
 
 
 if platform == "darwin":
-    os.system("python ../../../ControllerVolumeMac/VolumeHandControllerAdvanced.py")
+    os.system("python3 ../../../ControllerVolumeMac/VolumeHandControllerAdvanced.py")
 elif platform == "win32":
-    os.system("python Seven/models/core/ControllerVolume/VolumeController.py")
+    os.system("python3 Seven/models/core/ControllerVolume/VolumeController.py")

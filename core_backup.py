@@ -1,4 +1,4 @@
-import os 
+import os
 import datetime
 from main.data.speech.RealtimeSpeech import SpeechSynthesizer
 import json
@@ -21,9 +21,9 @@ if existence:
     # close opened
     opened.close()
 
-    # cd main/python main.py (redirect to main)
+    # cd main/python3 main.py (redirect to main)
     os.chdir("main")
-    os.system("python main.py")
+    os.system("python3  main.py")
 
 # if not existence(new user)
 else:
@@ -31,7 +31,8 @@ else:
     # Open mp3 file
 
     # Play File
-    SpeechSynthesizer("A new user I see. Welcome. Welcome to Seven. Let me introduce myself. I'm Seven. I'm a damn brilliant guy. That's all. Here let me get you through setup. Spell your name.")
+    SpeechSynthesizer(
+        "A new user I see. Welcome. Welcome to Seven. Let me introduce myself. I'm Seven. I'm a damn brilliant guy. That's all. Here let me get you through setup. Spell your name.")
 
     while True:
 
@@ -80,7 +81,7 @@ else:
                     jsonFile.close()
 
                 else:
-                    os.system("python core.py")
+                    os.system("python3 core.py")
 
             # Define variables for user.json
             dateCreated = str(datetime.date.today().day) + "/" + \
@@ -104,4 +105,4 @@ else:
         os.chdir("app")
         os.system("npm start")
 
-        os.system("python main/main.py")
+        os.system("python3  main/main.py")

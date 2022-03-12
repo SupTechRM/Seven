@@ -1,10 +1,11 @@
 """ Packages """
 
 # Speech Library Import
-from data.speech.RealtimeSpeech import SpeechSynthesizer
+from email.mime import audio
+from data.speech.RealtimeSpeech import SpeechSynthesis
 from data.speech.RealtimeMic import Stream_Speech
 
-# Module base import 
+# Module base import
 import json
 import webbrowser
 import pywhatkit as kit
@@ -14,6 +15,7 @@ from sys import platform
 import os
 import ssl
 import time
+
 
 # Import Seven Functions
 # from lib.introduction.introduction import IntroClass
@@ -38,16 +40,18 @@ name = data['name']
 file.close()
 
 """ Seven Class (Run Data -> Main) """
+
+
 class Seven:
     def __init__(self):
-
         """ Wolframalpha """
         file = open('../user.json')
         data = json.load(file)
         self.app_id = data['wolframalpha_api']
 
     def speak(self, data):
-        SpeechSynthesizer(data)
+        synthesis = SpeechSynthesis()
+        synthesis.synthesize(audio=data)
         print(data)
 
     def wolframalpha(self, user_input):
@@ -56,10 +60,11 @@ class Seven:
             client = wolframalpha.Client(self.app_id)
             res = client.query(user_input)
             answer = next(res.results).text
-           
+
             # Define a Whitelisted
-            whiteListed = ["Wolfram|Alpha", "Wolframlpha", "Wolfram alpha", "Wolfram", "Stephen"]
-            
+            whiteListed = ["Wolfram|Alpha", "Wolframlpha",
+                           "Wolfram alpha", "Wolfram", "Stephen"]
+
             # if answer in whiteListed
             if any(x in answer for x in whiteListed):
                 # Check for "name" or "created" or "developed" or "built" in x
@@ -73,7 +78,8 @@ class Seven:
             self.speak(answer)
 
         except Exception:
-            response = random.choice(["Hey, Couldn't find an answer! ", "I don't know what you're talking about. ", "Ok, No answer to that."])
+            response = random.choice(
+                ["Hey, Couldn't find an answer! ", "I don't know what you're talking about. ", "Ok, No answer to that."])
             self.speak("Would you like me to search this on google? ")
 
             # Create the Speech Object and Listen based on State
@@ -81,20 +87,23 @@ class Seven:
             self.user_input = self.object.takeCommand()
 
             if "yes" in self.user_input or "yeah" in self.user_input or "would love it" in self.user_input:
-                webbrowser.open("https://www.google.com/search?q=" + user_input)
-                response = random.choice(["K, I got your back.", "Sure thing, Right Away.", "Alright, I'll do it."])
+                webbrowser.open(
+                    "https://www.google.com/search?q=" + user_input)
+                response = random.choice(
+                    ["K, I got your back.", "Sure thing, Right Away.", "Alright, I'll do it."])
                 self.speak(response)
             else:
-                response = random.choice(["Ok I'm here if you need anything else", "Ok my man, I'm here for any other help.", "Sorry if I did not get that. I must have missed a keyword, you can try again. ", "Hey I'm here, alright."])
+                response = random.choice(["Ok I'm here if you need anything else", "Ok my man, I'm here for any other help.",
+                                          "Sorry if I did not get that. I must have missed a keyword, you can try again. ", "Hey I'm here, alright."])
                 self.speak("Ok I'm here if you need anything else")
 
     def main(self):
-        
+
         # Create the Speech Object and Listen based on State
         self.object = Stream_Speech()
         self.user_input = self.object.takeCommand()
         print(self.user_input)
-        
+
         # Proccess user spoken data
         self.user_input = self.user_input.lower()
         self.user_input_link = self.user_input.split()
@@ -108,7 +117,7 @@ class Seven:
 
                     # Open link in browser
                     webbrowser.open(
-                        'https://www.google.co.in/search?q=' + user_input )
+                        'https://www.google.co.in/search?q=' + user_input)
 
                     # Speak out
                     response = random.choice([f"Here is what I found for {user_input}", f"Oookay, searching for {user_input} in your browser", "Well that's factual? ", "Got It", "I'm on it",
@@ -156,7 +165,7 @@ class Seven:
             # Check Weather Data
             elif "weather" in self.user_input:
                 try:
-                    os.system("python ../core/packages/Weather/Weather.py")
+                    os.system("python3 ../core/packages/Weather/Weather.py")
                     response = random.choice(
                         ["I'm on it. ", "Getting Weather Info", "You know, you have a delightful weather. For me it's just digital heat, sometimes cold. ", "Weather, my favourite thing to use as an excuse. "])
                     self.speak()
@@ -165,7 +174,8 @@ class Seven:
 
             elif "corona" in self.user_input or "covid" in self.user_input:
                 try:
-                    os.system("python ../core/packages/CoronaInfo/coronaGet.py")
+                    os.system(
+                        "python3 ../core/packages/CoronaInfo/coronaGet.py")
                     response = random.choice(["I'm on it. ", "Getting Corona Info", "Hey Stay Safe", "Wear your mask when you go outside man",
                                               f"{name}, you've got to take care of yourself.", "Wishing your family and you to stay safe and when in problems to be able to face it."])
                     self.speak(response)
@@ -176,8 +186,8 @@ class Seven:
             # Network/Internet Check
             elif "internet" in self.user_input or "network" in self.user_input:
                 try:
-                    SpeechSynthesizer("Checking your network speed")
-                    os.system("python ../core/packages/Speedtest/Speedtest.py")
+                    SpeechSynthesis("Checking your network speed")
+                    os.system("python3 ../core/packages/Speedtest/Speedtest.py")
                     response = random.choice(["Checking your internet", "That's delicate.", "Wonderful.",
                                               "Wonder how I process stuff. Whoo! ", "Checking results... So far so good."])
                     self.speak(response)
@@ -188,12 +198,12 @@ class Seven:
             # See for Todo List
             elif "exit" in self.user_input or "bye" in self.user_input:
                 response = random.choice(["Okay, Bye!", "See you later.", "Have a nice day.",
-                                              "Adios! ", "Bye!", "Good Bye!"])
-                SpeechSynthesizer(response)
+                                          "Adios! ", "Bye!", "Good Bye!"])
+                SpeechSynthesis(response)
                 exit()
             elif "todo" in self.user_input or "to do" in self.user_input:
                 try:
-                    os.system("python ../core/packages/Todo/todo.py")
+                    os.system("python3 ../core/packages/Todo/todo.py")
 
                 except Exception as TodoException:
                     return TodoException
@@ -201,7 +211,7 @@ class Seven:
             # Get News
             elif "news" in self.user_input:
                 try:
-                    os.system("python ../core/packages/News/NewsFromBBC.py")
+                    os.system("python3 ../core/packages/News/NewsFromBBC.py")
 
                 except Exception as NewsException:
                     return NewsException
@@ -216,10 +226,10 @@ class Seven:
                 try:
                     if platform == "darwin":
                         os.system(
-                            "python ../models/gesture/core/ControllerVolumeMac/VolumeHandControlAdvanced.py")
+                            "python3  ../models/gesture/core/ControllerVolumeMac/VolumeHandControlAdvanced.py")
                     elif platform == "win32":
                         os.system(
-                            "python ../models/gesture/core/ControllerVolume/VolumeController.py")
+                            "python3  ../models/gesture/core/ControllerVolume/VolumeController.py")
 
                 except Exception as ControllerVolumeException:
                     return ControllerVolumeException
@@ -227,7 +237,7 @@ class Seven:
             elif "mouse controller" in self.user_input or "mouse" in self.user_input:
                 try:
                     os.system(
-                        "python ../models/gesture/core/VirtualMouse/VirtualMouse.py")
+                        "python3  ../models/gesture/core/VirtualMouse/VirtualMouse.py")
                 except Exception as ControllerMouseException:
                     return ControllerMouseException
 
@@ -235,16 +245,18 @@ class Seven:
             # """ Functions """
             #############################
             elif "sleep" in self.user_input or "bye" in self.user_input or "stop" in self.user_input:
-                response = random.choice(["Well, That's my cue.", "Adios", f"See you, {name}. I'll be back in a bit. "])
+                response = random.choice(
+                    ["Well, That's my cue.", "Adios", f"See you, {name}. I'll be back in a bit. "])
                 self.speak(response)
-                os.system("python ../initial.py")
+                os.system("python3  ../initial.py")
 
             elif "help" in self.user_input or "documentation" in self.user_input:
                 try:
-                    os.system("python ../core/packages/Help/Help.py")
+                    os.system("python3 ../core/packages/Help/Help.py")
                 except Exception as HelpException:
                     return HelpException
-                response = random.choice(["Sure opening the documentation", "Ok", "Right helping you out."])
+                response = random.choice(
+                    ["Sure opening the documentation", "Ok", "Right helping you out."])
                 self.speak(response)
 
             else:

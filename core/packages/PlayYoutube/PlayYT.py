@@ -15,10 +15,10 @@ def SpeechSynthesizer(audio):
     playsound.playsound(filename)
     os.remove(filename)
 
+
 def PlayYTTVideo(string):
     kit.playonyt(string)
     SpeechSynthesizer("Opening")
 
 
-
-os.system("python ../../../main/runmain.py")
+os.system("python3 ../../../main/runmain.py")

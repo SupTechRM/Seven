@@ -3,14 +3,16 @@
 import os
 import speech_recognition as sr
 
+
 class OnSeven:
     def __init__(self):
-        
         """ On Seven -> Detect(Start Core) """
         self.start()
 
     def start(self):
         # Continue listening
+        print("Listening...")
+
         while True:
 
             # Use Try/Except to troubleshoot errors
@@ -38,12 +40,17 @@ class OnSeven:
                     # If Seven in Inputtext then execute the following
                     if " " in inputtext.strip() and "7" in inputtext.strip():
                         # Redirect to core.py
-                        os.system("python core.py")
+                        try:
+                            print("Starting")
+                            os.system("python3  core.py")
+                        except Exception:
+                            pass
 
                         # Exit Current File
                         exit()
-
-            # Troubleshoot for Speech Requesting Errors
+                    elif "exit" in inputtext.lower():
+                        exit()
+                        # Troubleshoot for Speech Requesting Errors
             except sr.RequestError as e:
                 print("Could not request results; {0}".format(e))
 
@@ -54,5 +61,6 @@ class OnSeven:
 ##########################
 # While Seven -> OnSeven
 ##########################
+
 
 OnSeven = OnSeven()

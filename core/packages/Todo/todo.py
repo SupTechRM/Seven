@@ -85,4 +85,4 @@ delTask_btn = Button(
 delTask_btn.pack(fill=BOTH, expand=True, side=LEFT)
 
 ws.mainloop()
-os.system("python ../../../main/runmain.py")
+os.system("python3 ../../../main/runmain.py")
